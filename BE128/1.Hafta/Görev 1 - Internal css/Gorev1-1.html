@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Basit Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer-border {
+            border: 4px solid #f00;
+            margin: 24px auto;
+            max-width: 900px;
+            padding: 16px;
+        }
+
+        .header-border {
+            border: 2px solid #f00;
+            padding: 12px;
+            margin-bottom: 16px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .menu-border {
+            border: 2px solid #f00;
+            padding: 10px;
+            margin-bottom: 16px;
+        }
+
+            .menu-border ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                gap: 18px;
+                justify-content: center;
+            }
+
+            .menu-border a {
+                text-decoration: none;
+                color: #c00;
+                font-weight: bold;
+            }
+
+        .content-border {
+            border: 2px solid #f00;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+            .content-border > div {
+                border: 1px solid #f00;
+                padding: 10px;
+                margin-bottom: 12px;
+            }
+
+            .content-border table, .content-border th, .content-border td {
+                border: 1px solid #f00;
+                border-collapse: collapse;
+                padding: 6px 12px;
+            }
+
+        .footer-border {
+            border: 2px solid #f00;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-border">
+        <div class="header-border">
+            <span>💻</span>
+            Sercan Çavuş
+        </div>
+        <div class="menu-border">
+            <ul>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">Eğitim</a></li>
+                <li><a href="#">Yetenekler</a></li>
+                <li><a href="#">Projeler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+        <div class="content-border">
+            <div>
+                <h1>Hoş Geldiniz!</h1>
+                <p>Bu web sayfası, HTML'nin temel elementlerini örneklerle göstermektedir. Aşağıda başlık, paragraf, liste, resim, tablo ve form örneklerini bulabilirsiniz.</p>
+            </div>
+            <div>
+                <h2>Favori Teknolojilerim</h2>
+                <ul>
+                    <li>HTML &amp; CSS</li>
+                    <li>JavaScript</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Örnek Resimler</h3>
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Bilgi Teknolojileri 1" />
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Bilgi Teknolojileri 2" />
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Bilgi Teknolojileri 3" />
+            </div>
+            <div>
+                <h4>Tablo Örneği</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>Meslek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ali</td>
+                            <td>Yılmaz</td>
+                            <td>Yazılımcı</td>
+                        </tr>
+                        <tr>
+                            <td>Ayşe</td>
+                            <td>Kara</td>
+                            <td>Tasarımcı</td>
+                        </tr>
+                        <tr>
+                            <td>Mehmet</td>
+                            <td>Demir</td>
+                            <td>Veri Analisti</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h5>İletişim Formu</h5>
+                <form>
+                    <label for="ad">Adınız:</label>
+                    <input type="text" id="ad" name="ad" required>
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="mesaj">Mesajınız:</label>
+                    <textarea id="mesaj" name="mesaj" rows="3" required></textarea>
+                    <button type="submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+        <footer class="footer-border">
+            Sercan Çavuş
+        </footer>
+    </div>
+</body>
+</html>

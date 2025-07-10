@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV Hazýrlama Aracý</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            height: 100vh;
+            background: #fff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .left {
+            width: 300px;
+            background: #a9a9a9;
+            border-right: 2px solid #222;
+        }
+
+        .left-header {
+            background: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .left-content {
+            flex: 1;
+            padding: 10px 15px 0 15px;
+            overflow-y: auto;
+        }
+
+        .left-section {
+            margin-bottom: 18px;
+        }
+
+        .left-section-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #222;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 4px;
+        }
+
+        .left-label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .left-input, .left-textarea, .left-select {
+            width: 95%;
+            margin-bottom: 6px;
+            margin-top: 2px;
+            padding: 4px;
+            font-size: 14px;
+            border: 1px solid #888;
+            border-radius: 2px;
+        }
+
+        .left-textarea {
+            height: 40px;
+            resize: vertical;
+        }
+
+        .middle {
+            width: 220px;
+            background: #c0c0c0;
+            border-right: 2px solid #222;
+            border-left: 2px solid #222;
+        }
+
+        .middle-header {
+            background: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .middle-content {
+            flex: 1;
+            padding: 10px 15px 0 15px;
+            overflow-y: auto;
+        }
+
+        .middle-section-title {
+            font-weight: bold;
+            font-size: 15px;
+            color: #222;
+            margin: 10px 0 4px 0;
+        }
+
+        .middle-label {
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        .color-input {
+            width: 30px;
+            height: 20px;
+            border: 1px solid #888;
+            vertical-align: middle;
+        }
+
+        .middle-row {
+            margin-bottom: 8px;
+        }
+
+        .right {
+            flex: 1;
+            background: #c0392b;
+            color: #222;
+            display: flex;
+            flex-direction: row;
+            border-left: 2px solid #222;
+            min-width: 0;
+        }
+
+        .cv-left-col {
+            width: 270px;
+            background: #b32d24;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .cv-photo-circle {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #222;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 18px;
+            background: #c0392b;
+            color: #222;
+            overflow: hidden;
+        }
+
+            .cv-photo-circle img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+        .cv-section {
+            width: 90%;
+            margin-bottom: 30px;
+        }
+
+        .cv-section-title {
+            font-weight: bold;
+            border-bottom: 2px solid #222;
+            margin-bottom: 5px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cv-section ul {
+            list-style: none;
+            padding-left: 10px;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .cv-section-content {
+            font-size: 15px;
+            margin-top: 5px;
+            color: #222;
+        }
+
+        .cv-main-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .cv-header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0 20px 0;
+        }
+
+        .cv-name {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .cv-title {
+            font-size: 20px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .cv-main-sections {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            padding: 30px 40px 30px 40px;
+            min-height: 0;
+        }
+
+        .cv-main-section {
+            flex: 1 1 0;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+            .cv-main-section:last-child {
+                margin-bottom: 0;
+            }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">CV Hazýrlama Aracý</h2>
+    <div class="container">
+        <div class="panel left">
+            <div class="left-header">Metin Ýçerikleri</div>
+            <div class="left-content">
+                <div class="left-section">
+                    <div class="left-section-title">Ýsim Kutusu</div>
+                    <label class="left-label">Ad Soyad :</label>
+                    <input class="left-input" type="text" id="adsoyad" oninput="updateCV()">
+                    <label class="left-label">Unvan :</label>
+                    <input class="left-input" type="text" id="unvan" oninput="updateCV()">
+                </div>
+                <div class="left-section">
+                    <div class="left-section-title">Ýletiþim Bilgileri</div>
+                    <label class="left-label">Telefon :</label>
+                    <input class="left-input" type="text" id="telefon" oninput="updateCV()">
+                    <label class="left-label">Mail :</label>
+                    <input class="left-input" type="text" id="mail" oninput="updateCV()">
+                    <label class="left-label">Web :</label>
+                    <input class="left-input" type="text" id="web" oninput="updateCV()">
+                    <label class="left-label">Adres :</label>
+                    <textarea class="left-textarea" id="adres" oninput="updateCV()"></textarea>
+                </div>
+                <div class="left-section">
+                    <div class="left-section-title">Eðitim Bilgileri</div>
+                    <label class="left-label">Açýklama :</label>
+                    <textarea class="left-textarea" id="egitim" oninput="updateCV()"></textarea>
+                </div>
+                <div class="left-section">
+                    <div class="left-section-title">Yetenekler</div>
+                    <label class="left-label">Açýklama :</label>
+                    <textarea class="left-textarea" id="yetenekler" oninput="updateCV()"></textarea>
+                </div>
+                <div class="left-section">
+                    <div class="left-section-title">Hakkýnda</div>
+                    <label class="left-label">Açýklama :</label>
+                    <textarea class="left-textarea" id="hakkinda" oninput="updateCV()"></textarea>
+                </div>
+                <div class="left-section">
+                    <div class="left-section-title">Ýþ Deneyimi</div>
+                    <label class="left-label">Açýklama :</label>
+                    <textarea class="left-textarea" id="isdeneyimi" oninput="updateCV()"></textarea>
+                </div>
+                <div class="left-section">
+                    <div class="left-section-title">Fotoðraf</div>
+                    <input type="file" id="foto" accept="image/*" onchange="updatePhoto(event)">
+                </div>
+            </div>
+        </div>
+        <div class="panel middle">
+            <div class="middle-header">Görünüþ</div>
+            <div class="middle-content">
+                <div class="middle-section-title">Renkler</div>
+                <div class="middle-row">
+                    <span class="middle-label">Arkaplan :</span>
+                    <input class="color-input" type="color" id="bgcolor" value="#c0392b" onchange="updateCV()">
+                </div>
+                <div class="middle-row">
+                    <span class="middle-label">Sol Kolon :</span>
+                    <input class="color-input" type="color" id="leftcolcolor" value="#b32d24" onchange="updateCV()">
+                </div>
+                <div class="middle-row">
+                    <span class="middle-label">Baþlýk Kutusu :</span>
+                    <input class="color-input" type="color" id="headercolor" value="#333333" onchange="updateCV()">
+                </div>
+                <div class="middle-row">
+                    <span class="middle-label">Baþlýk Yazý :</span>
+                    <input class="color-input" type="color" id="headertextcolor" value="#ffffff" onchange="updateCV()">
+                </div>
+                <div class="middle-section-title">Yazý Tipi</div>
+                <div class="middle-row">
+                    <span class="middle-label">Yazý Tipi :</span>
+                    <select class="left-select" id="fontfamily" onchange="updateCV()">
+                        <option value="'Times New Roman', Times, serif">Times</option>
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+                        <option value="Verdana, Geneva, sans-serif">Verdana</option>
+                    </select>
+                </div>
+                <div class="middle-section-title">Fotoðraf</div>
+                <div class="middle-row">
+                    <span class="middle-label">Çerçeve :</span>
+                    <select class="left-select" id="photoborder" onchange="updateCV()">
+                        <option value="circle">Daire</option>
+                        <option value="square">Kare</option>
+                    </select>
+                </div>
+                <div class="middle-section-title">Baþlýk Altý Çizgi</div>
+                <div class="middle-row">
+                    <span class="middle-label">Renk :</span>
+                    <input class="color-input" type="color" id="linecolor" value="#222222" onchange="updateCV()">
+                </div>
+                <div class="middle-row">
+                    <span class="middle-label">Þekil :</span>
+                    <select class="left-select" id="linestyle" onchange="updateCV()">
+                        <option value="solid">Düz</option>
+                        <option value="dashed">Kesikli</option>
+                        <option value="dotted">Noktalý</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="panel right" id="cv-preview">
+            <div class="cv-left-col" id="cv-left-col">
+                <div class="cv-photo-circle" id="cv-photo-circle">
+                    <span id="cv-photo-placeholder">FOTOÐRAF</span>
+                    <img src="" id="cv-photo" style="display:none;">
+                </div>
+                <div class="cv-section">
+                    <div class="cv-section-title">ÝLETÝÞÝM</div>
+                    <ul>
+                        <li id="cv-telefon">( Telefon )</li>
+                        <li id="cv-mail">( Mail )</li>
+                        <li id="cv-adres">( Adres )</li>
+                        <li id="cv-web">( Web )</li>
+                    </ul>
+                </div>
+                <div class="cv-section">
+                    <div class="cv-section-title">EÐÝTÝM</div>
+                    <div class="cv-section-content" id="cv-egitim">(AÇIKLAMA)</div>
+                </div>
+                <div class="cv-section">
+                    <div class="cv-section-title">YETENEKLER</div>
+                    <div class="cv-section-content" id="cv-yetenekler">(AÇIKLAMA)</div>
+                </div>
+            </div>
+            <div class="cv-main-col" id="cv-main-col">
+                <div class="cv-header" id="cv-header">
+                    <div class="cv-name" id="cv-adsoyad">{ AD SOYAD }</div>
+                    <div class="cv-title" id="cv-unvan">{ UNVAN }</div>
+                </div>
+                <div class="cv-main-sections">
+                    <div class="cv-main-section">
+                        <div class="cv-section-title">HAKKINDA</div>
+                        <div class="cv-section-content" id="cv-hakkinda">(AÇIKLAMA)</div>
+                    </div>
+                    <div class="cv-main-section">
+                        <div class="cv-section-title">ÝÞ DENEYÝMÝ</div>
+                        <div class="cv-section-content" id="cv-isdeneyimi">(AÇIKLAMA)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateCV() {
+            document.getElementById('cv-adsoyad').textContent = document.getElementById('adsoyad').value || '{ AD SOYAD }';
+            document.getElementById('cv-unvan').textContent = document.getElementById('unvan').value || '{ UNVAN }';
+            document.getElementById('cv-telefon').textContent = document.getElementById('telefon').value || '( Telefon )';
+            document.getElementById('cv-mail').textContent = document.getElementById('mail').value || '( Mail )';
+            document.getElementById('cv-web').textContent = document.getElementById('web').value || '( Web )';
+            document.getElementById('cv-adres').textContent = document.getElementById('adres').value || '( Adres )';
+            document.getElementById('cv-egitim').textContent = document.getElementById('egitim').value || '(AÇIKLAMA)';
+            document.getElementById('cv-yetenekler').textContent = document.getElementById('yetenekler').value || '(AÇIKLAMA)';
+            document.getElementById('cv-hakkinda').textContent = document.getElementById('hakkinda').value || '(AÇIKLAMA)';
+            document.getElementById('cv-isdeneyimi').textContent = document.getElementById('isdeneyimi').value || '(AÇIKLAMA)';
+            document.getElementById('cv-preview').style.background = document.getElementById('bgcolor').value;
+            document.getElementById('cv-left-col').style.background = document.getElementById('leftcolcolor').value;
+            document.getElementById('cv-header').style.background = document.getElementById('headercolor').value;
+            document.getElementById('cv-header').style.color = document.getElementById('headertextcolor').value;
+            document.getElementById('cv-preview').style.fontFamily = document.getElementById('fontfamily').value;
+            var lineColor = document.getElementById('linecolor').value;
+            var lineStyle = document.getElementById('linestyle').value;
+            document.querySelectorAll('.cv-section-title').forEach(function (el) {
+                el.style.borderBottom = '2px ' + lineStyle + ' ' + lineColor;
+            });
+            var photoCircle = document.getElementById('cv-photo-circle');
+            photoCircle.style.borderRadius = document.getElementById('photoborder').value === 'circle' ? '50%' : '10px';
+        }
+        function updatePhoto(event) {
+            const file = event.target.files[0];
+            const img = document.getElementById('cv-photo');
+            const placeholder = document.getElementById('cv-photo-placeholder');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    placeholder.style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                img.src = '';
+                img.style.display = 'none';
+                placeholder.style.display = 'block';
+            }
+        }
+        updateCV();
+    </script>
+</body>
+</html>

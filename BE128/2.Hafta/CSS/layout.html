@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Css Flex</title>
+    <style>
+        .deneme1{
+            background-color:red;
+            height:100px;
+        }
+        .deneme2{
+            background-color:darkorange;
+            height:100px;
+        }
+        .deneme3{
+            background-color:fuchsia;
+            height:100px;
+        }
+        .container{
+            display:flex;
+            /*flex-direction:column;*/
+            /*flex-direction:column-reverse;*/
+            /*flex-direction:row;*/
+            flex-direction:row-reverse;
+        }
+        .deneme4{
+            background-color:aqua;
+            height:100px;
+            color:white;
+        }
+        .deneme5 {
+            background-color: chartreuse;
+            height: 100px;
+            color: white;
+        }
+        .deneme6 {
+            background-color: navy;
+            height: 100px;
+            color: white;
+        }
+
+        .container2{
+            display:flex;
+        }
+        .container2 div{
+            flex:1;
+        }
+        .container3{
+            display:flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="deneme1">Deneme 1</div>
+    <div class="deneme2">Deneme 2</div>
+    <div class="deneme3">Deneme 3</div>
+
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="deneme1">Deneme 1</div>
+        <div class="deneme2">Deneme 2</div>
+        <div class="deneme3">Deneme 3</div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="container2">
+        <div class="deneme4">Deneme 4</div>
+        <div class="deneme5">Deneme 5</div>
+        <div class="deneme6">Deneme 6</div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="container3">
+        <div class="deneme4" style="flex-grow:2;">Deneme 4</div>
+        <div class="deneme5" style="flex-grow:3;">Deneme 5</div>
+        <div class="deneme6" style="flex-grow:5;">Deneme 6</div>
+    </div>
+
+</body>
+</html>

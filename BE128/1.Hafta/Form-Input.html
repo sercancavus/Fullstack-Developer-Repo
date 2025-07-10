@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form-Input</title>
+</head>
+<body>
+
+    <h1>FORM ELEMENTÝ</h1>
+
+    <p>Form elementi, kullanýcýlardan alýnan bilgileri sunucuya göndermek için kullanýlýr.</p>
+
+    <form action="/" method="post"></form>
+
+    <!--form etiketleri arasýna yazýlýr-->
+    <!--form etiketleri içerisine çeþitli inputlar yerleþtirilir-->
+    <!--action attribute'u kullanýcýdan alýnan verilerin nereye(hangi sunucuya veya sunucunun hangi kýsmýna) gönderileceðinin ifade edildiði kýsýmdýr-->
+    <!--method attribute'u kullanýcýdan alýnan verilerin hangi http methodu ile sunucuya gönderileceðini ifade eder-->
+
+    <h1>Input Elementleri</h1>
+
+    <p>Input elementleri "input" etiketi ile kullanýlýr ve "type" attribute'u ile kullanýlacak olan inputun tipi belirlenir.</p>
+
+
+
+    <!--RADIO BUTTON-->
+
+    <input type="radio" id="html" name="fav_language" value="HTML" />
+    <label for="html">HTML</label>
+    <br />
+    <input type="radio" id="css" name="fav_language" value="CSS" />
+    <label for="css">CSS</label>
+    <br />
+    <input type="radio" id="javascript" name="fav_language" value="javascript" />
+    <label for="javascript">JavaScript</label>
+    <br />
+
+    <hr />
+
+    <!--CHECKBOX-->
+
+    <p>Sahip olduðunuz araçlarý seçin;</p>
+
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+    <label for="vehicle1">Motosiklet</label>
+    <br />
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+    <label for="vehicle2">Araba</label>
+    <br />
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Plane" />
+    <label for="vehicle3">Uçak</label>
+    <br />
+
+    <hr />
+
+    <!--COLOR-->
+
+    <label for="favcolor">Favori renginizi seçin:</label>
+    <input type="color" id="favcolor" name="favcolor" value="" />
+
+    <hr />
+
+    <!--DATE TIME-->
+
+    <p>Tarih ile ilgili inputlar</p>
+
+    <h5>Tarih seçimi</h5>
+    <label for="birthday">Doðum günü:</label>
+    <input type="date" name="birthday" />
+
+    <h5>Ay Seçimi</h5>
+
+    <label for="season">Sezon baþlangýcý:</label>
+    <input type="month" id="season" name="season" />
+
+    <h5>Saat Seçimi</h5>
+
+    <label for="hour">Ders Baþlangýç Saati:</label>
+    <input type="time" id="hour" name="hour" />
+
+    <h5>Tarih & Saat Seçimi</h5>
+
+    <label for="reservation">Rezervasyon zamaný:</label>
+    <input type="datetime-local" id="reservation" name="reservation" />
+
+    <h5>Hafta Seçimi</h5>
+
+    <label for="holiday">Tatil Haftasý</label>
+    <input type="week" id="holiday" name="holiday" />
+
+    <br />
+    <br />
+    <br />
+
+    <h2>RANGE Input'u</h2>
+
+    <label for="vol">Ses Seviyesi:</label>
+    <input type="range" id="vol" name="name" min="0" max="50" />
+
+    <br />
+
+    <label for="difficulty">Zorluk Seviyesi:</label>
+    <input type="range" id="difficulty" name="difficulty" min="0" max="100" step="25" />
+
+    <hr />
+
+    <h5>Form Gönderme Ýþlemi</h5>
+
+    <form action="/" method="post">
+
+        <!--TEXT-->
+
+        <label for="isim">Ad:</label>
+        <input type="text" id="isim" />
+        <br />
+        <br />
+        <label for="soyisim">Soyad:</label>
+        <input type="text" id="soyisim" />
+        <br />
+        <br />
+
+        <!--EMAIL-->
+
+        <label for="usermail">E-Mail:</label>
+        <input type="email" id="usermail" name="name" value="" />
+
+        <!--value deðeri boþ býrakýlýr, buraya kullanýcý giriþ yapar-->
+
+        <br />
+        <br />
+
+        <!--PASSWORD-->
+
+        <label for="pwd">Parola:</label>
+        <input type="password" name="pwd" />
+
+        <br />
+        <br />
+
+        <!--NUMBER-->
+
+        <label for="age">Yaþ:</label>
+        <input type="number" name="age" />
+
+        <br />
+        <br />
+
+        <!--PHONE-->
+
+        <label for="phone">Telefon:</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <br />
+        <br />
+
+        <label for="cinsiyet">Cinsiyet:</label>
+        <select id="cinsiyet">
+            <option value="Seçiminiz"></option>
+            <option value="Erkek">Erkek</option>
+            <option value="Kadýn">Kadýn</option>
+        </select>
+
+        <br />
+        <br />
+
+        <label for="adres">Adres:</label>
+        <textarea id="adres" name="adres"></textarea>
+
+        <br />
+        <br />
+        <br />
+
+        <button type="submit">Fýrlat</button>
+        <button type="reset">Yok et</button>
+
+    </form>
+
+</body>
+</html>

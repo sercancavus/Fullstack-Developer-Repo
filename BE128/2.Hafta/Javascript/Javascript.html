@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Çalýþmalarý</title>
+
+    <script>
+        //DEÐÝÞKEN TANIMLAMA
+        var adi = "Siliconmade";
+        let asgariMaas = 12323.23;
+        const personelSayisi = 5;
+
+        //OPERATORLER
+        //------------------------------
+
+        // Aritmetiksel Operatörler
+
+        var a = 3 + 5;
+        var b = 321 - 654;
+        var c = 47 * 4;
+        var d = 1243 / 34;
+        var e = 10 % 3;
+
+
+        // Mantýksal Operatörler
+
+        // && ve
+        // || veya
+        //! deðil
+
+        // Karþýlaþtýrma Operatörleri
+
+        // == eþit mi
+        // != eþit deðil
+        // > büyüktür
+        // < küçüktür
+        // >= büyük eþittir
+        // <= küçük eþittir
+        // === denk mi(tip olarak kontrol eder örneðin string "7" ile int 7 sayýlarý gibi)
+        // !== denk deðil
+
+        // TARÝH NESNESÝ
+        //--------------------------------
+
+        const suAn = new Date(); // içinde bulunduðumuz zaman
+
+        const dogumTarihi = new Date(1993, 6, 23, 6, 23, 17);
+
+        const yil = suAn.getFullYear();
+        const ay = suAn.getMonth();
+        const gun = suAn.getDay();
+        const saat = suAn.getHours();
+        const dk = suAn.getMinutes();
+        const saniye = suAn.getSeconds();
+
+
+        // NULL ve UNDEFINED
+
+        let x; // undefined
+
+        let y = null; // null
+
+        // CONSOLE KULLANIMI
+        // --------------------------------
+
+        // 1)
+
+        var isim = "Mahmut";
+
+        console.log(isim);
+
+        // 2)
+
+        console.log("Ýsminiz :" + isim);
+
+        // 3)
+
+        var sayi1 = 5;
+        var sayi2 = 12;
+
+        console.log("Sonuç" + (sayi1 + sayi2));
+
+
+        // INFO
+
+        console.info("Merhabalar");
+
+        // WARN
+
+        console.warn("Parolanýz 5 karakterden fazla olmalý");
+
+        // ERROR
+
+        console.error("Parolanýz 5 karakterden fazla olmalý!");
+
+
+        // TYPEOF
+        // ---------------------------------
+
+        console.log(typeof adi);
+        console.log(typeof asgariMaas);
+        console.log(typeof personelSayisi);
+        console.log(typeof sayi1);
+        console.log(typeof odemeTarihi);
+
+
+        // VERÝ TÜRLERÝ
+
+        // string
+        // number
+        // bool
+        // null
+        // undefined
+        // Dizi (Array)
+        // Object
+        // Function
+        // Symbol
+
+
+        // OBJECT NOTATION
+
+        // Javascript'te object oluþturma
+
+        var person = {
+            name: "Suat",
+            birthYear: 2000
+        };
+
+        console.log(person.name);
+
+        // LOCAL SCOPE - GLOBAL SCOPE
+        // --------------------------------
+
+        //global scope
+
+        if (true) {
+            var sayi3 = 10;
+
+            console.log("sayý : " + sayi3);
+        }
+
+        console.log("sayý : " + sayi3);
+
+        // var global scope özelliði taþýr
+        // let ve const ise local scope özelliði taþýr
+
+        if (true) {
+            let sayi4 = 10;
+
+            console.log("sayý4 : " + sayi4);
+        }
+        //console.log("sayý4 : " + sayi4);
+
+        console.clear();
+
+        // DÖNGÜLER
+        // ---------------------------------
+
+        // FOR DÖNGÜSÜ
+
+        for (let i = 0; i < 10; i++) {
+
+            if (i == 2) continue;
+            if (i == 6) break;   
+            
+            console.log("sayý : " + i);
+        }
+
+        // WHILE
+
+        let t = 0;
+        let toplam = 0;
+
+        while (t < 9) {
+            t++;
+
+            toplam += t
+        }
+
+        // ---------------------------------
+        // ÇARPIM TABLOSU
+
+        console.log(toplam)
+
+        console.clear();
+
+        var sayi = 9;
+
+        for (var i = 1; i <= 9; i++) {
+            console.log(i + " x " + sayi + " = " + (i * sayi));
+        }
+
+
+        // DÝZÝLER
+        // ---------------------------------
+
+        console.clear();
+
+        let isimler = ["Cemil", "Suaat", "Yusuf", "Orhan"];
+
+        console.log(isimler);
+        console.log(isimler[3]);
+
+        let arr2 = ["ABC", 55, { name: "Mahmut" }];
+
+        console.log(arr2);
+        console.log(arr2[2]);
+        console.log(arr2[2].name);
+
+        
+        const fruits = ["apple", "orange", "cherry"]
+
+        // dizinin sonuna eleman ekleme
+        fruits.push("banana");
+        fruits.push("Kiwi", "Lemon");
+
+        // dizinin baþýna eleman ekleme
+        fruits.unshift("Lemon", "Pineapple");
+
+        
+
+        // Dizinin son elemanýný sil
+        fruits.pop();
+        console.log(fruits);
+
+        // Dizinin ilk elemanýný sil
+        fruits.shift();
+
+        console.log(fruits);
+
+        // Diziden ara eleman silme
+
+        fruits.splice(1, 2);
+
+        console.log(fruits);
+
+        // Dizide araya eleman ekleme
+
+        fruits.splice(2, 0, "Melon", "Watermelon");
+
+
+        // foreach döngüsü
+
+        fruits.forEach(function (fruit, index) {
+            console.log((index + 1) + ". eleman " + fruit)
+        });
+
+        console.clear();
+
+        // for-of Döngüsü
+        // bir dizinin elemanlarýý sýrasý ile dolaþmak için kullanýlýr.
+
+        const array1 = ["a", "b", "c"];
+
+        for (const element of array1) {
+            console.log(element);
+        }
+
+        // for-in Döngüsü
+
+        const object = { x: 1, y: 2, z: 3 };
+
+        for (const property in object) {
+            //console.log(property + " : " + object[property]);
+            console.log(`${property}`: `${object}`); // string formatting
+        }
+
+
+
+        // FUNCTIONS
+        // ------------------------------------------
+
+        console.clear();
+
+        // Function Tanýmý 1
+
+        function Carp(a, b) {
+            return a * b;
+        }
+
+        var sonuc2 = Carp(3, 5);
+
+        console.log(sonuc);
+
+
+        // Function Tanýmý 2
+
+        var Topla = function (a, b) {
+            return a + b;
+        }
+
+        // Arrow Function
+
+        var Topla = (a, b) => a + b;
+
+        var sonuc3 = Topla(15, 9);
+
+        console.log(sonuc3);
+
+        // Function Tanýmý 3
+
+        var person = {
+            name ="Cemil",
+            birthYear: 1990,
+            getAge: function (year) {
+                return 2025 - year;
+            }
+        }
+
+
+        let dogumYili = person.birthYear;
+
+        console.log( person.getAge(dogumYili));
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <!--EVENTS-->
+
+    <h2>Events</h2>
+
+    <button onclick="alert('Merhaba')"> Merhaba</button>
+    <button onclick="uyariGoster()">Sil</button>
+    <button onclick="sifreliGirisYap()">Þifreli Giriþ</button>
+
+    <br />
+    <br />
+
+    <button ondblclick="alert('çift týkladýn!')" ">ondbclick Event'i'</button>
+    <button onmouseover="alert('mouse burada')">onmouseover Event'i'</button>
+
+    <br />
+    <br />
+
+    <label for="giris">Giriþ Yapýn</label>
+    <input type="text" id="giris" value="" onkeypress="alert('Buraya giriþ yapmak istediðinize emin misiniz?')" />
+
+
+    <script>
+        function uyariGoster() {
+            var secim = confirm("Silmek istediðinize emin misiniz?");
+
+            if (secim) {
+                alert("Siliyorum bak!")
+            }
+        }
+
+        function sifreliGirisYap() {
+            var girilenDeger = prompt("Þifreniz : ");
+
+            if (girilenDeger == "123") {
+                alert("Doðru þifre girdiniz.");
+            }
+            else {
+                alert("Yanlýþ Þifre Girdiniz!");
+            }
+        }
+
+    </script>
+
+    <!--EVENT LISTENERS-->
+
+    <h2>Event Listeners</h2>
+
+    <button id="btn1" >Týkla</button>
+    <button id="mouse1">Mouse</button>
+
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+
+        //btn1.addEventListener(olayAdi, fonksiyonAdi);
+        btn1.addEventListener("click", islem1);
+
+            function islem1() {
+                alert("1");
+            }
+        var mouse1 = document.getElementById("mouse1");
+
+        mouse1.addEventListener('mouseover', function () { alert('2') });
+
+
+
+    </script>
+
+    <br />
+    <br />
+
+    <!--DOM YAPISI-->
+    <!--(Document Object Model)-->
+
+    <!--Ornek-1-->
+
+    <div id="bilgi">JS ile bu kýsým deðiþtirilecek</div>
+
+    <script>
+        var bilgiElemani = document.getElementById("bilgi");
+
+        bilgiElemani.innerHTML = "Merhaba Siliconmade Academy";
+        bilgiElemani.style.color = "red";
+        bilgiElemani.style.fontSize = "30px";
+
+    </script>
+
+    <br />
+    <br />
+
+    <!--Ornek-2-->
+
+    <label for="metin">Buraya</label>
+    <input type="text" name="name" value="" placeholder="metin girin" id="metin" />
+    <button onclick="Tamam()">Tamam</button>
+
+    <br />
+
+    <div id="sonuc">Sonuç buraya gelecek</div>
+
+    <script>
+        function Tamam() {
+            document.getElementById("sonuc").innerHTML = document.getElementById("metin").value;
+        }
+    </script>
+
+
+    <br />
+    <br />
+
+    <!--DOM Element ekleme-->
+
+    <div id="parentEleman">
+        
+    </div>
+
+    <script>
+
+        var paragraf = document.createElement("p");
+
+        paragraf.innerHTML = "Tanto quel in esse di noi forse lodato dio liberalita nostro oportune o piene che allo ma che nel speranza"
+
+        paragraf.style.color = "red";
+
+        var eleman = document.getElementById("parentEleman");
+
+        eleman.appendChild(paragraf);
+
+    </script>
+
+    <br />
+    <br />
+    
+
+    <!--TWEET ÖRNEÐÝ-->
+    <!----------------------------------------------------->
+
+    <label>Tweet</label>
+    <br />
+    <textarea id="tweet" onkeyup="Say()" placeholder="metin girin"></textarea>
+    
+    <div id="karakter"></div>
+
+
+    <script>
+        function Say() {
+            var metin = document.getElementById("tweet");
+
+            var harfSayisi = metin.value.length;
+
+            document.getElementById("karakter").innerHTML = harfSayisi + " karakter girildi";
+
+            if (harfSayisi > 10) {
+                metin.style.color = "red";
+            }
+            else if (harfSayisi <= 10) {
+                metin.style.color = "black";
+            }
+
+            if (harfSayisi >= 20) {
+                metin.disabled = true;
+            }
+        }
+    </script>
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sercan Çavuş – Full Stack Developer</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Sercan Çavuş – Full Stack Developer Portfolio. Projects, skills, and contact information. BE128 Siliconmade Academy.">
+    <meta property="og:title" content="Sercan Çavuş – Full Stack Developer Portfolio">
+    <meta property="og:description" content="Explore Sercan's projects, skills, and journey in the BE128 Full Stack Developer Program at Siliconmade Academy.">
+    <meta property="og:image" content="profil.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-url.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sercan Çavuş – Full Stack Developer Portfolio">
+    <meta name="twitter:description" content="Explore Sercan's projects, skills, and journey in the BE128 Full Stack Developer Program at Siliconmade Academy.">
+    <meta name="twitter:image" content="profil.jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2000;background:#181c24;display:flex;align-items:center;justify-content:center;transition:opacity 0.4s;">
+        <div class="spinner-border text-info" style="width:3rem;height:3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-navbar">
+        <div class="container">
+            <a href="#" class="main-logo me-2" style="display:inline-block; vertical-align:middle; text-decoration:none;">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#98ffec"/>
+                            <stop offset="1" stop-color="#2a5298"/>
+                        </linearGradient>
+                        <linearGradient id="logo-shimmer" x1="0" y1="0" x2="44" y2="0">
+                            <stop offset="0%" stop-color="#fff" stop-opacity="0.2">
+                                <animate attributeName="offset" values="-0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+                            </stop>
+                            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="22" cy="22" r="20" fill="url(#logo-gradient)"/>
+                    <circle cx="22" cy="22" r="20" fill="url(#logo-shimmer)"/>
+                    <path d="M30 16c0-3.5-2.8-5.5-8-5.5s-8 2-8 5.5c0 3.5 2.8 4.5 8 6s8 2.5 8 6c0 3.5-2.8 5.5-8 5.5s-8-2-8-5.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </a>
+            <a class="navbar-brand fw-bold text-white" href="#" style="color: #98ffec;">Sercan</a>
+            <div id="themeSwitch" class="theme-switch ms-3" tabindex="0" aria-label="Toggle dark/light mode" role="button">
+                <div class="switch-bg">
+                    <div class="switch-icon sun">
+                        <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="#FFD700"/><g class="clouds"><ellipse cx="22" cy="20" rx="5" ry="2" fill="#fff" opacity=".8"/><ellipse cx="14" cy="22" rx="4" ry="1.5" fill="#fff" opacity=".7"/></g></svg>
+                    </div>
+                    <div class="switch-icon moon">
+                        <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="22" cy="16" r="8" fill="#F4F1C9"/><g class="stars"><circle cx="10" cy="12" r="1" fill="#fff"/><circle cx="18" cy="8" r="0.7" fill="#fff"/><circle cx="25" cy="12" r="0.5" fill="#fff"/></g></svg>
+                    </div>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="bg-gradient text-theme text-center py-5" data-aos="fade-down" data-aos-mirror="true" data-aos-once="false">
+        <div class="container">
+            <div class="mb-2" style="display:flex; justify-content:center;">
+                <a href="#" class="main-logo" style="display:inline-block; text-decoration:none;">
+                    <svg width="72" height="72" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logo-gradient-hero" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#98ffec"/>
+                                <stop offset="1" stop-color="#2a5298"/>
+                            </linearGradient>
+                            <linearGradient id="logo-shimmer-hero" x1="0" y1="0" x2="44" y2="0">
+                                <stop offset="0%" stop-color="#fff" stop-opacity="0.2">
+                                    <animate attributeName="offset" values="-0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+                                </stop>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="22" cy="22" r="20" fill="url(#logo-gradient-hero)"/>
+                        <circle cx="22" cy="22" r="20" fill="url(#logo-shimmer-hero)"/>
+                        <path d="M30 16c0-3.5-2.8-5.5-8-5.5s-8 2-8 5.5c0 3.5 2.8 4.5 8 6s8 2.5 8 6c0 3.5-2.8 5.5-8 5.5s-8-2-8-5.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </a>
+            </div>
+            <img src="profil.jpeg" alt="Sercan Çavuş" class="rounded-circle mb-4 shadow img-fluid" width="150" data-aos="zoom-in" data-aos-mirror="true" data-aos-once="false">
+            <h1 class="text-center theme-text-primary fw-bold display-4 mb-3">Hi, I’m Sercan</h1>
+            <div class="d-flex justify-content-center">
+                <div class="card shadow-lg hero-info-card theme-card animate__animated animate__fadeInUp">
+                    <div class="card-body text-center p-4">
+                        <p class="lead mb-4 theme-text-primary">Aspiring Full Stack Developer<br> BE128 • Siliconmade Academy</p>
+                        <div class="text-center my-2 d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <a href="https://www.linkedin.com/in/sercancavus" class="btn btn-lg rounded-pill px-4 d-flex align-items-center justify-content-center hero-social-btn btn-linkedin" target="_blank">
+                                <span style="display: flex; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 24 24" style="margin-right: 8px;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+                                    LinkedIn
+                                </span>
+                            </a>
+                            <a href="https://github.com/sercancavus" class="btn btn-lg rounded-pill px-4 d-flex align-items-center justify-content-center hero-social-btn btn-github ms-3" target="_blank">
+                                <span style="display: flex; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 24 24" style="margin-right: 8px;"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-light" id="timeline" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Learning Timeline</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-mirror="true" data-aos-once="false">
+                    <div class="card text-white bg-primary h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Week 1</h5>
+                            <p class="card-text">Intro to HTML, structure and semantic tags, page layout basics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+                    <div class="card text-white bg-info h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Week 2</h5>
+                            <p class="card-text">CV page design using CSS – Box model, layout, typography, visual styling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-left" data-aos-mirror="true" data-aos-once="false">
+                    <div class="card text-white bg-dark h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Week 3</h5>
+                            <p class="card-text">Java backend setup, WebAPI project structure, Program.cs & routing foundations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-light" id="be128-details" data-aos="zoom-in" data-aos-mirror="true" data-aos-once="false">
+        <div class="container d-flex justify-content-center">
+            <div class="card shadow-lg be128-card animate__animated animate__fadeInUp" style="max-width: 960px; min-height: 520px; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                <div class="card-body p-5">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-5 text-center text-md-start d-flex flex-column justify-content-center">
+                            <h2 class="fw-bold mb-2" style="color:#2a5298; font-family:'Montserrat','Poppins','Nunito','Segoe UI',Arial,sans-serif; font-size:2.2rem;">BE128 – Backend Software Engineering Program</h2>
+                            <span class="badge bg-primary mb-3" style="font-size:1.15rem; padding:0.7em 1.5em;">16 Weeks • 185+ Hours</span>
+                            <p class="lead mb-3" style="color:#22304a; font-family:'Nunito','Poppins','Segoe UI',Arial,sans-serif; font-size:1.15rem;">A modern, project-based curriculum for aspiring backend engineers, designed for international learners and career changers.</p>
+                            <ul class="list-unstyled mb-4" style="color:#2a5298; font-size:1.08rem;">
+                                <li class="mb-2"><svg width="20" height="20" fill="#2a5298" style="vertical-align:middle;margin-right:6px;" viewBox="0 0 16 16"><path d="M16 2.5a2.5 2.5 0 0 1-4.995.15A2.5 2.5 0 0 1 16 2.5zM6.5 2A2.5 2.5 0 1 1 1.5 4.5 2.5 2.5 0 0 1 6.5 2zm0 1A1.5 1.5 0 1 0 8 4.5 1.5 1.5 0 0 0 6.5 3zm7.5 7.5a2.5 2.5 0 1 1-2.5 2.5 2.5 2.5 0 0 1 2.5-2.5zm-7.5 1A1.5 1.5 0 1 0 8 13.5 1.5 1.5 0 0 0 6.5 11.5zm-5-1A2.5 2.5 0 1 1 1.5 13.5 2.5 2.5 0 0 1 1.5 10.5zm0 1A1.5 1.5 0 1 0 3 13.5 1.5 1.5 0 0 0 1.5 11.5z"/></svg> International, English-based instruction</li>
+                                <li class="mb-2"><svg width="20" height="20" fill="#2a5298" style="vertical-align:middle;margin-right:6px;" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 15A7 7 0 1 1 15 8 7 7 0 0 1 8 15z"/><path d="M8 4a.5.5 0 0 1 .5.5v3.793l2.146 2.147a.5.5 0 0 1-.708.708l-2.292-2.292A.5.5 0 0 1 7.5 8.5V4.5A.5.5 0 0 1 8 4z"/></svg> Weekly hands-on projects & code reviews</li>
+                                <li class="mb-2"><svg width="20" height="20" fill="#2a5298" style="vertical-align:middle;margin-right:6px;" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 15A7 7 0 1 1 15 8 7 7 0 0 1 8 15z"/><path d="M8 4a.5.5 0 0 1 .5.5v3.793l2.146 2.147a.5.5 0 0 1-.708.708l-2.292-2.292A.5.5 0 0 1 7.5 8.5V4.5A.5.5 0 0 1 8 4z"/></svg> 1:1 mentorship & career support</li>
+                                <li class="mb-2"><svg width="20" height="20" fill="#2a5298" style="vertical-align:middle;margin-right:6px;" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 15A7 7 0 1 1 15 8 7 7 0 0 1 8 15z"/><path d="M8 4a.5.5 0 0 1 .5.5v3.793l2.146 2.147a.5.5 0 0 1-.708.708l-2.292-2.292A.5.5 0 0 1 7.5 8.5V4.5A.5.5 0 0 1 8 4z"/></svg> Real-world backend technologies & best practices</li>
+                            </ul>
+                            <a href="https://siliconmadeacademy.com/akademi/BE/BE128.html" target="_blank" class="btn btn-outline-info mb-2" style="font-weight:600; font-size:1.08rem; border-radius:2rem; padding:0.7em 2.2em;">Official Program Page &rarr;</a>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="p-4 rounded-4 h-100 d-flex flex-column justify-content-center" style="background:rgba(255,255,255,0.92);box-shadow:0 2px 12px rgba(120,160,180,0.08);">
+                                <h4 class="fw-bold mb-3" style="color:#2a5298;">Curriculum Overview</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="mb-3" style="color:#22304a;font-size:1.05rem;">
+                                            <li><strong>Web Fundamentals</strong><br>HTML, CSS, JavaScript (ES6+)</li>
+                                            <li><strong>Java Programming</strong><br>OOP, core libraries, backend logic</li>
+                                            <li><strong>WebAPI & REST</strong><br>API design, implementation, docs</li>
+                                            <li><strong>Backend Architecture</strong><br>Scalable, secure, maintainable systems</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="mb-3" style="color:#22304a;font-size:1.05rem;">
+                                            <li><strong>Database & Data Modeling</strong><br>SQL, NoSQL, ER diagrams</li>
+                                            <li><strong>Testing & Debugging</strong><br>Unit tests, integration, troubleshooting</li>
+                                            <li><strong>DevOps & Deployment</strong><br>CI/CD, cloud basics, monitoring</li>
+                                            <li><strong>Professional Skills</strong><br>Documentation, teamwork, code reviews</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <h6 class="fw-semibold mb-2" style="color:#2a5298;">Sample Weekly Timeline</h6>
+                                    <div class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center">
+                                        <span class="badge bg-info" style="font-size:1rem;">Week 1: Web Basics</span>
+                                        <span class="badge bg-info" style="font-size:1rem;">Week 4: Java OOP</span>
+                                        <span class="badge bg-info" style="font-size:1rem;">Week 8: API Design</span>
+                                        <span class="badge bg-info" style="font-size:1rem;">Week 12: DevOps</span>
+                                        <span class="badge bg-info" style="font-size:1rem;">Week 16: Capstone Project</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5" id="about" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100" data-aos-mirror="true" data-aos-once="false">
+                    <div class="about-logos d-flex flex-wrap justify-content-center align-items-center gap-3 py-3 animate__animated animate__fadeInLeft" style="min-height:120px;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="about-logo" alt="HTML5" title="HTML5" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="about-logo" alt="CSS3" title="CSS3" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="about-logo" alt="JavaScript" title="JavaScript" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="about-logo" alt="Java" title="Java" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="about-logo" alt="GitHub" title="GitHub" />
+                        <span class="about-logo" title="WebAPI" style="display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e0eafc 60%,#b3e0ff 100%);border-radius:12px;">
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="API">
+                                        <circle cx="22" cy="22" r="20" fill="#fff" stroke="#b3e0ff" stroke-width="2"/>
+                                        <circle cx="22" cy="22" r="7" fill="#2a5298"/>
+                                        <circle cx="22" cy="7" r="3" fill="#2a5298"/>
+                                        <circle cx="37" cy="22" r="3" fill="#2a5298"/>
+                                        <circle cx="22" cy="37" r="3" fill="#2a5298"/>
+                                        <circle cx="7" cy="22" r="3" fill="#2a5298"/>
+                                        <line x1="22" y1="10" x2="22" y2="15" stroke="#2a5298" stroke-width="2"/>
+                                        <line x1="22" y1="29" x2="22" y2="34" stroke="#2a5298" stroke-width="2"/>
+                                        <line x1="10" y1="22" x2="15" y2="22" stroke="#2a5298" stroke-width="2"/>
+                                        <line x1="29" y1="22" x2="34" y2="22" stroke="#2a5298" stroke-width="2"/>
+                                    </svg>
+                                </span>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200" data-aos-mirror="true" data-aos-once="false">
+                    <h2 class="fw-bold mb-3 animate__animated animate__fadeInDown">About Me</h2>
+                    <p class="lead animate__animated animate__fadeIn animate__delay-1s">I'm <strong>Sercan</strong>, a detail-driven and design-conscious Full Stack Developer in training.</p>
+                    <p class="animate__animated animate__fadeIn animate__delay-2s">Currently enrolled in the <strong>BE128 Full Stack Developer Program</strong> at Siliconmade Academy, I focus on building responsive UIs, mastering backend architecture, and documenting clean, professional code.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item animate__animated animate__fadeInUp animate__delay-1s">✅ Passionate about minimal and visual-first interfaces</li>
+                        <li class="list-group-item animate__animated animate__fadeInUp animate__delay-2s">✅ <span id="projectCounter" style="font-weight:bold; color:#2a5298;">0</span> Weekly hands-on projects in HTML, CSS, JS, Java, and WebAPI</li>
+                        <li class="list-group-item animate__animated animate__fadeInUp animate__delay-3s">✅ Regularly share progress on LinkedIn and GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-light" id="skills" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">My Skills</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="skill-card card shadow-sm text-center animate__animated animate__fadeInUp" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="40" height="40">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="40" height="40" style="margin-left:8px;">
+                            </div>
+                            <h5 class="fw-semibold mb-2">HTML / CSS</h5>
+                            <div class="d-flex align-items-center minimal-progress-wrap">
+                                <div class="progress minimal-progress flex-grow-1">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%" data-target-width="95%"></div>
+                                </div>
+                                <span class="skill-percent ms-3">95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="skill-card card shadow-sm text-center animate__animated animate__fadeInUp" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="40" height="40">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width="40" height="40" style="margin-left:8px;">
+                            </div>
+                            <h5 class="fw-semibold mb-2">Bootstrap / Tailwind CSS</h5>
+                            <div class="d-flex align-items-center minimal-progress-wrap">
+                                <div class="progress minimal-progress flex-grow-1">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 0%" data-target-width="90%"></div>
+                                </div>
+                                <span class="skill-percent ms-3">90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="skill-card card shadow-sm text-center animate__animated animate__fadeInUp" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40">
+                            </div>
+                            <h5 class="fw-semibold mb-2">JavaScript (ES6)</h5>
+                            <div class="d-flex align-items-center minimal-progress-wrap">
+                                <div class="progress minimal-progress flex-grow-1">
+                                    <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 0%" data-target-width="85%"></div>
+                                </div>
+                                <span class="skill-percent ms-3">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="skill-card card shadow-sm text-center animate__animated animate__fadeInUp" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40">
+                                <span style="margin-left:8px;display:inline-block;vertical-align:middle;">
+                                    <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="API">
+                                        <circle cx="22" cy="22" r="20" fill="#fff" stroke="#b7d7e8" stroke-width="2"/>
+                                        <circle cx="22" cy="22" r="7" fill="#2a5298"/>
+                                        <circle cx="22" cy="7" r="3" fill="#2a5298"/>
+                                        <circle cx="37" cy="22" r="3" fill="#2a5298"/>
+                                        <circle cx="22" cy="37" r="3" fill="#2a5298"/>
+                                        <circle cx="7" cy="22" r="3" fill="#2a5298"/>
+                                        <line x1="22" y1="10" x2="22" y2="15" stroke="#2a5298" stroke-width="2"/>
+                                        <line x1="22" y1="29" x2="22" y2="34" stroke="#2a5298" stroke-width="2"/>
+                                        <line x1="10" y1="22" x2="15" y2="22" stroke="#2a5298" stroke-width="2"/>
+                                        <line x1="29" y1="22" x2="34" y2="22" stroke="#2a5298" stroke-width="2"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <h5 class="fw-semibold mb-2">Java & WebAPI (Backend)</h5>
+                            <div class="d-flex align-items-center minimal-progress-wrap">
+                                <div class="progress minimal-progress flex-grow-1">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%" data-target-width="75%"></div>
+                                </div>
+                                <span class="skill-percent ms-3">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="skill-card card shadow-sm text-center animate__animated animate__fadeInUp" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="40" height="40">
+                            </div>
+                            <h5 class="fw-semibold mb-2">GitHub & Documentation</h5>
+                            <div class="d-flex align-items-center minimal-progress-wrap">
+                                <div class="progress minimal-progress flex-grow-1">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: 0%" data-target-width="90%"></div>
+                                </div>
+                                <span class="skill-percent ms-3">90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-white" id="testimonials" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Testimonials</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-3" width="80" height="80" alt="Peer 1">
+                            <blockquote class="blockquote text-center">
+                                <p class="mb-3">Sercan's attention to detail and passion for clean code make him a standout developer in our cohort.</p>
+                                <footer class="blockquote-footer">Ali Yılmaz, <cite title="Peer">Peer, BE128</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mb-3" width="80" height="80" alt="Mentor 1">
+                            <blockquote class="blockquote text-center">
+                                <p class="mb-3">He consistently delivers visually impressive and functional projects. Highly recommended!</p>
+                                <footer class="blockquote-footer">Elif Demir, <cite title="Mentor">Mentor, Siliconmade Academy</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" class="rounded-circle mb-3" width="80" height="80" alt="Peer 2">
+                            <blockquote class="blockquote text-center">
+                                <p class="mb-3">Working with Sercan is always a pleasure—he brings creativity and professionalism to every project.</p>
+                                <footer class="blockquote-footer">Mehmet Kaya, <cite title="Peer">Peer, BE128</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="py-5" id="projects" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">My Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="zoom-in" data-aos-mirror="true" data-aos-once="false">
+                    <div class="card shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                        <img src="cv-project.jpg" class="card-img-top img-fluid" alt="CV Design Project Screenshot">
+                        <div class="card-body">
+                            <h5 class="card-title">CV Design Project – Week 2</h5>
+                            <p class="card-text">A responsive and minimal HTML/CSS project focused on layout structure, typography, and color harmony.</p>
+                            <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/G%C3%B6rev%202/index%201.2.html" class="btn btn-outline-primary" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 4px; vertical-align: middle;"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-mirror="true" data-aos-once="false">
+                    <div class="card shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                        <img src="backendapi.png" class="card-img-top img-fluid" alt="Backend API Project Coming Soon">
+                        <div class="card-body">
+                            <h5 class="card-title">Backend API Starter – Coming Week 3</h5>
+                            <p class="card-text">Initial backend setup with Java, WebAPI structure, Program.cs configuration and routing basics.</p>
+                            <a href="#" class="btn btn-outline-secondary disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Modals -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModal1Label">CV Design Project – Week 2</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="cv-project.jpg" class="img-fluid rounded mb-3" alt="CV Project Screenshot">
+            <p>This project demonstrates a responsive and minimal HTML/CSS CV layout, focusing on structure, typography, and color harmony. Built as part of the BE128 program's second week.</p>
+            <ul>
+              <li>Responsive design using CSS Flexbox/Grid</li>
+              <li>Semantic HTML structure</li>
+              <li>Modern color palette and typography</li>
+            </ul>
+            <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/G%C3%B6rev%202/index%201.2.html" target="_blank" class="btn btn-primary mt-2">View Source on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModal2Label">Backend API Starter – Coming Week 3</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="backendapi.png" class="img-fluid rounded mb-3" alt="Backend API Project Screenshot">
+            <p>This project is the initial backend setup for the BE128 program, featuring Java, WebAPI structure, and basic routing configuration. More details and code will be available soon.</p>
+            <ul>
+              <li>Java backend foundation</li>
+              <li>WebAPI structure and routing</li>
+              <li>Program.cs configuration basics</li>
+            </ul>
+            <button class="btn btn-secondary mt-2" disabled>Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-3 fs-5">Designed & coded by <strong>Sercan Çavuş</strong> ✨</p>
+            <a href="https://www.linkedin.com/in/sercancavus" class="text-white mx-3" target="_blank" style="vertical-align: middle;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+            </a>
+            <a href="https://github.com/sercancavus" class="text-white mx-3" target="_blank" style="vertical-align: middle;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <p class="mt-3 small text-muted">© 2025 · All rights reserved</p>
+        </div>
+    </footer>
+    <button id="backToTop" class="btn btn-primary rounded-circle" style="position:fixed;bottom:32px;right:32px;z-index:999;display:none;width:48px;height:48px;align-items:center;justify-content:center;">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 12V4m0 0L4 8m4-4l4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    </button>
+    <section class="py-5 bg-light" id="contact" data-aos="fade-up" data-aos-mirror="true" data-aos-once="false">
+        <div class="container text-center">
+            <h2 class="theme-section-title text-center">Let's Connect</h2>
+            <h5 class="theme-section-subtitle text-center">I'd love to hear from you!</h5>
+            <p class="lead mb-4 fs-5" style="color:#2a5298; font-family:'Nunito','Poppins','Segoe UI',Arial,sans-serif;">Feel free to reach out for collaboration, feedback, or tech discussions. I'll get back to you as soon as possible.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <form action="https://formspree.io/f/xnqekqzq" method="POST" class="contact-form-card shadow-lg rounded-4 p-5 mt-4 mb-2" style="max-width: 540px; margin: 0 auto; transition: box-shadow 0.3s;">
+                        <div class="text-center mb-4">
+                            <svg width="44" height="44" fill="none" viewBox="0 0 44 44" style="margin-bottom: 8px;"><circle cx="22" cy="22" r="20" fill="#2a5298"/><path d="M32 16v12a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V16" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16l10 7 10-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <h3 class="fw-bold mb-1" style="color:#2a5298; font-family:'Montserrat','Poppins','Nunito','Segoe UI',Arial,sans-serif;">Contact Me</h3>
+                            <p class="mb-0" style="color:#22304a; font-size:1.08rem;">Let's build something great together. I reply to every message!</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label theme-form-label">Name</label>
+                            <input type="text" class="form-control theme-form-input" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label theme-form-label">Email</label>
+                            <input type="email" class="form-control theme-form-input" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label theme-form-label">Message</label>
+                            <textarea class="form-control theme-form-input" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary" style="font-weight:600; font-size:1.08rem; border-radius:2rem; padding:0.7em 2.2em;">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            once: false,
+            mirror: true
+        });
+        document.body.setAttribute("data-bs-spy", "scroll");
+        document.body.setAttribute("data-bs-target", "#mainNav");
+        document.body.setAttribute("data-bs-offset", "70");
+    </script>
+    <script>
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      // Back to top button
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.style.display = 'flex';
+        } else {
+          backToTop.style.display = 'none';
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+    <script>
+      // Animate skill bars on scroll
+      document.addEventListener('DOMContentLoaded', function() {
+        var skillsSection = document.getElementById('skills');
+        var bars = skillsSection.querySelectorAll('.progress-bar');
+        var animated = false;
+        function animateBars() {
+          if (animated) return;
+          bars.forEach(function(bar) {
+            var target = bar.getAttribute('data-target-width') || '100%';
+            bar.style.setProperty('--target-width', target);
+            bar.classList.add('animated');
+          });
+          animated = true;
+        }
+        var observer = new window.IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) animateBars();
+          });
+        }, { threshold: 0.3 });
+        observer.observe(skillsSection);
+      });
+    </script>
+    <script>
+      // Hide loader on page load
+      window.addEventListener('load', function() {
+        var loader = document.getElementById('loader');
+        loader.style.opacity = 0;
+        setTimeout(function() { loader.style.display = 'none'; }, 400);
+      });
+    </script>
+    <script>
+      // Animated theme switch toggle
+      function setThemeSwitch(dark) {
+        const switchEl = document.getElementById('themeSwitch');
+        if (dark) {
+          document.body.classList.add('dark-mode');
+          switchEl.classList.add('dark');
+        } else {
+          document.body.classList.remove('dark-mode');
+          switchEl.classList.remove('dark');
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        let dark = localStorage.getItem('theme') === 'dark';
+        setThemeSwitch(dark);
+        const switchEl = document.getElementById('themeSwitch');
+        function toggleTheme() {
+          dark = !dark;
+          setThemeSwitch(dark);
+          localStorage.setItem('theme', dark ? 'dark' : 'light');
+        }
+        switchEl.addEventListener('click', toggleTheme);
+        switchEl.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }
+        });
+      });
+    </script>
+    <script>
+      // About image hover effect
+      document.querySelectorAll('.about-img-animate').forEach(function(img) {
+        img.addEventListener('mouseenter', function() {
+          img.style.transform = 'scale(1.07)';
+          img.style.boxShadow = '0 8px 32px rgba(30,60,114,0.25)';
+          img.style.transition = 'transform 0.4s, box-shadow 0.4s';
+        });
+        img.addEventListener('mouseleave', function() {
+          img.style.transform = 'scale(1)';
+          img.style.boxShadow = '';
+        });
+      });
+      // Animated counter for weekly projects
+      function animateCounter(id, end, duration) {
+        var el = document.getElementById(id);
+        var start = 0;
+        var range = end - start;
+        var stepTime = Math.abs(Math.floor(duration / range));
+        var current = start;
+        var timer = setInterval(function() {
+          current++;
+          el.textContent = current;
+          if (current >= end) clearInterval(timer);
+        }, stepTime);
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        animateCounter('projectCounter', 16, 1200);
+      });
+    </script>
+</body>
+</html>

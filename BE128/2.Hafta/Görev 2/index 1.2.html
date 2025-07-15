@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Hazırlama Aracı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fbbf24 100%);
+            min-height: 100vh;
+            color: #92400e;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #d97706;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 20px;
+            height: calc(100vh - 140px);
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .panel-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .left-panel { width: 350px; }
+        .middle-panel { width: 280px; }
+        .right-panel { flex: 1; }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #f59e0b;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fed7aa;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #92400e;
+        }
+
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #fed7aa;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #fef3c7;
+        }
+
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: #f59e0b;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        .form-textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .color-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .color-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            min-width: 100px;
+        }
+
+        .color-input {
+            width: 50px;
+            height: 35px;
+            border: 2px solid #fed7aa;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 12px;
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .file-upload-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .cv-preview {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            display: flex;
+        }
+
+        .cv-left-col {
+            width: 280px;
+            background: #fed7aa;
+            color: #92400e;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cv-photo-container {
+            width: 120px;
+            height: 120px;
+            border: 4px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .cv-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .cv-photo-placeholder {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.7;
+        }
+
+        .cv-section {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .cv-section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cv-section-content {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        .cv-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cv-section li {
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .cv-main-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cv-header {
+            background: #f59e0b;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .cv-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cv-title {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cv-main-sections {
+            flex: 1;
+            padding: 25px;
+        }
+
+        .cv-main-section {
+            margin-bottom: 25px;
+        }
+
+        .cv-main-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-main-section .cv-section-title {
+            color: #f97316;
+            border-bottom-color: #f97316;
+            margin-bottom: 12px;
+        }
+
+        .cv-main-section .cv-section-content {
+            color: #92400e;
+            opacity: 1;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-panel, .middle-panel {
+                width: 100%;
+            }
+            .cv-preview {
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            .cv-left-col {
+                width: 100%;
+                padding: 20px;
+            }
+            .cv-preview {
+                flex-direction: column;
+            }
+            .cv-photo-container {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-file-alt"></i> CV Hazırlama Aracı</h1>
+        <p>Profesyonel CV'nizi kolayca oluşturun</p>
+    </div>
+
+    <div class="container">
+        <div class="panel left-panel">
+            <div class="panel-header">
+                <i class="fas fa-edit"></i> Metin İçerikleri
+            </div>
+            <div class="panel-content">
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-user"></i> Kişisel Bilgiler
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ad Soyad</label>
+                        <input class="form-input" type="text" id="adsoyad" placeholder="Adınız ve soyadınız" oninput="updateCV()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Unvan</label>
+                        <input class="form-input" type="text" id="unvan" placeholder="Meslek unvanınız" oninput="updateCV()">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-address-book"></i> İletişim Bilgileri
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Telefon</label>
+                        <input class="form-input" type="tel" id="telefon" placeholder="+90 555 123 4567" oninput="updateCV()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">E-posta</label>
+                        <input class="form-input" type="email" id="mail" placeholder="ornek@email.com" oninput="updateCV()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Web Sitesi</label>
+                        <input class="form-input" type="url" id="web" placeholder="www.websitem.com" oninput="updateCV()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Adres</label>
+                        <textarea class="form-textarea" id="adres" placeholder="Adres bilgileriniz" oninput="updateCV()"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-graduation-cap"></i> Eğitim Bilgileri
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Eğitim Detayları</label>
+                        <textarea class="form-textarea" id="egitim" placeholder="Eğitim geçmişiniz" oninput="updateCV()"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-laptop-code"></i> Yetenekler
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Yetenekleriniz</label>
+                        <textarea class="form-textarea" id="yetenekler" placeholder="Teknik ve kişisel yetenekleriniz" oninput="updateCV()"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-info-circle"></i> Hakkında
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Hakkınızda</label>
+                        <textarea class="form-textarea" id="hakkinda" placeholder="Kendiniz hakkında kısa bilgi" oninput="updateCV()"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-briefcase"></i> İş Deneyimi
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">İş Geçmişi</label>
+                        <textarea class="form-textarea" id="isdeneyimi" placeholder="İş deneyimleriniz" oninput="updateCV()"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-camera"></i> Profil Fotoğrafı
+                    </div>
+                    <div class="form-group">
+                        <div class="file-upload">
+                            <input type="file" id="foto" accept="image/*" onchange="updatePhoto(event)">
+                            <label for="foto" class="file-upload-label">
+                                <i class="fas fa-upload"></i> Fotoğraf Seç
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel middle-panel">
+            <div class="panel-header">
+                <i class="fas fa-palette"></i> Görünüm
+            </div>
+            <div class="panel-content">
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-paint-brush"></i> Renkler
+                    </div>
+                    <div class="color-group">
+                        <span class="color-label">Arkaplan</span>
+                        <input class="color-input" type="color" id="bgcolor" value="#fef3c7" onchange="updateCV()">
+                    </div>
+                    <div class="color-group">
+                        <span class="color-label">Sol Kolon</span>
+                        <input class="color-input" type="color" id="leftcolcolor" value="#fed7aa" onchange="updateCV()">
+                    </div>
+                    <div class="color-group">
+                        <span class="color-label">Başlık Kutusu</span>
+                        <input class="color-input" type="color" id="headercolor" value="#f59e0b" onchange="updateCV()">
+                    </div>
+                    <div class="color-group">
+                        <span class="color-label">Başlık Yazı</span>
+                        <input class="color-input" type="color" id="headertextcolor" value="#92400e" onchange="updateCV()">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-font"></i> Yazı Tipi
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Yazı Tipi</label>
+                        <select class="form-select" id="fontfamily" onchange="updateCV()">
+                            <option value="'Inter', sans-serif">Inter</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-image"></i> Fotoğraf
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Çerçeve Şekli</label>
+                        <select class="form-select" id="photoborder" onchange="updateCV()">
+                            <option value="circle">Daire</option>
+                            <option value="square">Kare</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-minus"></i> Başlık Altı Çizgi
+                    </div>
+                    <div class="color-group">
+                        <span class="color-label">Renk</span>
+                        <input class="color-input" type="color" id="linecolor" value="#f97316" onchange="updateCV()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Çizgi Stili</label>
+                        <select class="form-select" id="linestyle" onchange="updateCV()">
+                            <option value="solid">Düz</option>
+                            <option value="dashed">Kesikli</option>
+                            <option value="dotted">Noktalı</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <i class="fas fa-download"></i> İndirme
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" onclick="downloadCV()">
+                            <i class="fas fa-download"></i> CV'yi İndir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel right-panel">
+            <div class="cv-preview" id="cv-preview">
+                <div class="cv-left-col" id="cv-left-col">
+                    <div class="cv-photo-container" id="cv-photo-container">
+                        <span class="cv-photo-placeholder" id="cv-photo-placeholder">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <img src="" id="cv-photo" style="display:none;">
+                    </div>
+                    
+                    <div class="cv-section">
+                        <div class="cv-section-title">İletişim</div>
+                        <ul>
+                            <li id="cv-telefon"><i class="fas fa-phone"></i> ( Telefon )</li>
+                            <li id="cv-mail"><i class="fas fa-envelope"></i> ( E-posta )</li>
+                            <li id="cv-web"><i class="fas fa-globe"></i> ( Web )</li>
+                            <li id="cv-adres"><i class="fas fa-map-marker-alt"></i> ( Adres )</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <div class="cv-section-title">Eğitim</div>
+                        <div class="cv-section-content" id="cv-egitim">( Eğitim bilgileri )</div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <div class="cv-section-title">Yetenekler</div>
+                        <div class="cv-section-content" id="cv-yetenekler">( Yetenekleriniz )</div>
+                    </div>
+                </div>
+                
+                <div class="cv-main-col" id="cv-main-col">
+                    <div class="cv-header" id="cv-header">
+                        <div class="cv-name" id="cv-adsoyad">{ AD SOYAD }</div>
+                        <div class="cv-title" id="cv-unvan">{ UNVAN }</div>
+                    </div>
+                    
+                    <div class="cv-main-sections">
+                        <div class="cv-main-section">
+                            <div class="cv-section-title">Hakkında</div>
+                            <div class="cv-section-content" id="cv-hakkinda">( Hakkınızda bilgi )</div>
+                        </div>
+                        
+                        <div class="cv-main-section">
+                            <div class="cv-section-title">İş Deneyimi</div>
+                            <div class="cv-section-content" id="cv-isdeneyimi">( İş deneyimleriniz )</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateCV() {
+            document.getElementById('cv-adsoyad').textContent = document.getElementById('adsoyad').value || '{ AD SOYAD }';
+            document.getElementById('cv-unvan').textContent = document.getElementById('unvan').value || '{ UNVAN }';
+            document.getElementById('cv-telefon').innerHTML = `<i class="fas fa-phone"></i> ${document.getElementById('telefon').value || '( Telefon )'}`;
+            document.getElementById('cv-mail').innerHTML = `<i class="fas fa-envelope"></i> ${document.getElementById('mail').value || '( E-posta )'}`;
+            document.getElementById('cv-web').innerHTML = `<i class="fas fa-globe"></i> ${document.getElementById('web').value || '( Web )'}`;
+            document.getElementById('cv-adres').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${document.getElementById('adres').value || '( Adres )'}`;
+            document.getElementById('cv-egitim').textContent = document.getElementById('egitim').value || '( Eğitim bilgileri )';
+            document.getElementById('cv-yetenekler').textContent = document.getElementById('yetenekler').value || '( Yetenekleriniz )';
+            document.getElementById('cv-hakkinda').textContent = document.getElementById('hakkinda').value || '( Hakkınızda bilgi )';
+            document.getElementById('cv-isdeneyimi').textContent = document.getElementById('isdeneyimi').value || '( İş deneyimleriniz )';
+
+            document.getElementById('cv-preview').style.background = document.getElementById('bgcolor').value;
+            document.getElementById('cv-left-col').style.background = document.getElementById('leftcolcolor').value;
+            document.getElementById('cv-header').style.background = document.getElementById('headercolor').value;
+            document.getElementById('cv-header').style.color = document.getElementById('headertextcolor').value;
+
+            document.getElementById('cv-preview').style.fontFamily = document.getElementById('fontfamily').value;
+
+            const lineColor = document.getElementById('linecolor').value;
+            const lineStyle = document.getElementById('linestyle').value;
+            document.querySelectorAll('.cv-section-title').forEach(function(el) {
+                el.style.borderBottom = `2px ${lineStyle} ${lineColor}`;
+            });
+
+            const photoContainer = document.getElementById('cv-photo-container');
+            photoContainer.style.borderRadius = document.getElementById('photoborder').value === 'circle' ? '50%' : '15px';
+        }
+
+        function updatePhoto(event) {
+            const file = event.target.files[0];
+            const img = document.getElementById('cv-photo');
+            const placeholder = document.getElementById('cv-photo-placeholder');
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    placeholder.style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                img.src = '';
+                img.style.display = 'none';
+                placeholder.style.display = 'block';
+            }
+        }
+
+        function downloadCV() {
+            alert('CV indirme özelliği yakında eklenecek!');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCV();
+        });
+    </script>
+</body>
+</html> 

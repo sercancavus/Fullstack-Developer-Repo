@@ -23,6 +23,15 @@ SOFTWARE.
 
 ---
 
+This repository uses a dual licensing approach to distinguish between source code and educational content:
+- Source Code: Licensed under the MIT License, allowing full reuse, modification, and distribution with proper attribution.
+- Educational Materials & Design Assets: Licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). These may be shared and adapted for non-commercial purposes only, with credit given.
+
+Please refer to the individual license files for more details:
+- LICENSE → MIT License for code
+- LICENSE.assets.md → Creative Commons License for non-code content
+
+
 If you intend to make the repo open for viewing and educational reuse (but not commercial use or redistribution), the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license is a good fit.
 
 ```markdown

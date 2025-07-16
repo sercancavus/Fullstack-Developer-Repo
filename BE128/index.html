@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BE128 Günlükleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e6f7f4;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2ac4a5;
+        }
+
+        table {
+            margin: 2rem auto;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2ac4a5;
+            color: white;
+        }
+
+        footer {
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        .log {
+            margin-top: 2rem;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+            .log h2 {
+                color: #2ac4a5;
+                margin-bottom: 0.5rem;
+            }
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-code"></i> BE128 Günlükleri</h1>
+    <p>Bu sayfa, BE128 klasöründeki dosyalarý ve güncellemeleri otomatik olarak listeler.</p>
+
+    <table>
+        <thead>
+            <tr><th>Dosya Adý</th><th>Tür</th><th>Son Deðiþiklik</th></tr>
+        </thead>
+        <tbody>
+            <!-- Script tarafýndan otomatik olarak güncellenecek -->
+        </tbody>
+    </table>
+
+    <div class="log">
+        <h2><i class="fas fa-history"></i> Güncelleme Geçmiþi</h2>
+        <ul>
+            <!-- Script tarafýndan otomatik olarak güncellenecek -->
+        </ul>
+    </div>
+
+    <footer>Son güncelleme: <span id="date"></span></footer>
+
+    <script>
+        document.getElementById("date").textContent = new Date().toLocaleString("tr-TR");
+    </script>
+</body>
+</html>

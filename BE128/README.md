@@ -1,6 +1,1 @@
-# BE128 Günlükleri
-
-Bu klasör, Sercan'ýn Fullstack Developer yolculuðundaki örnekleri ve geliþmeleri içerir.  
-Her güncelleme otomatik olarak bu dosyaya tarih olarak yansýr.
-
-Son güncelleme: [script tarafýndan otomatik yazýlýr]
+Son gÃ¼ncelleme: 2025-07-16 21:52

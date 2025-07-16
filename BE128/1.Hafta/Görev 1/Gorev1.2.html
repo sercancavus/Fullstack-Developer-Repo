@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -101,6 +101,47 @@
             font-size: 1.4rem;
         }
 
+        .section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tech-list li {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-weight: 600;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
         .table-container {
             overflow-x: auto;
             margin: 20px 0;
@@ -187,26 +228,6 @@
             margin-top: 30px;
         }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .image-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
-
         @media (max-width: 768px) {
             .nav ul {
                 flex-direction: column;
@@ -215,6 +236,14 @@
 
             .header h1 {
                 font-size: 2rem;
+            }
+
+            .tech-list {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -228,158 +257,55 @@
 
         <nav class="nav">
             <ul>
-                <li><a href="#personal">Kişisel Bilgiler</a></li>
+                <li><a href="#home">Anasayfa</a></li>
+                <li><a href="#about">Hakkımda</a></li>
                 <li><a href="#skills">Yetenekler</a></li>
                 <li><a href="#projects">Projeler</a></li>
-                <li><a href="#team">Takım</a></li>
                 <li><a href="#contact">İletişim</a></li>
             </ul>
         </nav>
 
         <main class="main-content">
-            <section class="section" id="personal">
-                <h2>Kişisel Bilgiler</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Bilgi</th>
-                                <th>Detay</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ad Soyad</td>
-                                <td>Sercan Çavuş</td>
-                            </tr>
-                            <tr>
-                                <td>Meslek</td>
-                                <td>Backend Developer</td>
-                            </tr>
-                            <tr>
-                                <td>Uzmanlık</td>
-                                <td>Web Geliştirme</td>
-                            </tr>
-                            <tr>
-                                <td>Eğitim Durumu</td>
-                                <td>Backend Development Kursu</td>
-                            </tr>
-                            <tr>
-                                <td>Hedef</td>
-                                <td>Full-Stack Developer olmak</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <section class="section" id="home">
+                <h2>Hoş Geldiniz! 👋</h2>
+                <p>
+                    Merhaba! Ben Sercan Çavuş. Backend development alanında kendimi geliştirmeye odaklanmış bir yazılım geliştiricisiyim. 
+                    Bu sayfa, HTML, CSS ve JavaScript öğrenme sürecimde oluşturduğum basit bir portföy örneğidir.
+                </p>
+                <p>
+                    Aşağıda öğrendiğim teknolojiler, örnek projeler ve iletişim bilgilerimi bulabilirsiniz.
+                </p>
             </section>
 
             <section class="section" id="skills">
-                <h2>Teknoloji Yetenekleri</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Teknoloji</th>
-                                <th>Seviye</th>
-                                <th>Açıklama</th>
-                                <th>Kullanım Alanı</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HTML5</td>
-                                <td>İleri</td>
-                                <td>Web sayfası yapısı</td>
-                                <td>Frontend</td>
-                            </tr>
-                            <tr>
-                                <td>CSS3</td>
-                                <td>İleri</td>
-                                <td>Stil ve tasarım</td>
-                                <td>Frontend</td>
-                            </tr>
-                            <tr>
-                                <td>JavaScript</td>
-                                <td>Orta</td>
-                                <td>Etkileşimli özellikler</td>
-                                <td>Frontend/Backend</td>
-                            </tr>
-                            <tr>
-                                <td>C#</td>
-                                <td>Başlangıç</td>
-                                <td>Backend programlama</td>
-                                <td>Backend</td>
-                            </tr>
-                            <tr>
-                                <td>Python</td>
-                                <td>Başlangıç</td>
-                                <td>Veri analizi ve otomasyon</td>
-                                <td>Backend</td>
-                            </tr>
-                            <tr>
-                                <td>SQL</td>
-                                <td>Başlangıç</td>
-                                <td>Veritabanı yönetimi</td>
-                                <td>Backend</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h2>Öğrendiğim Teknolojiler 🚀</h2>
+                <ul class="tech-list">
+                    <li>HTML5 - Web sayfası yapısı</li>
+                    <li>CSS3 - Stil ve tasarım</li>
+                    <li>JavaScript - Etkileşimli özellikler</li>
+                    <li>C# - Backend programlama</li>
+                    <li>Python - Veri analizi ve otomasyon</li>
+                    <li>SQL - Veritabanı yönetimi</li>
+                </ul>
             </section>
 
-            <section class="section" id="projects">
-                <h2>Proje Deneyimleri</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Proje Adı</th>
-                                <th>Teknolojiler</th>
-                                <th>Durum</th>
-                                <th>Açıklama</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Portfolio Web Sitesi</td>
-                                <td>HTML, CSS, JavaScript</td>
-                                <td>Tamamlandı</td>
-                                <td>Kişisel portföy sitesi</td>
-                            </tr>
-                            <tr>
-                                <td>E-ticaret Backend</td>
-                                <td>C#, SQL</td>
-                                <td>Geliştiriliyor</td>
-                                <td>API geliştirme projesi</td>
-                            </tr>
-                            <tr>
-                                <td>Veri Analizi Tool</td>
-                                <td>Python, SQL</td>
-                                <td>Planlanıyor</td>
-                                <td>Veri işleme uygulaması</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <section class="section">
+                <h3>Teknoloji Görselleri 📸</h3>
+                <div class="image-gallery">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" 
+                         alt="Bilgi Teknolojileri 1" 
+                         title="Modern ofis ortamı">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" 
+                         alt="Bilgi Teknolojileri 2" 
+                         title="Kod yazma">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" 
+                         alt="Bilgi Teknolojileri 3" 
+                         title="Teknoloji çözümleri">
                 </div>
             </section>
 
             <section class="section">
-                <h3>Proje Görselleri</h3>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" 
-                         alt="Proje 1" 
-                         title="Web Geliştirme">
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" 
-                         alt="Proje 2" 
-                         title="Kod Yazma">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" 
-                         alt="Proje 3" 
-                         title="Teknoloji">
-                </div>
-            </section>
-
-            <section class="section" id="team">
-                <h2>Takım Arkadaşları</h2>
+                <h3>Takım Arkadaşlarım 👥</h3>
                 <div class="table-container">
                     <table>
                         <thead>
@@ -388,7 +314,6 @@
                                 <th>Soyad</th>
                                 <th>Uzmanlık Alanı</th>
                                 <th>Deneyim</th>
-                                <th>Projeler</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -397,28 +322,18 @@
                                 <td>Yılmaz</td>
                                 <td>Frontend Developer</td>
                                 <td>3 yıl</td>
-                                <td>React, Vue.js</td>
                             </tr>
                             <tr>
                                 <td>Ayşe</td>
                                 <td>Kara</td>
                                 <td>UI/UX Designer</td>
                                 <td>2 yıl</td>
-                                <td>Figma, Adobe XD</td>
                             </tr>
                             <tr>
                                 <td>Mehmet</td>
                                 <td>Demir</td>
                                 <td>Data Scientist</td>
                                 <td>4 yıl</td>
-                                <td>Python, R, ML</td>
-                            </tr>
-                            <tr>
-                                <td>Fatma</td>
-                                <td>Özkan</td>
-                                <td>DevOps Engineer</td>
-                                <td>5 yıl</td>
-                                <td>Docker, Kubernetes</td>
                             </tr>
                         </tbody>
                     </table>
@@ -426,42 +341,7 @@
             </section>
 
             <section class="section" id="contact">
-                <h2>İletişim Bilgileri</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>İletişim Türü</th>
-                                <th>Bilgi</th>
-                                <th>Durum</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>E-posta</td>
-                                <td>sercan.cavus@email.com</td>
-                                <td>Aktif</td>
-                            </tr>
-                            <tr>
-                                <td>LinkedIn</td>
-                                <td>linkedin.com/in/sercancavus</td>
-                                <td>Aktif</td>
-                            </tr>
-                            <tr>
-                                <td>GitHub</td>
-                                <td>github.com/sercancavus</td>
-                                <td>Aktif</td>
-                            </tr>
-                            <tr>
-                                <td>Telefon</td>
-                                <td>+90 555 123 4567</td>
-                                <td>Aktif</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>İletişim Formu</h3>
+                <h3>İletişim Formu 📧</h3>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Adınız Soyadınız:</label>
@@ -529,4 +409,4 @@
         });
     </script>
 </body>
-</html>
+</html> 

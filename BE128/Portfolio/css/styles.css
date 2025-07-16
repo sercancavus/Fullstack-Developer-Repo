@@ -17,7 +17,13 @@ Theme System & Naming Conventions
   --text-light: #e0e6ed;
   --text-accent: #b7d7e8;
 }
+html, body {
+  height: 100%;
+}
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(120deg, var(--light-bg-alt) 0%, #f7f6e7 40%, var(--light-bg) 100%);
   font-family: 'Poppins', 'Nunito', 'Quicksand', 'Montserrat', 'Segoe UI', Arial, sans-serif;
   color: var(--text-dark);
@@ -824,5 +830,36 @@ body.dark-mode .contact-form-card p.mb-0 {
   color: #b7d7e8 !important;
 } 
 body.dark-mode #contact .lead {
+  color: #b7d7e8 !important;
+} 
+footer.bg-dark {
+  background: linear-gradient(90deg, var(--light-bg-alt) 0%, var(--accent) 100%) !important;
+  color: var(--text-dark) !important;
+}
+footer.bg-dark a,
+footer.bg-dark .text-white {
+  color: var(--primary) !important;
+  transition: color 0.2s;
+}
+footer.bg-dark a:hover,
+footer.bg-dark a:focus {
+  color: var(--text-dark) !important;
+}
+body.dark-mode footer.bg-dark {
+  background: linear-gradient(90deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%) !important;
+  color: var(--text-light) !important;
+}
+body.dark-mode footer.bg-dark a,
+body.dark-mode footer.bg-dark .text-white {
+  color: var(--accent) !important;
+}
+body.dark-mode footer.bg-dark a:hover,
+body.dark-mode footer.bg-dark a:focus {
+  color: #fff !important;
+}
+footer.bg-dark .small.text-muted {
+  color: #888 !important;
+}
+body.dark-mode footer.bg-dark .small.text-muted {
   color: #b7d7e8 !important;
 } 

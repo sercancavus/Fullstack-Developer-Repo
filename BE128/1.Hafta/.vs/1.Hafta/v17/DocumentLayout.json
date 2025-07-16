@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\G\u00F6rev 1 - CSS Aesthetic\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:G\u00F6rev 1 - CSS Aesthetic\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\Form-Input.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Form-Input.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\Elementler.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Elementler.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 115,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 257,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\G\u00F6rev 1 - CSS Aesthetic\\index.html",
+              "RelativeDocumentMoniker": "G\u00F6rev 1 - CSS Aesthetic\\index.html",
+              "ToolTip": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\G\u00F6rev 1 - CSS Aesthetic\\index.html",
+              "RelativeToolTip": "G\u00F6rev 1 - CSS Aesthetic\\index.html",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAwwCIBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-07-10T18:27:18.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Elementler.html",
+              "DocumentMoniker": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\Elementler.html",
+              "RelativeDocumentMoniker": "Elementler.html",
+              "ToolTip": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\Elementler.html",
+              "RelativeToolTip": "Elementler.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYBAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-07-01T17:27:02.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form-Input.html",
+              "DocumentMoniker": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\Form-Input.html",
+              "RelativeDocumentMoniker": "Form-Input.html",
+              "ToolTip": "C:\\Users\\Monster\\Desktop\\BE128\\1.Hafta\\Form-Input.html",
+              "RelativeToolTip": "Form-Input.html",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAiwJcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-07-02T18:11:13.837Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 78,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

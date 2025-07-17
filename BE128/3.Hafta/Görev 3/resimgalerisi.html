@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resim Galerisi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+            .gallery-img:hover {
+                transform: scale(1.05);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4">📷 Resim Galerisi</h2>
+        <div class="row g-4">
+            <!-- Resim 1 -->
+            <div class="col-md-4">
+                <img src="images/resim1.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#modal1" alt="Resim 1">
+            </div>
+            <!-- Resim 2 -->
+            <div class="col-md-4">
+                <img src="images/resim2.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#modal2" alt="Resim 2">
+            </div>
+            <!-- Resim 3 -->
+            <div class="col-md-4">
+                <img src="images/resim3.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#modal3" alt="Resim 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <img src="images/resim1.jpg" class="img-fluid" alt="Resim 1">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <img src="images/resim2.jpg" class="img-fluid" alt="Resim 2">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <img src="images/resim3.jpg" class="img-fluid" alt="Resim 3">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,189 +1,30 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BE128 Güncellemeleri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>BE128 Haftalık Günlükler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #e6f7f4;
-      padding: 2rem;
-      text-align: center;
-    }
-    h1 {
-      color: #2ac4a5;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
-    table {
-      margin: 2rem auto;
-      border-collapse: collapse;
-      width: 100%;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      overflow-x: auto;
-    }
-    th, td {
-      padding: 0.8rem;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #2ac4a5;
-      color: white;
-    }
-    footer {
-      margin-top: 2rem;
-      color: #666;
-    }
-    .log {
-      margin-top: 2rem;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .log h2 {
-      color: #2ac4a5;
-      margin-bottom: 0.5rem;
-    }
-    @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
-      }
-      th {
-        text-align: center;
-      }
-      td {
-        text-align: center;
-        padding: 0.5rem;
-      }
-    }
+    body { font-family:sans-serif; background:#e6f7f4; text-align:center; padding:2rem }
+    h1 { color:#2ac4a5; margin-bottom:1rem }
+    ul { list-style:none; padding:0; max-width:400px; margin:auto }
+    li { margin:0.8rem 0 }
+    a { display:block; padding:0.6rem; border-radius:8px; background:#fff;
+        box-shadow:0 2px 6px rgba(0,0,0,0.05); text-decoration:none;
+        color:#2ac4a5; font-weight:bold; font-size:1.2rem;
+        transition:background 0.2s, transform 0.2s; }
+    a:hover { background:#d2f2ec; transform:scale(1.02) }
+    footer { margin-top:2rem; color:#666; font-size:0.9rem }
   </style>
 </head>
 <body>
-  <h1>BE128 Güncellemeleri</h1>
-  <p>Bu sayfa, BE128 klasöründeki dosyaları ve güncellemeleri otomatik olarak listeler.</p>
-
-  <table>
-    <thead>
-    <tr><th>Dosya Adı</th><th>Tür</th><th>Boyut</th><th>Son Değişiklik</th></tr>
-    </thead>
-    <tbody>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/applicationhost.config" target="_blank">applicationhost.config</a></td><td>CONFIG</td><td>84 KB</td><td>07.02.2025 01:15:14</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/01d08761-9100-418f-b48b-2c3954797cc4" target="_blank">01d08761-9100-418f-b48b-2c3954797cc4</a></td><td>01D08761-9100-418F-B48B-2C3954797CC4</td><td>296 KB</td><td>07.07.2025 20:29:16</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>148 KB</td><td>07.07.2025 20:31:15</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>07.07.2025 20:31:15</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>188 KB</td><td>10.07.2025 21:28:37</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>10.07.2025 21:28:37</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/0418a1de-82a4-43d1-a110-8267115429f3.vsidx" target="_blank">0418a1de-82a4-43d1-a110-8267115429f3.vsidx</a></td><td>VSIDX</td><td>20 KB</td><td>10.07.2025 21:28:37</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/4507601b-7fe7-470e-871c-041360d68021.vsidx" target="_blank">4507601b-7fe7-470e-871c-041360d68021.vsidx</a></td><td>VSIDX</td><td>16 KB</td><td>02.07.2025 20:49:12</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/4711d659-9d93-4c6c-a8f8-966cc5c021a1.vsidx" target="_blank">4711d659-9d93-4c6c-a8f8-966cc5c021a1.vsidx</a></td><td>VSIDX</td><td>16 KB</td><td>10.07.2025 21:27:22</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/7c824125-c2f2-4cb3-a170-43a4ff7c1ac0.vsidx" target="_blank">7c824125-c2f2-4cb3-a170-43a4ff7c1ac0.vsidx</a></td><td>VSIDX</td><td>20 KB</td><td>10.07.2025 21:26:19</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/d78bc6f2-508f-446c-b9fc-82f3b6f3b08b.vsidx" target="_blank">d78bc6f2-508f-446c-b9fc-82f3b6f3b08b.vsidx</a></td><td>VSIDX</td><td>16 KB</td><td>10.07.2025 21:26:19</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/e646d63b-82a1-49a9-9501-5ffa70e0251c.vsidx" target="_blank">e646d63b-82a1-49a9-9501-5ffa70e0251c.vsidx</a></td><td>VSIDX</td><td>20 KB</td><td>10.07.2025 21:27:44</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/.wsuo" target="_blank">.wsuo</a></td><td>WSUO</td><td>24 KB</td><td>10.07.2025 21:28:37</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.backup.json" target="_blank">DocumentLayout.backup.json</a></td><td>JSON</td><td>4 KB</td><td>07.07.2025 20:31:15</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.json" target="_blank">DocumentLayout.json</a></td><td>JSON</td><td>8 KB</td><td>10.07.2025 21:28:37</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/slnx.sqlite" target="_blank">slnx.sqlite</a></td><td>SQLITE</td><td>88 KB</td><td>10.07.2025 21:28:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/VSWorkspaceState.json" target="_blank">VSWorkspaceState.json</a></td><td>JSON</td><td>1 KB</td><td>10.07.2025 21:28:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Elementler.html" target="_blank">Elementler.html</a></td><td>HTML</td><td>8 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Form-Input.html" target="_blank">Form-Input.html</a></td><td>HTML</td><td>8 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Gorev1.2.html" target="_blank">Gorev1.2.html</a></td><td>HTML</td><td>16 KB</td><td>15.07.2025 19:52:56</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Gorev1.html" target="_blank">Gorev1.html</a></td><td>HTML</td><td>20 KB</td><td>10.07.2025 21:35:12</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/index.html" target="_blank">index.html</a></td><td>HTML</td><td>12 KB</td><td>10.07.2025 21:27:43</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Gorev1-1.html" target="_blank">Gorev1-1.html</a></td><td>HTML</td><td>8 KB</td><td>10.07.2025 21:09:17</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/applicationhost.config" target="_blank">applicationhost.config</a></td><td>CONFIG</td><td>84 KB</td><td>07.02.2025 01:15:14</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>104 KB</td><td>08.07.2025 23:17:26</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>08.07.2025 23:17:26</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>188 KB</td><td>10.07.2025 21:26:08</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>10.07.2025 21:26:08</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/14c4cac3-ac93-4228-9ba5-497b2bf1ad47.vsidx" target="_blank">14c4cac3-ac93-4228-9ba5-497b2bf1ad47.vsidx</a></td><td>VSIDX</td><td>20 KB</td><td>10.07.2025 20:36:41</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/5f1ea07b-8f93-448b-8906-0ba66ee8a7dc.vsidx" target="_blank">5f1ea07b-8f93-448b-8906-0ba66ee8a7dc.vsidx</a></td><td>VSIDX</td><td>8 KB</td><td>09.07.2025 23:25:26</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/7ccf6e8a-270e-4894-8e86-b13fcfe4a4d1.vsidx" target="_blank">7ccf6e8a-270e-4894-8e86-b13fcfe4a4d1.vsidx</a></td><td>VSIDX</td><td>24 KB</td><td>09.07.2025 23:09:53</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/b82b25fd-b3f7-4760-ab2f-40313fbee787.vsidx" target="_blank">b82b25fd-b3f7-4760-ab2f-40313fbee787.vsidx</a></td><td>VSIDX</td><td>12 KB</td><td>07.07.2025 21:29:57</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/c690119b-156a-4a85-b47e-0c07dab2a28d.vsidx" target="_blank">c690119b-156a-4a85-b47e-0c07dab2a28d.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>10.07.2025 20:47:56</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/.wsuo" target="_blank">.wsuo</a></td><td>WSUO</td><td>40 KB</td><td>10.07.2025 21:26:11</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.backup.json" target="_blank">DocumentLayout.backup.json</a></td><td>JSON</td><td>12 KB</td><td>09.07.2025 23:57:11</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.json" target="_blank">DocumentLayout.json</a></td><td>JSON</td><td>8 KB</td><td>10.07.2025 21:26:08</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/slnx.sqlite" target="_blank">slnx.sqlite</a></td><td>SQLITE</td><td>88 KB</td><td>10.07.2025 21:26:11</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/VSWorkspaceState.json" target="_blank">VSWorkspaceState.json</a></td><td>JSON</td><td>1 KB</td><td>10.07.2025 21:26:11</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/layout.html" target="_blank">layout.html</a></td><td>HTML</td><td>4 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/StilCalismalari.html" target="_blank">StilCalismalari.html</a></td><td>HTML</td><td>4 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/stilim.css" target="_blank">stilim.css</a></td><td>CSS</td><td>1 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/index 1.2.html" target="_blank">index 1.2.html</a></td><td>HTML</td><td>28 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/index.html" target="_blank">index.html</a></td><td>HTML</td><td>20 KB</td><td>10.07.2025 20:36:18</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Javascript.html" target="_blank">Javascript.html</a></td><td>HTML</td><td>12 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/applicationhost.config" target="_blank">applicationhost.config</a></td><td>CONFIG</td><td>84 KB</td><td>07.02.2025 01:15:14</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/ae7879d8-c2bc-4490-91d6-50032256f807" target="_blank">ae7879d8-c2bc-4490-91d6-50032256f807</a></td><td>AE7879D8-C2BC-4490-91D6-50032256F807</td><td>92 KB</td><td>14.07.2025 20:53:04</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>156 KB</td><td>16.07.2025 20:35:55</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>16.07.2025 20:35:55</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/0ef95ad1-636f-430a-8884-4a9904a6f654.vsidx" target="_blank">0ef95ad1-636f-430a-8884-4a9904a6f654.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>16.07.2025 20:33:29</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/27d78796-3004-4dd1-93d4-4f4851d5b41e.vsidx" target="_blank">27d78796-3004-4dd1-93d4-4f4851d5b41e.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>15.07.2025 20:03:52</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/60e21a2f-5c53-4bc4-8ba3-3323d963ff85.vsidx" target="_blank">60e21a2f-5c53-4bc4-8ba3-3323d963ff85.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>16.07.2025 20:35:43</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/b0a267bb-00cf-40b2-9691-d847673fc9b7.vsidx" target="_blank">b0a267bb-00cf-40b2-9691-d847673fc9b7.vsidx</a></td><td>VSIDX</td><td>56 KB</td><td>16.07.2025 20:30:14</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/b12c81c8-b855-4d12-8030-021464ab88e5.vsidx" target="_blank">b12c81c8-b855-4d12-8030-021464ab88e5.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>16.07.2025 20:30:13</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/.wsuo" target="_blank">.wsuo</a></td><td>WSUO</td><td>24 KB</td><td>16.07.2025 20:35:55</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.backup.json" target="_blank">DocumentLayout.backup.json</a></td><td>JSON</td><td>4 KB</td><td>16.07.2025 20:23:31</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.json" target="_blank">DocumentLayout.json</a></td><td>JSON</td><td>4 KB</td><td>16.07.2025 20:35:55</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/slnx.sqlite" target="_blank">slnx.sqlite</a></td><td>SQLITE</td><td>88 KB</td><td>16.07.2025 20:35:55</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/VSWorkspaceState.json" target="_blank">VSWorkspaceState.json</a></td><td>JSON</td><td>1 KB</td><td>16.07.2025 20:35:55</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Bootstrap1.html" target="_blank">Bootstrap1.html</a></td><td>HTML</td><td>8 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Bootstrap2.html" target="_blank">Bootstrap2.html</a></td><td>HTML</td><td>12 KB</td><td>15.07.2025 23:13:56</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/Javascript.html" target="_blank">Javascript.html</a></td><td>HTML</td><td>16 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/sercan.html" target="_blank">sercan.html</a></td><td>HTML</td><td>4 KB</td><td>14.07.2025 23:22:25</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/index.html" target="_blank">index.html</a></td><td>HTML</td><td>16 KB</td><td>16.07.2025 22:30:00</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/applicationhost.config" target="_blank">applicationhost.config</a></td><td>CONFIG</td><td>84 KB</td><td>07.02.2025 01:15:14</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>160 KB</td><td>15.07.2025 20:03:25</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>15.07.2025 20:03:25</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/07cb9e16-a7c8-4ac0-9da6-32c0fab9ab37.vsidx" target="_blank">07cb9e16-a7c8-4ac0-9da6-32c0fab9ab37.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>15.07.2025 18:35:11</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3b0047a6-165f-43f8-bfbf-a24c9806291a.vsidx" target="_blank">3b0047a6-165f-43f8-bfbf-a24c9806291a.vsidx</a></td><td>VSIDX</td><td>32 KB</td><td>15.07.2025 20:03:39</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/7c00ef0c-93b7-42b5-9890-828184f11f37.vsidx" target="_blank">7c00ef0c-93b7-42b5-9890-828184f11f37.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>15.07.2025 18:23:29</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/88dd2aae-5d04-47a3-b876-da85f88d14df.vsidx" target="_blank">88dd2aae-5d04-47a3-b876-da85f88d14df.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>15.07.2025 18:25:14</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/f76e2cf7-0c70-4144-9275-066bc8ace4d2.vsidx" target="_blank">f76e2cf7-0c70-4144-9275-066bc8ace4d2.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>15.07.2025 18:35:19</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/.wsuo" target="_blank">.wsuo</a></td><td>WSUO</td><td>16 KB</td><td>15.07.2025 20:03:26</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/DocumentLayout.json" target="_blank">DocumentLayout.json</a></td><td>JSON</td><td>4 KB</td><td>15.07.2025 20:03:25</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/slnx.sqlite" target="_blank">slnx.sqlite</a></td><td>SQLITE</td><td>88 KB</td><td>15.07.2025 20:03:33</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/VSWorkspaceState.json" target="_blank">VSWorkspaceState.json</a></td><td>JSON</td><td>1 KB</td><td>15.07.2025 20:03:32</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/backendapi.png" target="_blank">backendapi.png</a></td><td>PNG</td><td>1224 KB</td><td>15.07.2025 18:32:48</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/styles.css" target="_blank">styles.css</a></td><td>CSS</td><td>28 KB</td><td>16.07.2025 21:39:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/cv-project.jpg" target="_blank">cv-project.jpg</a></td><td>JPG</td><td>96 KB</td><td>15.07.2025 18:23:05</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/index.html" target="_blank">index.html</a></td><td>HTML</td><td>48 KB</td><td>15.07.2025 23:10:52</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/profil.jpeg" target="_blank">profil.jpeg</a></td><td>JPEG</td><td>20 KB</td><td>23.01.2025 15:55:38</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/sercancavus.png" target="_blank">sercancavus.png</a></td><td>PNG</td><td>1284 KB</td><td>15.07.2025 18:25:07</td></tr>
-<tr><td><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/README.md" target="_blank">README.md</a></td><td>MD</td><td>1 KB</td><td>16.07.2025 22:29:39</td></tr>
-    </tbody>
-  </table>
-
-  <div class="log">
-    <h2>Güncelleme Geçmişi</h2>
-    <input type="text" id="logSearch" placeholder="Güncelleme ara..." style="padding: 0.5rem; width: 80%; max-width: 400px; margin-bottom: 1rem;" />
-    <ul id="logList">
-<li>2025-07-16 20:44 - BE128 klasörü güncellendi</li>
-<li>2025-07-16 20:51 - BE128 klasörü güncellendi</li>
-<li>2025-07-16 20:52 - BE128 klasörü güncellendi</li>
-<li>2025-07-16 21:37 - BE128 klasörü güncellendi</li>
-<li>2025-07-16 21:52 - BE128 klasörü güncellendi</li>
-<li>2025-07-16 21:56 - BE128 klasörü güncellendi</li>
-<li>2025-07-16 22:29 - BE128 klasörü güncellendi</li>
-    </ul>
-  </div>
-
-  <footer>Son güncelleme: 2025-07-16 22:29</footer>
-
-  <script>
-    document.getElementById("logSearch").addEventListener("input", function() {
-      const query = this.value.toLowerCase();
-      const items = document.querySelectorAll("#logList li");
-      items.forEach(item => {
-        item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
-      });
-    });
-  </script>
+  <h1>📘 BE128 Haftalık Günlükler</h1>
+  <ul>
+    <li><a href="./1.Hafta/index.html">1.Hafta</a></li>
+    <li><a href="./2.Hafta/index.html">2.Hafta</a></li>
+    <li><a href="./3.Hafta/index.html">3.Hafta</a></li>
+    <li><a href="./4.Hafta/index.html">4.Hafta</a></li>
+  </ul>
+  <footer>Oluşturuldu: 2025-07-17 20:47</footer>
 </body>
 </html>

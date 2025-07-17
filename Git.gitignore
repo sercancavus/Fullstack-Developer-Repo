@@ -1,0 +1,106 @@
+########################################
+# 🌐 GENEL DOSYALAR
+########################################
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.lock
+.DS_Store
+Thumbs.db
+
+########################################
+# 🧠 GIT VE VERSİYON KONTROL
+########################################
+.git/
+.gitignore
+.gitattributes
+
+########################################
+# 🖥️ EDITÖR VE IDE DOSYALARI
+########################################
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vs/
+
+########################################
+# 📦 NODE.JS VE JAVASCRIPT
+########################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.env
+.env.local
+coverage/
+*.tgz
+
+########################################
+# 🧱 .NET / C# / ASP.NET
+########################################
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.config
+*.csproj.user
+*.dbmdl
+*.log
+*.vspscc
+*.vssscc
+*.ncb
+*.sdf
+*.opensdf
+*.v12.suo
+*.sln
+*.csproj
+*.vbproj
+*.db
+*.mdf
+*.ldf
+
+########################################
+# 🧪 TEST VE DERLEME
+########################################
+TestResults/
+*.TestResults
+*.coverage
+*.coveragexml
+*.trx
+
+########################################
+# 🧰 OTOMASYON VE SCRIPT ÇIKTILARI
+########################################
+scripts/generated/
+output/
+logs/
+temp/
+cache/
+
+########################################
+# 📱 MOBİL VE PLATFORM ÖZEL
+########################################
+wwwroot/
+App_Data/
+App_Start/
+Properties/
+
+########################################
+# 🔒 GÜVENLİK VE KİŞİSEL DOSYALAR
+########################################
+*.key
+*.pem
+*.crt
+*.pfx
+*.publishsettings
+*.secret
+*.token

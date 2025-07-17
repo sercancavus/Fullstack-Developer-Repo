@@ -1,19 +1,32 @@
-# Genel dışlamalar
+ï»¿# ğŸŒ Genel
 *.log
 *.tmp
 .DS_Store
+Thumbs.db
 
-# Node.js
+# ğŸ–¥ï¸ EditÃ¶r ve IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.vs/
+
+# ğŸ“¦ Node.js ve JavaScript
 node_modules/
 dist/
+.env
+*.lock
 
-# .NET / C#
+# ğŸ§± .NET / C#
 bin/
 obj/
+*.dll
+*.exe
+*.pdb
+*.csproj.user
+*.sln
 
-# VS Code
-.vscode/
-
-# Otomasyon çıktıları
-output/
+# ğŸ§ª Test ve otomasyon
+TestResults/
 scripts/generated/
+output/

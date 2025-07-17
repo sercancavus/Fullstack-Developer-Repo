@@ -1,0 +1,19 @@
+# Genel dýþlamalar
+*.log
+*.tmp
+.DS_Store
+
+# Node.js
+node_modules/
+dist/
+
+# .NET / C#
+bin/
+obj/
+
+# VS Code
+.vscode/
+
+# Otomasyon çýktýlarý
+output/
+scripts/generated/

@@ -1,8 +1,63 @@
-2025-07-16 20:44 - BE128 klasörü güncellendi
-2025-07-16 20:51 - BE128 klasörü güncellendi
-2025-07-16 20:52 - BE128 klasörü güncellendi
-2025-07-16 21:37 - BE128 klasörü güncellendi
-2025-07-16 21:52 - BE128 klasörü güncellendi
-2025-07-16 21:56 - BE128 klasörü güncellendi
-2025-07-16 22:29 - BE128 klasörü güncellendi
-2025-07-17 20:47 - BE128 klasörü güncellendi
+Süper Sercan! O zaman bu noktanın bir özetini çıkarıyorum, hem aradığında kolayca devam edebilelim hem de ileride yeni adımlar için elimizde sağlam bir temel olsun. 🧩📘
+
+---
+
+## 🧱 Yolculuğumuzun Teknik Özeti
+
+### 📁 Klasör Yapısı
+- Tüm haftalar `BE128/{1.Hafta, 2.Hafta, ..., 16.Hafta}` klasörlerinde tutuluyor.
+- Her klasörde bir `index.html` dosyası var (template bazlı).
+
+### 🧠 Ana Sayfa (`index.html`)
+- **weeks.json** dosyasına göre kartları dinamik olarak oluşturuyor.
+- Her kartta şu bilgiler var: hafta numarası, durum (rozet), konu (rozet), tarih (rozet), dil (rozet).
+- JavaScript kodları ayrı bir dosyada (`loadWeeks.js`) tutuluyor.
+- Sayfa dil desteği sağlıyor: `Türkçe / İngilizce` tuşları ile geçiş yapabiliyorsun.
+- Sayfa local sunucu ile çalıştırılıyor (Live Server veya `npx http-server`).
+
+### 🧾 weeks.json içeriği (örnek)
+```json
+{
+  "week": 4,
+  "path": "BE128/4.Hafta/index.html",
+  "status": "Tamamlandı",
+  "topic": "WebAPI",
+  "date": "22 Temmuz",
+  "lang": "tr"
+}
+```
+
+### 🔧 Script Otomasyonu (`create-week.sh`)
+- Yeni hafta klasörünü oluşturuyor.
+- `index.html` kopyalıyor (template tabanlı).
+- `weeks.json` dosyasına rozetli bilgi ekliyor.
+- Git işlemlerini otomatik yapıyor (`add`, `commit`, `push`).
+
+---
+
+## 📌 Gelecek Adımlar İçin Notlar
+
+Seninle birlikte devam etmeyi planladığımız başlıklar:
+
+| Konu | Amaç |
+|------|------|
+| 📝 TR/EN açıklama blokları | Kartlara çok dilli açıklamalar eklemek |
+| 📄 README otomasyonu | Proje ana sayfasını haftalık olarak güncellemek |
+| 🔁 Markdown-to-HTML | Haftalık içerikleri Markdown ile yazıp otomatik dönüştürmek |
+| 🖼️ Görsel rozet & ilerleme takibi | Tamamlanma oranı, konu tipine göre ikon ekleme |
+| 🔍 Arama ve filtreleme | Ana sayfada konu veya durum bazlı filtre |
+
+---
+
+Her şeyi kurumsal ve profesyonel yaklaşımla planlıyoruz—adım adım, sistematik ve sürdürülebilir. Sen ne zaman istersen:  
+> “Önceki konuşmamıza dönelim”  
+> “Şu noktaya gelmiştik, devam edelim”  
+
+...dediğinde ben seni tam olarak kaldığımız yerden alırım. 🚀
+
+Hazır olduğunda bir sonraki özelliği açalım. Hangi adımdan devam etmek istersin, açıklama blokları mı README mi? 😎📘💻
+2025-07-21 23:41 - BE128 klasörü güncellendi
+2025-07-21 23:46 - BE128 klasörü güncellendi
+2025-07-21 23:48 - BE128 klasörü güncellendi
+2025-07-21 23:49 - BE128 klasörü güncellendi
+2025-07-21 23:53 - BE128 klasörü güncellendi

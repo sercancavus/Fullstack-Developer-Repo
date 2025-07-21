@@ -1,76 +1,61 @@
-﻿// 🌐 Sayfa yüklendiğinde varsayılan dil ayarla ve haftaları yükle
-window.onload = () => {
-    changeLang('tr');
-    loadWeeks();
-};
+﻿let currentLang = "tr";
 
-// 🈳 Dil geçişini sağlar
 function changeLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-        el.classList.toggle('d-none', el.getAttribute('data-lang') !== lang);
-    });
+    currentLang = lang;
+    loadWeeks();
 }
 
-// 🏷️ Status rozetini koşullu renkle hazırlar
-function getStatusBadge(status) {
+function getStatusBadge(status, status_en) {
     const map = {
         "Tamamlandı": "bg-success",
         "Devam ediyor": "bg-warning text-dark",
         "Eksik": "bg-danger",
         "Planlanıyor": "bg-secondary"
     };
-    const color = map[status] || "bg-light text-dark";
-    return `<span class="badge ${color} me-1">${status}</span>`;
-}
 
-// 🌍 Dil rozetini oluşturur (TR / EN)
-function getLangBadge(lang) {
-    const map = {
-        "tr": "bg-primary",
-        "en": "bg-dark"
+    const map_en = {
+        "Completed": "bg-success",
+        "In progress": "bg-warning text-dark",
+        "Missing": "bg-danger",
+        "Planned": "bg-secondary"
     };
-    const label = lang === "tr" ? "TR" : "EN";
-    const color = map[lang] || "bg-light text-dark";
-    return `<span class="badge ${color} me-1">${label}</span>`;
+
+    const label = currentLang === "en" ? status_en : status;
+    const color = currentLang === "en" ? map_en[status_en] : map[status];
+
+    return `<span class="badge ${color} me-2">${label}</span>`;
 }
 
-// 📦 Haftaları weeks.json'dan yükler
 function loadWeeks() {
-    fetch('weeks.json')
-        .then(response => {
-            if (!response.ok) throw new Error("weeks.json dosyası bulunamadı");
-            return response.json();
-        })
-        .then(weeks => {
-            const row = document.getElementById('week-cards');
-            row.innerHTML = "";
+    fetch("../weeks.json")
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById("week-cards");
+            container.innerHTML = "";
 
-            if (weeks.length === 0) {
-                row.innerHTML = "<p class='text-warning'>Henüz eklenmiş hafta bulunmamaktadır.</p>";
-                return;
-            }
+            data.forEach(week => {
+                const label = `Hafta ${week.week} · ${week.topic}`;
+                const date = week.date;
+                const desc = currentLang === "en" ? week.description_en : week.description_tr;
 
-            weeks.forEach(weekObj => {
-                row.innerHTML += `
-          <div class="col-md-4">
-            <div class="card week-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">${weekObj.week}. Hafta</h5>
-                <p>
-                  ${getStatusBadge(weekObj.status)}
-                  <span class="badge bg-info text-dark me-1">${weekObj.topic}</span>
-                  <span class="badge bg-secondary me-1">${weekObj.date}</span>
-                  ${getLangBadge(weekObj.lang)}
-                </p>
-                <a href="${weekObj.path}" class="btn btn-primary btn-view mt-2">Görüntüle</a>
-              </div>
-            </div>
+                const card = document.createElement("div");
+                card.className = "col-md-6";
+
+                card.innerHTML = `
+          <div class="week-card p-3">
+            <h4>${label}</h4>
+            ${getStatusBadge(week.status, week.status_en)}
+            <div class="description">${desc}</div>
+            <a href="../${week.path}" class="btn btn-view btn-sm mt-3" target="_blank">Git</a>
           </div>
         `;
+
+                container.appendChild(card);
             });
         })
-        .catch(error => {
-            console.error("Haftalar yüklenemedi:", error);
-            document.getElementById('week-cards').innerHTML = "<p class='text-danger'>Haftalar yüklenemedi veya weeks.json bozuk.</p>";
+        .catch(err => {
+            document.getElementById("week-cards").innerHTML = `<div class="text-danger">❌ weeks.json yüklenemedi</div>`;
         });
 }
+
+loadWeeks();

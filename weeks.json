@@ -2,33 +2,56 @@
   {
     "week": 1,
     "path": "BE128/1.Hafta/index.html",
-    "status": "Tamamland�",
-    "topic": "Giri�",
+    "status": "Tamamlandı",
+    "status_en": "Completed",
+    "topic": "Giriş",
     "date": "30 Haziran",
-    "lang":  "tr"
+    "lang": "tr",
+    "description_tr": "Git kurulumu, proje başlangıcı ve öğrenme süreci planlandı.",
+    "description_en": "Git setup, project initiation, and learning roadmap were introduced."
   },
   {
     "week": 2,
     "path": "BE128/2.Hafta/index.html",
-    "status": "Tamamland�",
+    "status": "Devam ediyor",
+    "status_en": "In progress",
     "topic": "HTML & CSS",
     "date": "07 Temmuz",
-    "lang":  "tr"
+    "lang": "tr",
+    "description_tr": "Responsive yapılar ve erişilebilir HTML/CSS örnekleri işlendi.",
+    "description_en": "Responsive layouts and accessible HTML/CSS examples were explored."
   },
   {
     "week": 3,
     "path": "BE128/3.Hafta/index.html",
-    "status": "Devam ediyor",
+    "status": "Eksik",
+    "status_en": "Missing",
     "topic": "JavaScript",
     "date": "14 Temmuz",
-    "lang": "tr"
+    "lang": "tr",
+    "description_tr": "Değişken tanımlama, DOM işlemleri ve event yönetimi ele alındı.",
+    "description_en": "Variable declaration, DOM manipulation and event management covered."
   },
   {
     "week": 4,
     "path": "BE128/4.Hafta/index.html",
-    "status": "Tamamland�",
+    "status": "Tamamlandı",
+    "status_en": "Completed",
     "topic": "WebAPI",
     "date": "21 Temmuz",
-    "lang": "tr"
+    "lang": "tr",
+    "description_tr": "Minimal WebAPI yapısı test edildi, otomasyon scriptleri bağlandı.",
+    "description_en": "Minimal WebAPI structure was tested and automation scripts integrated."
+  },
+  {
+    "week": 5,
+    "path": "BE128/5.Hafta/index.html",
+    "status": "Planlanıyor",
+    "status_en": "Planned",
+    "topic": "5.Hafta",
+    "date": "4 Ağustos",
+    "lang": "tr",
+    "description_tr": "5.Hafta Günlükleri",
+    "description_en": "5th Week Entries"
   }
 ]

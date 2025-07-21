@@ -1,48 +1,52 @@
 #!/bin/bash
 
-# === Ayarlar ===
-BASE_DIR="BE128"
-WEEKS_DIR="$BASE_DIR"
+cd /c/Users/Monster/Fullstack-Developer-Repo || { echo "❌ Repo klasörü bulunamadı."; exit 1; }
+
+read -p "Yeni hafta numarasını girin (örn: 5): " WEEK
+read -p "Konu başlığı (örn: Backend): " TOPIC
+read -p "Tarih (örn: 29 Temmuz): " DATE
+read -p "Durum (Tamamlandı / Devam ediyor / Eksik / Planlanıyor): " STATUS
+read -p "Açıklama (TR): " DESC_TR
+read -p "Açıklama (EN): " DESC_EN
+
+WEEK_DIR="BE128/${WEEK}.Hafta"
+INDEX_PATH="${WEEK_DIR}/index.html"
 TEMPLATE="template.html"
-PREFIX=".Hafta"
-MAX_WEEK=16
-WEEKS_JSON="weeks.json"
 
-# === Haftaya özel bilgiler (rozet verileri)
-STATUS="Tamamlandı"
-TOPIC="WebAPI"
-DATE="22 Temmuz"
-LANG="tr"
+# 📁 Klasörü oluştur
+mkdir -p "$WEEK_DIR"
 
-# === Mevcut son haftayı bul
-last_week=$(ls "$WEEKS_DIR" | grep -E '^[0-9]+\.Hafta$' | sed 's/\.Hafta//' | sort -n | tail -1)
-new_week=$(( ${last_week:-0} + 1 ))
-
-# === Sınır kontrolü
-if (( new_week > MAX_WEEK )); then
-  echo "🚫 $MAX_WEEK haftaya ulaşıldı."
-  exit 1
-fi
-
-# === Yeni klasör ve index.html oluştur
-new_folder="${new_week}${PREFIX}"
-mkdir -p "$WEEKS_DIR/$new_folder"
-cp "$TEMPLATE" "$WEEKS_DIR/$new_folder/index.html"
-echo "📂 $new_folder klasörü oluşturuldu."
-
-# === weeks.json güncelle (rozetli veri girişi)
-new_entry="{\"week\": ${new_week}, \"path\": \"BE128/${new_folder}/index.html\", \"status\": \"${STATUS}\", \"topic\": \"${TOPIC}\", \"date\": \"${DATE}\", \"lang\": \"${LANG}\"}"
-
-if [ ! -f "$WEEKS_JSON" ]; then
-  echo "[$new_entry]" > "$WEEKS_JSON"
-  echo "📄 Yeni weeks.json oluşturuldu."
+# 📝 template.html'yi kopyala
+if [ -f "$TEMPLATE" ]; then
+  cp "$TEMPLATE" "$INDEX_PATH"
 else
-  sed -i '$ s/\]/,\n  '"$new_entry"'\n]/' "$WEEKS_JSON"
-  echo "📌 weeks.json güncellendi: Hafta ${new_week} eklendi."
+  echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Hafta $WEEK</title></head><body><h1>Hafta $WEEK - $TOPIC</h1></body></html>" > "$INDEX_PATH"
 fi
 
-# === Git işlemleri
-git add .
-git commit -m "✨ ${new_folder} eklendi · ${STATUS}, ${TOPIC}, ${DATE}, ${LANG}"
-git push origin main
-echo "🚀 Git push başarılı!"
+# 🧠 weeks.json'a yeni içerik ekle
+jq --arg week "$WEEK" \
+   --arg path "$INDEX_PATH" \
+   --arg status "$STATUS" \
+   --arg status_en "$(case "$STATUS" in "Tamamlandı") echo "Completed";;
+                                      "Devam ediyor") echo "In progress";;
+                                      "Eksik") echo "Missing";;
+                                      "Planlanıyor") echo "Planned";;
+                                      *) echo "$STATUS";; esac)" \
+   --arg topic "$TOPIC" \
+   --arg date "$DATE" \
+   --arg lang "tr" \
+   --arg desc_tr "$DESC_TR" \
+   --arg desc_en "$DESC_EN" \
+'. += [{
+  week: ($week | tonumber),
+  path: $path,
+  status: $status,
+  status_en: $status_en,
+  topic: $topic,
+  date: $date,
+  lang: $lang,
+  description_tr: $desc_tr,
+  description_en: $desc_en
+}]' weeks.json > tmp.json && mv tmp.json weeks.json
+
+echo "✅ Hafta $WEEK başarıyla oluşturuldu: $INDEX_PATH"

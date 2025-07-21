@@ -113,10 +113,15 @@ Connect on [LinkedIn](https://www.linkedin.com/in/sercancavus) for weekly update
 
 ---
 
-> 💡 This repository documents an ongoing learning journey. Stay tuned for weekly updates and new milestones!
->
-> ## 🗓️ Weekly Logs
-- Week 01: Setup, HTML basics ✅
-- Week 02: CV layout & CSS structure ✅
-- Week 03: JavaScript basics and Bootstrap 🔄 (in progress)
-...
+> 💡 This repository documents an ongoing fullstack learning journey. Stay tuned for weekly updates and new milestones!
+
+## 🗓️ Weekly Logs
+- Week 01: Setup, HTML basics ✅  
+- Week 02: CV layout & CSS structure ✅  
+- Week 03: JavaScript & Bootstrap Essentials 🔄  
+  - 📦 What is Bootstrap?  
+  - 🧱 Grid Layout and spacing utilities (margin, padding)  
+  - 🎛️ Buttons, Inputs, Alerts, Modals, Navbar  
+  - 🛠️ Git & GitHub basics (version control, branches, merge)  
+  - 💻 GitHub Desktop & repository workflow  
+  - ⚔️ Conflict resolution

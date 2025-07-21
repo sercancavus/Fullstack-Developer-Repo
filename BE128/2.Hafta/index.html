@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>2.Hafta Günlükleri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    body { font-family:sans-serif; background:#e6f7f4; padding:2rem }
-    h1 { color:#2ac4a5 }
-    table { width:100%; border-collapse:collapse; margin-bottom:2rem; background:#fff }
-    th,td { padding:0.6rem; border-bottom:1px solid #ddd; text-align:left }
-    th { background:#2ac4a5; color:#fff }
-    .log-table { width:100%; border-collapse:collapse }
-    .log-table th, .log-table td { padding:0.4rem; border:1px solid #ddd; font-size:0.9rem }
-    .log-table th { background:#1a9e86; color:#fff }
-    footer { margin-top:2rem; color:#666; font-size:0.8rem }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2. Hafta – CSS ve CV Tasarımı</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f8f6;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #097c72;
+        }
+    </style>
 </head>
 <body>
-  <h1>📒 2.Hafta Günlükleri</h1>
-  <h2>Dosya Listesi</h2>
-  <table>
-    <thead>
-      <tr><th>Dosya</th><th>Tür</th><th>Boyut</th><th>Son Değişiklik</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/applicationhost.config" target="_blank">applicationhost.config</a></td><td>CONFIG</td><td>84 KB</td><td>07.02.2025 01:15</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>104 KB</td><td>08.07.2025 23:17</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>08.07.2025 23:17</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>188 KB</td><td>10.07.2025 21:26</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>10.07.2025 21:26</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/14c4cac3-ac93-4228-9ba5-497b2bf1ad47.vsidx" target="_blank">14c4cac3-ac93-4228-9ba5-497b2bf1ad47.vsidx</a></td><td>VSIDX</td><td>20 KB</td><td>10.07.2025 20:36</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/5f1ea07b-8f93-448b-8906-0ba66ee8a7dc.vsidx" target="_blank">5f1ea07b-8f93-448b-8906-0ba66ee8a7dc.vsidx</a></td><td>VSIDX</td><td>8 KB</td><td>09.07.2025 23:25</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/7ccf6e8a-270e-4894-8e86-b13fcfe4a4d1.vsidx" target="_blank">7ccf6e8a-270e-4894-8e86-b13fcfe4a4d1.vsidx</a></td><td>VSIDX</td><td>24 KB</td><td>09.07.2025 23:09</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/b82b25fd-b3f7-4760-ab2f-40313fbee787.vsidx" target="_blank">b82b25fd-b3f7-4760-ab2f-40313fbee787.vsidx</a></td><td>VSIDX</td><td>12 KB</td><td>07.07.2025 21:29</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/c690119b-156a-4a85-b47e-0c07dab2a28d.vsidx" target="_blank">c690119b-156a-4a85-b47e-0c07dab2a28d.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>10.07.2025 20:47</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/.wsuo" target="_blank">.wsuo</a></td><td>WSUO</td><td>40 KB</td><td>10.07.2025 21:26</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/DocumentLayout.backup.json" target="_blank">DocumentLayout.backup.json</a></td><td>JSON</td><td>12 KB</td><td>09.07.2025 23:57</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/DocumentLayout.json" target="_blank">DocumentLayout.json</a></td><td>JSON</td><td>8 KB</td><td>10.07.2025 21:26</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/slnx.sqlite" target="_blank">slnx.sqlite</a></td><td>SQLITE</td><td>88 KB</td><td>10.07.2025 21:26</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/VSWorkspaceState.json" target="_blank">VSWorkspaceState.json</a></td><td>JSON</td><td>1 KB</td><td>10.07.2025 21:26</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/layout.html" target="_blank">layout.html</a></td><td>HTML</td><td>4 KB</td><td>16.07.2025 21:39</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/StilCalismalari.html" target="_blank">StilCalismalari.html</a></td><td>HTML</td><td>4 KB</td><td>16.07.2025 21:39</td></tr>
-      <tr><td>🟦 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/stilim.css" target="_blank">stilim.css</a></td><td>CSS</td><td>1 KB</td><td>16.07.2025 21:39</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/index 1.2.html" target="_blank">index 1.2.html</a></td><td>HTML</td><td>28 KB</td><td>16.07.2025 21:39</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/index.html" target="_blank">index.html</a></td><td>HTML</td><td>20 KB</td><td>10.07.2025 20:36</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/index.html" target="_blank">index.html</a></td><td>HTML</td><td>8 KB</td><td>17.07.2025 20:47</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/2.Hafta/Javascript.html" target="_blank">Javascript.html</a></td><td>HTML</td><td>12 KB</td><td>16.07.2025 21:39</td></tr>
-    </tbody>
-  </table>
-  <h2>Commit Geçmişi</h2>
-  <table class="log-table">
-    <thead><tr><th>Hash</th><th>Tarih</th><th>Mesaj</th><th>Dosyalar</th></tr></thead>
-    <tbody>
-BE128/2.Hafta/.vs/2.Hafta/CopilotIndices/17.14.734.62261/CodeChunks.db,BE128/2.Hafta/.vs/2.Hafta/CopilotIndices/17.14.734.62261/SemanticSymbols.db,BE128/2.Hafta/.vs/2.Hafta/CopilotIndices/17.14.827.52834/CodeChunks.db,BE128/2.Hafta/.vs/2.Hafta/CopilotIndices/17.14.827.52834/SemanticSymbols.db,BE128/2.Hafta/.vs/2.Hafta/FileContentIndex/14c4cac3-ac93-4228-9ba5-497b2bf1ad47.vsidx,BE128/2.Hafta/.vs/2.Hafta/FileContentIndex/5f1ea07b-8f93-448b-8906-0ba66ee8a7dc.vsidx,BE128/2.Hafta/.vs/2.Hafta/FileContentIndex/7ccf6e8a-270e-4894-8e86-b13fcfe4a4d1.vsidx,BE128/2.Hafta/.vs/2.Hafta/FileContentIndex/b82b25fd-b3f7-4760-ab2f-40313fbee787.vsidx,BE128/2.Hafta/.vs/2.Hafta/FileContentIndex/c690119b-156a-4a85-b47e-0c07dab2a28d.vsidx,BE128/2.Hafta/.vs/2.Hafta/config/applicationhost.config,BE128/2.Hafta/.vs/2.Hafta/v17/.wsuo,BE128/2.Hafta/.vs/2.Hafta/v17/DocumentLayout.backup.json,BE128/2.Hafta/.vs/2.Hafta/v17/DocumentLayout.json,BE128/2.Hafta/.vs/VSWorkspaceState.json,BE128/2.Hafta/.vs/slnx.sqlite,BE128/2.Hafta/CSS/StilCalismalari.html,BE128/2.Hafta/CSS/layout.html,BE128/2.Hafta/CSS/stilim.css,BE128/2.Hafta/Javascript/Javascript.html,</td></tr>
-    </tbody>
-  </table>
-  <footer>Oluşturuldu: 2025-07-17 20:47</footer>
+    <nav class="navbar navbar-light bg-white shadow-sm px-3">
+        <a class="navbar-brand fw-bold text-primary" href="../index.html">← Ana Sayfa</a>
+    </nav>
+
+    <div class="container py-5">
+        <!-- Türkçe Bölüm -->
+        <div class="section-card mb-4">
+            <h2>🎨 2. Hafta – CSS ve CV Tasarımı</h2>
+            <p><strong>Açıklama:</strong> Bu hafta kişisel bir CV düzeni oluşturulup temel CSS özellikleriyle stillendi.</p>
+            <ul>
+                <li>Flexbox ile CV düzenleme</li>
+                <li>Yazı tipi, renk ve boşluk ayarları</li>
+                <li>Mobil uyumlu yapının temelleri</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalTR">🗂️ Detayları Gör (Türkçe)</button>
+        </div>
+
+        <!-- English Section -->
+        <div class="section-card">
+            <h2>🎨 Week 02 – CSS & CV Layout</h2>
+            <p><strong>Description:</strong> This week focused on building a personal CV layout and styling it with core CSS techniques.</p>
+            <ul>
+                <li>Structuring layout with Flexbox</li>
+                <li>Font, color, and spacing setup</li>
+                <li>Basic mobile responsiveness</li>
+            </ul>
+            <button class="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#modalEN">🗂️ View Details (English)</button>
+        </div>
+    </div>
+
+    <!-- Modal Türkçe -->
+    <div class="modal fade" id="modalTR" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">📝 Detay – Türkçe</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bu hafta CV tasarımı için aşağıdaki konular ele alındı:</p>
+                    <ul>
+                        <li>Grid & Flexbox ile bölümlerin yerleşimi</li>
+                        <li>Renk paleti ve yazı tipi seçimi</li>
+                        <li>`media queries` ile mobil uyumluluk</li>
+                        <li>Sayfa yapısının Bootstrap ile düzenlenmesi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal English -->
+    <div class="modal fade" id="modalEN" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content shadow">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">📝 Details – English</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This week’s focus included:</p>
+                    <ul>
+                        <li>Layout with Grid & Flexbox</li>
+                        <li>Color palette and font selection</li>
+                        <li>Responsive design with media queries</li>
+                        <li>Structuring with Bootstrap components</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

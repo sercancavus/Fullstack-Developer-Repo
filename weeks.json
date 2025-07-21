@@ -1,0 +1,34 @@
+[
+  {
+    "week": 1,
+    "path": "BE128/1.Hafta/index.html",
+    "status": "Tamamlandý",
+    "topic": "Giriþ",
+    "date": "30 Haziran",
+    "lang":  "tr"
+  },
+  {
+    "week": 2,
+    "path": "BE128/2.Hafta/index.html",
+    "status": "Tamamlandý",
+    "topic": "HTML & CSS",
+    "date": "07 Temmuz",
+    "lang":  "tr"
+  },
+  {
+    "week": 3,
+    "path": "BE128/3.Hafta/index.html",
+    "status": "Devam ediyor",
+    "topic": "JavaScript",
+    "date": "14 Temmuz",
+    "lang": "tr"
+  },
+  {
+    "week": 4,
+    "path": "BE128/4.Hafta/index.html",
+    "status": "Tamamlandý",
+    "topic": "WebAPI",
+    "date": "21 Temmuz",
+    "lang": "tr"
+  }
+]

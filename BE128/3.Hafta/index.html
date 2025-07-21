@@ -1,61 +1,102 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>3.Hafta Günlükleri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    body { font-family:sans-serif; background:#e6f7f4; padding:2rem }
-    h1 { color:#2ac4a5 }
-    table { width:100%; border-collapse:collapse; margin-bottom:2rem; background:#fff }
-    th,td { padding:0.6rem; border-bottom:1px solid #ddd; text-align:left }
-    th { background:#2ac4a5; color:#fff }
-    .log-table { width:100%; border-collapse:collapse }
-    .log-table th, .log-table td { padding:0.4rem; border:1px solid #ddd; font-size:0.9rem }
-    .log-table th { background:#1a9e86; color:#fff }
-    footer { margin-top:2rem; color:#666; font-size:0.8rem }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3. Hafta – Bootstrap ve GitHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f1f9f6;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #086d66;
+        }
+    </style>
 </head>
 <body>
-  <h1>📒 3.Hafta Günlükleri</h1>
-  <h2>Dosya Listesi</h2>
-  <table>
-    <thead>
-      <tr><th>Dosya</th><th>Tür</th><th>Boyut</th><th>Son Değişiklik</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/applicationhost.config" target="_blank">applicationhost.config</a></td><td>CONFIG</td><td>84 KB</td><td>07.02.2025 01:15</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/CodeChunks.db" target="_blank">CodeChunks.db</a></td><td>DB</td><td>156 KB</td><td>16.07.2025 20:35</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/CodeChunks.db-shm" target="_blank">CodeChunks.db-shm</a></td><td>DB-SHM</td><td>32 KB</td><td>17.07.2025 20:45</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/CodeChunks.db-wal" target="_blank">CodeChunks.db-wal</a></td><td>DB-WAL</td><td>640 KB</td><td>17.07.2025 20:46</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/SemanticSymbols.db" target="_blank">SemanticSymbols.db</a></td><td>DB</td><td>52 KB</td><td>16.07.2025 20:35</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/SemanticSymbols.db-shm" target="_blank">SemanticSymbols.db-shm</a></td><td>DB-SHM</td><td>32 KB</td><td>17.07.2025 20:45</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/SemanticSymbols.db-wal" target="_blank">SemanticSymbols.db-wal</a></td><td>DB-WAL</td><td>128 KB</td><td>17.07.2025 20:48</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/0a133ecf-5716-4259-9ef1-dffb1fcba1ff.vsidx" target="_blank">0a133ecf-5716-4259-9ef1-dffb1fcba1ff.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>17.07.2025 20:46</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/0ef95ad1-636f-430a-8884-4a9904a6f654.vsidx" target="_blank">0ef95ad1-636f-430a-8884-4a9904a6f654.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>16.07.2025 20:33</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/27d78796-3004-4dd1-93d4-4f4851d5b41e.vsidx" target="_blank">27d78796-3004-4dd1-93d4-4f4851d5b41e.vsidx</a></td><td>VSIDX</td><td>1 KB</td><td>15.07.2025 20:03</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/559dde5a-da87-4d1e-bed7-280c4ac9282f.vsidx" target="_blank">559dde5a-da87-4d1e-bed7-280c4ac9282f.vsidx</a></td><td>VSIDX</td><td>56 KB</td><td>17.07.2025 20:45</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/8476265e-b404-4662-a397-a1b93eaabf35.vsidx" target="_blank">8476265e-b404-4662-a397-a1b93eaabf35.vsidx</a></td><td>VSIDX</td><td>8 KB</td><td>17.07.2025 20:46</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/.wsuo" target="_blank">.wsuo</a></td><td>WSUO</td><td>24 KB</td><td>16.07.2025 20:35</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/DocumentLayout.backup.json" target="_blank">DocumentLayout.backup.json</a></td><td>JSON</td><td>4 KB</td><td>16.07.2025 20:23</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/DocumentLayout.json" target="_blank">DocumentLayout.json</a></td><td>JSON</td><td>4 KB</td><td>16.07.2025 20:35</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/slnx.sqlite" target="_blank">slnx.sqlite</a></td><td>SQLITE</td><td>88 KB</td><td>17.07.2025 20:47</td></tr>
-      <tr><td>📄 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/VSWorkspaceState.json" target="_blank">VSWorkspaceState.json</a></td><td>JSON</td><td>1 KB</td><td>16.07.2025 20:35</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/Bootstrap1.html" target="_blank">Bootstrap1.html</a></td><td>HTML</td><td>8 KB</td><td>16.07.2025 21:39</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/Bootstrap2.html" target="_blank">Bootstrap2.html</a></td><td>HTML</td><td>12 KB</td><td>15.07.2025 23:13</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/resimgalerisi.html" target="_blank">resimgalerisi.html</a></td><td>HTML</td><td>4 KB</td><td>17.07.2025 20:46</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/index.html" target="_blank">index.html</a></td><td>HTML</td><td>8 KB</td><td>17.07.2025 20:48</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/Javascript.html" target="_blank">Javascript.html</a></td><td>HTML</td><td>16 KB</td><td>16.07.2025 21:39</td></tr>
-      <tr><td>🟥 <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/BE128/3.Hafta/sercan.html" target="_blank">sercan.html</a></td><td>HTML</td><td>4 KB</td><td>14.07.2025 23:22</td></tr>
-    </tbody>
-  </table>
-  <h2>Commit Geçmişi</h2>
-  <table class="log-table">
-    <thead><tr><th>Hash</th><th>Tarih</th><th>Mesaj</th><th>Dosyalar</th></tr></thead>
-    <tbody>
-BE128/3.Hafta/.vs/3.Hafta/CopilotIndices/17.14.827.52834/CodeChunks.db,BE128/3.Hafta/.vs/3.Hafta/CopilotIndices/17.14.827.52834/SemanticSymbols.db,BE128/3.Hafta/.vs/3.Hafta/FileContentIndex/0ef95ad1-636f-430a-8884-4a9904a6f654.vsidx,BE128/3.Hafta/.vs/3.Hafta/FileContentIndex/27d78796-3004-4dd1-93d4-4f4851d5b41e.vsidx,BE128/3.Hafta/.vs/3.Hafta/FileContentIndex/60e21a2f-5c53-4bc4-8ba3-3323d963ff85.vsidx,BE128/3.Hafta/.vs/3.Hafta/FileContentIndex/b0a267bb-00cf-40b2-9691-d847673fc9b7.vsidx,BE128/3.Hafta/.vs/3.Hafta/FileContentIndex/b12c81c8-b855-4d12-8030-021464ab88e5.vsidx,BE128/3.Hafta/.vs/3.Hafta/config/applicationhost.config,BE128/3.Hafta/.vs/3.Hafta/copilot-chat/892d49c3/sessions/ae7879d8-c2bc-4490-91d6-50032256f807,BE128/3.Hafta/.vs/3.Hafta/v17/.wsuo,BE128/3.Hafta/.vs/3.Hafta/v17/DocumentLayout.backup.json,BE128/3.Hafta/.vs/3.Hafta/v17/DocumentLayout.json,BE128/3.Hafta/.vs/VSWorkspaceState.json,BE128/3.Hafta/.vs/slnx.sqlite,BE128/3.Hafta/Bootstrap2.html,BE128/3.Hafta/Bootstrap1.html,BE128/3.Hafta/Javascript.html,BE128/3.Hafta/Sercan Website/sercan.html,</td></tr>
-    </tbody>
-  </table>
-  <footer>Oluşturuldu: 2025-07-17 20:47</footer>
+    <nav class="navbar navbar-light bg-white shadow-sm px-3">
+        <a class="navbar-brand fw-bold text-primary" href="../index.html">← Ana Sayfa</a>
+    </nav>
+
+    <div class="container py-5">
+        <!-- Türkçe Bölüm -->
+        <div class="section-card mb-4">
+            <h2>⚙️ 3. Hafta – Bootstrap & GitHub İş Akışı</h2>
+            <p><strong>Açıklama:</strong> Bu hafta Bootstrap bileşenleri kullanılarak arayüz geliştirildi, ardından Git ve GitHub üzerinde çalışma akışı oturtuldu.</p>
+            <ul>
+                <li>Grid layout ve spacing (margin/padding)</li>
+                <li>Button, input, alert, modal ve navbar bileşenleri</li>
+                <li>GitHub Desktop ile branch işlemleri</li>
+                <li>Pull request, merge ve conflict çözümü</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalTR">🗂️ Detayları Gör (Türkçe)</button>
+        </div>
+
+        <!-- English Section -->
+        <div class="section-card">
+            <h2>⚙️ Week 03 – Bootstrap & GitHub Workflow</h2>
+            <p><strong>Description:</strong> UI development using Bootstrap components, followed by version control setup with Git and GitHub.</p>
+            <ul>
+                <li>Grid layout & spacing (margin/padding)</li>
+                <li>Button, input, alert, modal, navbar components</li>
+                <li>Branching and commits with GitHub Desktop</li>
+                <li>Pull requests, merging, and resolving conflicts</li>
+            </ul>
+            <button class="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#modalEN">🗂️ View Details (English)</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalTR" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">📝 Detay – Türkçe</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bootstrap sayesinde projeye hız ve görsel uyum kazandırıldı. GitHub ile versiyonlama adımları yönetildi:</p>
+                    <ul>
+                        <li>Responsive grid yapısı ve spacing sınıfları</li>
+                        <li>Modal ile etkileşimli içerik</li>
+                        <li>Branch oluşturma, commit ve push işlemleri</li>
+                        <li>Çakışma (conflict) senaryoları ve çözüm yolları</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEN" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content shadow">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">📝 Details – English</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This week's key learnings:</p>
+                    <ul>
+                        <li>Using grid and spacing utilities for layout</li>
+                        <li>Modal interaction and responsive UI</li>
+                        <li>Working with branches and committing changes</li>
+                        <li>Identifying and solving merge conflicts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

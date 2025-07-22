@@ -8,7 +8,9 @@
     "date": "30 Haziran",
     "lang": "tr",
     "description_tr": "Git kurulumu, proje başlangıcı ve öğrenme süreci planlandı.",
-    "description_en": "Git setup, project initiation, and learning roadmap were introduced."
+    "description_en": "Git setup, project initiation, and learning roadmap were introduced.",
+    "badgeIcon": "bi-person-workspace"
+
   },
   {
     "week": 2,
@@ -19,7 +21,8 @@
     "date": "07 Temmuz",
     "lang": "tr",
     "description_tr": "Responsive yapılar ve erişilebilir HTML/CSS örnekleri işlendi.",
-    "description_en": "Responsive layouts and accessible HTML/CSS examples were explored."
+    "description_en": "Responsive layouts and accessible HTML/CSS examples were explored.",
+    "badgeIcon": "bi-code-slash"
   },
   {
     "week": 3,
@@ -30,7 +33,8 @@
     "date": "14 Temmuz",
     "lang": "tr",
     "description_tr": "Değişken tanımlama, DOM işlemleri ve event yönetimi ele alındı.",
-    "description_en": "Variable declaration, DOM manipulation and event management covered."
+    "description_en": "Variable declaration, DOM manipulation and event management covered.",
+    "badgeIcon": "bi-file-earmark-code"
   },
   {
     "week": 4,
@@ -41,7 +45,8 @@
     "date": "21 Temmuz",
     "lang": "tr",
     "description_tr": "Minimal WebAPI yapısı test edildi, otomasyon scriptleri bağlandı.",
-    "description_en": "Minimal WebAPI structure was tested and automation scripts integrated."
+    "description_en": "Minimal WebAPI structure was tested and automation scripts integrated.",
+    "badgeIcon": "bi-hdd-network"
   },
   {
     "week": 5,
@@ -52,6 +57,7 @@
     "date": "4 Ağustos",
     "lang": "tr",
     "description_tr": "5.Hafta Günlükleri",
-    "description_en": "5th Week Entries"
+    "description_en": "5th Week Entries",
+    "badgeIcon": "bi-journal-text"
   }
 ]

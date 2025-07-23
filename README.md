@@ -43,10 +43,10 @@
 
 ## 📅 Güncel Haftalar Listesi
 
-- [Hafta 1](BE128/1.Hafta) ✅ HTML ve CSS Temelleri · 01.01.2024
-- [Hafta 2](BE128/2.Hafta) ✅ İleri Düzey CSS & Responsive Tasarım · 08.01.2024
-- [Hafta 3](BE128/3.Hafta) ✅ JavaScript Temelleri · 15.01.2024
-- [Hafta 4](BE128/4.Hafta) ✅ İleri JavaScript & DOM Manipülasyonu · 22.01.2024
+- [Hafta 1](BE128/1.Hafta) ✅ HTML ve CSS Temelleri · 30.06.2025
+- [Hafta 2](BE128/2.Hafta) ✅ İleri Düzey CSS & Responsive Tasarım · 07.07.2025
+- [Hafta 3](BE128/3.Hafta) ✅ JavaScript Temelleri · 14.07.2025
+- [Hafta 4](BE128/4.Hafta) ✅ İleri JavaScript & DOM Manipülasyonu · 21.07.2025
 
 > Daha fazla hafta ve detay için [BE128 klasörüne göz atın](BE128/)
 

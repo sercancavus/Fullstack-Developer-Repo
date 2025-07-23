@@ -1,4 +1,5 @@
 ﻿#!/bin/bash
+set -euo pipefail
 
 # Ayarlar
 BASE_DIR="BE128/Haftalar"
@@ -12,9 +13,14 @@ last_week=$(ls "$BASE_DIR" | grep "$PREFIX" | sed "s/$PREFIX//" | sort -n | tail
 new_week=$((last_week + 1))
 new_folder="${PREFIX}${new_week}"
 
+# Şablon dosya kontrolü
+test -f "$TEMPLATE_HTML" || { echo -e "\e[31m❌ $TEMPLATE_HTML bulunamadı!\e[0m"; exit 1; }
+
 # Yeni klasörü oluştur
 mkdir -p "$BASE_DIR/$new_folder"
 cp "$TEMPLATE_HTML" "$BASE_DIR/$new_folder/index.html"
+
+echo -e "\e[32m✅ $new_folder klasörü ve index.html oluşturuldu.\e[0m"
 
 # Yeni kart içeriğini oluştur
 new_card=$(cat <<EOF
@@ -37,4 +43,4 @@ awk -v card="$new_card" '
 { print }
 ' "$MAIN_HTML" > temp.html && mv temp.html "$MAIN_HTML"
 
-echo "✅ ${new_folder} oluşturuldu, index.html kopyalandı ve ana sayfa güncellendi."
+echo -e "\e[32m✅ Ana sayfa güncellendi.\e[0m"

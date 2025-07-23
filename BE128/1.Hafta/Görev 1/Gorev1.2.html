@@ -3,410 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backend Developer Portfolio - Sercan Çavuş</title>
+    <title>Gorev 1.2 - Backend Developer Portfoyu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .nav {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .nav a:hover {
-            background-color: #667eea;
-            color: white;
-        }
-
-        .main-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-
-        .section h3 {
-            color: #764ba2;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .section p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .tech-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .tech-list li {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            font-weight: 600;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .image-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #667eea;
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        .contact-form {
-            max-width: 600px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .tech-list {
-                grid-template-columns: 1fr;
-            }
-
-            .image-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .lang-switch { position: absolute; right: 2.5rem; top: 2.5rem; z-index: 10; }
+        .lang-btn { background: #23272b; color: #00d8ff; border: 1px solid #00d8ff; border-radius: 50%; width: 38px; height: 38px; margin-left: 8px; font-size: 1.2rem; transition: background 0.2s, color 0.2s; }
+        .lang-btn.active, .lang-btn:hover { background: #00d8ff; color: #23272b; }
+        .btn-back { background: #00d8ff; color: #181a1b; font-weight: 600; border: none; border-radius: 8px; padding: 0.5rem 1.5rem; font-size: 1rem; margin-bottom: 1.5rem; transition: background 0.2s; display: inline-block; margin-top: 10px; }
+        .btn-back:hover { background: #009bb3; color: #fff; }
+        .nav { background: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .nav a { text-decoration: none; color: #333; font-weight: 600; padding: 10px 15px; border-radius: 5px; transition: all 0.3s ease; }
+        .nav a:hover { background-color: #667eea; color: white; }
+        .main-content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .section { margin-bottom: 40px; }
+        .section:last-child { margin-bottom: 0; }
+        .section h2 { color: #667eea; margin-bottom: 20px; font-size: 1.8rem; }
+        .section h3 { color: #764ba2; margin-bottom: 15px; font-size: 1.4rem; }
+        .section p { margin-bottom: 15px; line-height: 1.8; }
+        .tech-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tech-list li { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea; font-weight: 600; }
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .image-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
+        .image-gallery img:hover { transform: scale(1.05); }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #667eea; color: white; font-weight: 600; }
+        tr:hover { background-color: #f8f9fa; }
+        .contact-form { max-width: 600px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px; transition: border-color 0.3s ease; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #667eea; }
+        .btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: 600; transition: transform 0.3s ease; }
+        .btn:hover { transform: translateY(-2px); }
+        .footer { background: #333; color: white; text-align: center; padding: 20px; border-radius: 10px; margin-top: 30px; }
+        @media (max-width: 768px) { .nav ul { flex-direction: column; gap: 10px; } .header h1 { font-size: 2rem; } .tech-list { grid-template-columns: 1fr; } .image-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
+    <div class="lang-switch">
+        <button class="lang-btn active" id="btn-tr" title="Turkce"><i class="fas fa-flag"></i> TR</button>
+        <button class="lang-btn" id="btn-en" title="English"><i class="fas fa-flag-usa"></i> EN</button>
+    </div>
     <div class="container">
+        <a href="../../index.html" class="btn-back" id="btn-back">&larr; Haftaya Don</a>
         <header class="header">
-            <h1>💻 Sercan Çavuş</h1>
-            <p>Backend Developer & Web Geliştirici</p>
+            <h1 id="header-title">💻 Sercan Cavus</h1>
+            <p id="header-desc">Backend Developer & Web Gelistirici</p>
         </header>
-
         <nav class="nav">
-            <ul>
+            <ul id="nav-list">
                 <li><a href="#home">Anasayfa</a></li>
-                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#about">Hakkimda</a></li>
                 <li><a href="#skills">Yetenekler</a></li>
                 <li><a href="#projects">Projeler</a></li>
-                <li><a href="#contact">İletişim</a></li>
+                <li><a href="#contact">Iletisim</a></li>
             </ul>
         </nav>
-
         <main class="main-content">
             <section class="section" id="home">
-                <h2>Hoş Geldiniz! 👋</h2>
-                <p>
-                    Merhaba! Ben Sercan Çavuş. Backend development alanında kendimi geliştirmeye odaklanmış bir yazılım geliştiricisiyim. 
-                    Bu sayfa, HTML, CSS ve JavaScript öğrenme sürecimde oluşturduğum basit bir portföy örneğidir.
-                </p>
-                <p>
-                    Aşağıda öğrendiğim teknolojiler, örnek projeler ve iletişim bilgilerimi bulabilirsiniz.
-                </p>
+                <h2 id="welcome-title">Hos Geldiniz! 👋</h2>
+                <p id="welcome-1">Merhaba! Ben Sercan Cavus. Backend development alaninda kendimi gelistirmeye odaklanmis bir yazilim gelistiricisiyim. Bu sayfa, HTML, CSS ve JavaScript ogrenme surecimde olusturdugum basit bir portfoy ornegidir.</p>
+                <p id="welcome-2">Asagida ogrendigim teknolojiler, ornek projeler ve iletisim bilgilerimi bulabilirsiniz.</p>
             </section>
-
             <section class="section" id="skills">
-                <h2>Öğrendiğim Teknolojiler 🚀</h2>
-                <ul class="tech-list">
-                    <li>HTML5 - Web sayfası yapısı</li>
-                    <li>CSS3 - Stil ve tasarım</li>
-                    <li>JavaScript - Etkileşimli özellikler</li>
+                <h2 id="skills-title">Ogrendigim Teknolojiler 🚀</h2>
+                <ul class="tech-list" id="tech-list">
+                    <li>HTML5 - Web sayfasi yapisi</li>
+                    <li>CSS3 - Stil ve tasarim</li>
+                    <li>JavaScript - Etkilesimli ozellikler</li>
                     <li>C# - Backend programlama</li>
                     <li>Python - Veri analizi ve otomasyon</li>
-                    <li>SQL - Veritabanı yönetimi</li>
+                    <li>SQL - Veritabani yonetimi</li>
                 </ul>
             </section>
-
             <section class="section">
-                <h3>Teknoloji Görselleri 📸</h3>
+                <h3 id="gallery-title">Teknoloji Gorselleri 📸</h3>
                 <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" 
-                         alt="Bilgi Teknolojileri 1" 
-                         title="Modern ofis ortamı">
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" 
-                         alt="Bilgi Teknolojileri 2" 
-                         title="Kod yazma">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" 
-                         alt="Bilgi Teknolojileri 3" 
-                         title="Teknoloji çözümleri">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Bilgi Teknolojileri 1" title="Modern ofis ortami">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Bilgi Teknolojileri 2" title="Kod yazma">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Bilgi Teknolojileri 3" title="Teknoloji cozumleri">
                 </div>
             </section>
-
             <section class="section">
-                <h3>Takım Arkadaşlarım 👥</h3>
+                <h3 id="team-title">Takim Arkadaslarim 👥</h3>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
-                                <th>Ad</th>
-                                <th>Soyad</th>
-                                <th>Uzmanlık Alanı</th>
-                                <th>Deneyim</th>
+                                <th id="th-name">Ad</th>
+                                <th id="th-surname">Soyad</th>
+                                <th id="th-role">Uzmanlik Alani</th>
+                                <th id="th-exp">Deneyim</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ali</td>
-                                <td>Yılmaz</td>
-                                <td>Frontend Developer</td>
-                                <td>3 yıl</td>
-                            </tr>
-                            <tr>
-                                <td>Ayşe</td>
-                                <td>Kara</td>
-                                <td>UI/UX Designer</td>
-                                <td>2 yıl</td>
-                            </tr>
-                            <tr>
-                                <td>Mehmet</td>
-                                <td>Demir</td>
-                                <td>Data Scientist</td>
-                                <td>4 yıl</td>
-                            </tr>
+                        <tbody id="team-list">
+                            <tr><td>Ali</td><td>Yilmaz</td><td>Frontend Developer</td><td>3 yil</td></tr>
+                            <tr><td>Ayse</td><td>Kara</td><td>UI/UX Designer</td><td>2 yil</td></tr>
+                            <tr><td>Mehmet</td><td>Demir</td><td>Data Scientist</td><td>4 yil</td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
-
             <section class="section" id="contact">
-                <h3>İletişim Formu 📧</h3>
+                <h3 id="contact-title">Iletisim Formu 📧</h3>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <label for="name">Adınız Soyadınız:</label>
+                        <label for="name" id="label-name">Adiniz Soyadiniz:</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="email">E-posta Adresiniz:</label>
+                        <label for="email" id="label-email">E-posta Adresiniz:</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="subject">Konu:</label>
+                        <label for="subject" id="label-subject">Konu:</label>
                         <input type="text" id="subject" name="subject" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="message">Mesajınız:</label>
+                        <label for="message" id="label-message">Mesajiniz:</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    
-                    <button type="submit" class="btn">Mesaj Gönder</button>
+                    <button type="submit" class="btn" id="btn-send">Mesaj Gonder</button>
                 </form>
             </section>
         </main>
-
         <footer class="footer">
-            <p>&copy; 2024 Sercan Çavuş - Backend Developer Portfolio</p>
+            <p id="footer-text">&copy; 2024 Sercan Cavus - Backend Developer Portfolio</p>
         </footer>
     </div>
-
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Dil verileri
+    const langData = {
+        tr: {
+            back: '← Haftaya Don',
+            headerTitle: '💻 Sercan Cavus',
+            headerDesc: 'Backend Developer & Web Gelistirici',
+            nav: ['Anasayfa','Hakkimda','Yetenekler','Projeler','Iletisim'],
+            welcomeTitle: 'Hos Geldiniz! 👋',
+            welcome1: 'Merhaba! Ben Sercan Cavus. Backend development alaninda kendimi gelistirmeye odaklanmis bir yazilim gelistiricisiyim. Bu sayfa, HTML, CSS ve JavaScript ogrenme surecimde olusturdugum basit bir portfoy ornegidir.',
+            welcome2: 'Asagida ogrendigim teknolojiler, ornek projeler ve iletisim bilgilerimi bulabilirsiniz.',
+            skillsTitle: 'Ogrendigim Teknolojiler 🚀',
+            techList: [
+                'HTML5 - Web sayfasi yapisi',
+                'CSS3 - Stil ve tasarim',
+                'JavaScript - Etkilesimli ozellikler',
+                'C# - Backend programlama',
+                'Python - Veri analizi ve otomasyon',
+                'SQL - Veritabani yonetimi'
+            ],
+            galleryTitle: 'Teknoloji Gorselleri 📸',
+            teamTitle: 'Takim Arkadaslarim 👥',
+            thName: 'Ad',
+            thSurname: 'Soyad',
+            thRole: 'Uzmanlik Alani',
+            thExp: 'Deneyim',
+            teamList: [
+                ['Ali','Yilmaz','Frontend Developer','3 yil'],
+                ['Ayse','Kara','UI/UX Designer','2 yil'],
+                ['Mehmet','Demir','Data Scientist','4 yil']
+            ],
+            contactTitle: 'Iletisim Formu 📧',
+            labelName: 'Adiniz Soyadiniz:',
+            labelEmail: 'E-posta Adresiniz:',
+            labelSubject: 'Konu:',
+            labelMessage: 'Mesajiniz:',
+            btnSend: 'Mesaj Gonder',
+            footer: '&copy; 2024 Sercan Cavus - Backend Developer Portfolio',
+            alertSuccess: 'Mesajiniz basariyla gonderildi! Tesekkurler ',
+            alertError: 'Lutfen tum alanlari doldurun!'
+        },
+        en: {
+            back: '← Back to Week',
+            headerTitle: '💻 Sercan Cavus',
+            headerDesc: 'Backend Developer & Web Developer',
+            nav: ['Home','About','Skills','Projects','Contact'],
+            welcomeTitle: 'Welcome! 👋',
+            welcome1: "Hi! I'm Sercan Cavus. I'm a software developer focused on improving myself in backend development. This page is a simple portfolio example I created during my HTML, CSS, and JavaScript learning journey.",
+            welcome2: 'Below you can find the technologies I learned, sample projects, and my contact information.',
+            skillsTitle: 'Technologies I Learned 🚀',
+            techList: [
+                'HTML5 - Web page structure',
+                'CSS3 - Styling and design',
+                'JavaScript - Interactive features',
+                'C# - Backend programming',
+                'Python - Data analysis and automation',
+                'SQL - Database management'
+            ],
+            galleryTitle: 'Technology Gallery 📸',
+            teamTitle: 'My Teammates 👥',
+            thName: 'Name',
+            thSurname: 'Surname',
+            thRole: 'Role',
+            thExp: 'Experience',
+            teamList: [
+                ['Ali','Yilmaz','Frontend Developer','3 years'],
+                ['Ayse','Kara','UI/UX Designer','2 years'],
+                ['Mehmet','Demir','Data Scientist','4 years']
+            ],
+            contactTitle: 'Contact Form 📧',
+            labelName: 'Your Name:',
+            labelEmail: 'Your Email:',
+            labelSubject: 'Subject:',
+            labelMessage: 'Your Message:',
+            btnSend: 'Send Message',
+            footer: '&copy; 2024 Sercan Cavus - Backend Developer Portfolio',
+            alertSuccess: 'Your message has been sent successfully! Thank you ',
+            alertError: 'Please fill in all fields!'
+        }
+    };
+    function setLang(lang) {
+        document.getElementById('btn-back').innerText = langData[lang].back;
+        document.getElementById('header-title').innerText = langData[lang].headerTitle;
+        document.getElementById('header-desc').innerText = langData[lang].headerDesc;
+        // Nav
+        const navItems = document.querySelectorAll('#nav-list li a');
+        langData[lang].nav.forEach((txt, i) => navItems[i].innerText = txt);
+        document.getElementById('welcome-title').innerText = langData[lang].welcomeTitle;
+        document.getElementById('welcome-1').innerText = langData[lang].welcome1;
+        document.getElementById('welcome-2').innerText = langData[lang].welcome2;
+        document.getElementById('skills-title').innerText = langData[lang].skillsTitle;
+        // Tech list
+        const techList = document.getElementById('tech-list');
+        techList.innerHTML = langData[lang].techList.map(x=>`<li>${x}</li>`).join('');
+        document.getElementById('gallery-title').innerText = langData[lang].galleryTitle;
+        document.getElementById('team-title').innerText = langData[lang].teamTitle;
+        document.getElementById('th-name').innerText = langData[lang].thName;
+        document.getElementById('th-surname').innerText = langData[lang].thSurname;
+        document.getElementById('th-role').innerText = langData[lang].thRole;
+        document.getElementById('th-exp').innerText = langData[lang].thExp;
+        // Team list
+        const teamList = document.getElementById('team-list');
+        teamList.innerHTML = langData[lang].teamList.map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`).join('');
+        document.getElementById('contact-title').innerText = langData[lang].contactTitle;
+        document.getElementById('label-name').innerText = langData[lang].labelName;
+        document.getElementById('label-email').innerText = langData[lang].labelEmail;
+        document.getElementById('label-subject').innerText = langData[lang].labelSubject;
+        document.getElementById('label-message').innerText = langData[lang].labelMessage;
+        document.getElementById('btn-send').innerText = langData[lang].btnSend;
+        document.getElementById('footer-text').innerHTML = langData[lang].footer;
+        document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        localStorage.setItem('lang', lang);
+    }
+    document.getElementById('btn-tr').onclick = () => setLang('tr');
+    document.getElementById('btn-en').onclick = () => setLang('en');
+    // URL parametresinden veya localStorage'dan dil tercihini yükle
+    function getLangFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('lang') || localStorage.getItem('lang') || 'tr';
+    }
+    setLang(getLangFromUrl());
+    // Geri butonuna tıklarken dil parametresiyle yönlendir
+    document.getElementById('btn-back').onclick = function(e) {
+        e.preventDefault();
+        const lang = localStorage.getItem('lang') || 'tr';
+        window.location.href = `../../index.html?lang=${lang}`;
+    };
+    // Form işlemleri
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        const lang = localStorage.getItem('lang') || 'tr';
+        if (name && email && subject && message) {
+            alert(langData[lang].alertSuccess + name + '!');
+            this.reset();
+        } else {
+            alert(langData[lang].alertError);
+        }
+    });
+    // Anchor smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            if (name && email && subject && message) {
-                alert('Mesajınız başarıyla gönderildi! Teşekkürler ' + name + '!');
-                this.reset();
-            } else {
-                alert('Lütfen tüm alanları doldurun!');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        window.addEventListener('load', function() {
-            console.log('Portfolio sayfası başarıyla yüklendi!');
-        });
+    });
+    window.addEventListener('load', function() {
+        console.log('Portfolio sayfasi basariyla yuklendi!');
+    });
     </script>
 </body>
-</html> 
+</html>

@@ -1,9 +1,10 @@
 ﻿#!/bin/bash
+set -euo pipefail
 
-cd ~/Fullstack-Developer-Repo || { echo "❌ Klasör bulunamadı"; exit 1; }
+cd ~/Fullstack-Developer-Repo || { echo -e "\e[31m❌ Klasör bulunamadı\e[0m"; exit 1; }
 
 if git status | grep -q "BE128"; then
-    echo "🔄 BE128 klasöründe değişiklikler algılandı. Güncelleniyor..."
+    echo -e "\e[36m🔄 BE128 klasöründe değişiklikler algılandı. Güncelleniyor...\e[0m"
 
     # Sadece belirli dosya türlerini sahneye al
     find BE128 -type f \( -name "*.html" -o -name "*.js" -o -name "*.java" -o -name "*.css" \) -exec git add {} \;
@@ -43,7 +44,7 @@ if git status | grep -q "BE128"; then
     git push origin main
 
     echo -e "\a"
-    echo "✅ index.html başarıyla güncellendi!"
+    echo -e "\e[32m✅ index.html başarıyla güncellendi!\e[0m"
 else
-    echo "🟢 BE128 klasöründe değişiklik yok. Güncelleme yapılmadı."
+    echo -e "\e[32m🟢 BE128 klasöründe değişiklik yok. Güncelleme yapılmadı.\e[0m"
 fi

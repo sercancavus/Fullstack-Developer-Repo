@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Hafta - JavaScript Temelleri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #181a1b 60%, #23272b 100%);
+            color: #f1f1f1;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            margin-top: 5vh;
+            max-width: 800px;
+            background: #23272b;
+            border-radius: 18px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+            padding: 2.5rem 2rem;
+        }
+        h1, h2 {
+            color: #00d8ff;
+            font-weight: bold;
+        }
+        ul.topic-list {
+            color: #b2ebf2;
+            margin-bottom: 1.5rem;
+        }
+        .footer {
+            color: #aaa;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        a {
+            color: #00d8ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn-back {
+            background: #00d8ff;
+            color: #181a1b;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: background 0.2s;
+        }
+        .btn-back:hover {
+            background: #009bb3;
+            color: #fff;
+        }
+        .lang-switch {
+            position: absolute;
+            right: 2.5rem;
+            top: 2.5rem;
+            z-index: 10;
+        }
+        .lang-btn {
+            background: #23272b;
+            color: #00d8ff;
+            border: 1px solid #00d8ff;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            margin-left: 8px;
+            font-size: 1.2rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-btn.active, .lang-btn:hover {
+            background: #00d8ff;
+            color: #23272b;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1rem 0.2rem; }
+            .lang-switch { right: 1rem; top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn active" id="btn-tr" title="Turkce"><i class="fas fa-flag"></i> TR</button>
+        <button class="lang-btn" id="btn-en" title="English"><i class="fas fa-flag-usa"></i> EN</button>
+    </div>
+    <div class="container shadow-lg position-relative">
+        <a href="../index.html" class="btn btn-back" id="btn-back">&larr; Haftalara Don</a>
+        <h1 class="mb-4" id="week-title">3. Hafta - JavaScript Temelleri</h1>
+        <h2 class="mb-3" id="topics-title">Konu Basliklari</h2>
+        <ul class="topic-list" id="topics-list">
+            <li>JavaScript'e Giris</li>
+            <li>Degiskenler ve Veri Tipleri</li>
+            <li>Operatorler</li>
+            <li>Kosullar ve Karar Yapilari</li>
+            <li>Donguler</li>
+            <li>Fonksiyonlar</li>
+            <li>Temel DOM Islemleri</li>
+            <li>Olaylar (Events)</li>
+            <li>Temel Array ve Object Kullanimi</li>
+        </ul>
+        <div class="footer">
+            &copy; 2024 Sercan Cavus | BE128 Fullstack Developer Repo
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    const topics = {
+        tr: [
+            "JavaScript'e Giris",
+            'Degiskenler ve Veri Tipleri',
+            'Operatorler',
+            'Kosullar ve Karar Yapilari',
+            'Donguler',
+            'Fonksiyonlar',
+            'Temel DOM Islemleri',
+            'Olaylar (Events)',
+            'Temel Array ve Object Kullanimi'
+        ],
+        en: [
+            'Introduction to JavaScript',
+            'Variables and Data Types',
+            'Operators',
+            'Conditionals and Decision Structures',
+            'Loops',
+            'Functions',
+            'Basic DOM Operations',
+            'Events',
+            'Basic Array and Object Usage'
+        ]
+    };
+    const labels = {
+        tr: {
+            weekTitle: '3. Hafta - JavaScript Temelleri',
+            topicsTitle: 'Konu Basliklari',
+            btnBack: '? Haftalara Don'
+        },
+        en: {
+            weekTitle: 'Week 3 - JavaScript Basics',
+            topicsTitle: 'Topics',
+            btnBack: '? Back to Weeks'
+        }
+    };
+    function setLang(lang) {
+        document.getElementById('week-title').innerText = labels[lang].weekTitle;
+        document.getElementById('topics-title').innerText = labels[lang].topicsTitle;
+        document.getElementById('btn-back').innerText = labels[lang].btnBack;
+        let topicsUl = document.getElementById('topics-list');
+        topicsUl.innerHTML = topics[lang].map(x => `<li>${x}</li>`).join('');
+        document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        localStorage.setItem('lang', lang);
+    }
+    document.getElementById('btn-tr').onclick = () => setLang('tr');
+    document.getElementById('btn-en').onclick = () => setLang('en');
+    // URL parametresinden veya localStorage'dan dil tercihini yukle
+    function getLangFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('lang') || localStorage.getItem('lang') || 'tr';
+    }
+    setLang(getLangFromUrl());
+    // Geri butonuna tiklarken dil parametresiyle yonlendir
+    document.getElementById('btn-back').onclick = function(e) {
+        e.preventDefault();
+        const lang = localStorage.getItem('lang') || 'tr';
+        window.location.href = `../index.html?lang=${lang}`;
+    };
+    </script>
+</body>
+</html>

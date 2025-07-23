@@ -1,0 +1,36 @@
+name: Update README on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+      - name: Run update-main.sh
+        run: |
+          chmod +x ./update-main.sh
+          ./update-main.sh
+      - name: Commit and push changes if README.md updated
+        run: |
+          if git status --porcelain | grep -q 'README.md'; then
+            git add README.md
+            git commit -m "?? Otomatik README güncellemesi (GitHub Actions)"
+            git push origin main
+          else
+            echo "README.md deðiþmedi, commit yok."
+          fi

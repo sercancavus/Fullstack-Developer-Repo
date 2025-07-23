@@ -1,7 +1,7 @@
 # 🚀 Siliconmade Academy BE128 - Backend Eğitim Programı
 
 <p align="center">
-  <img src="https://www.siliconmadeacademy.com/assets/img/akademi/be128-banner.png" alt="BE128 Banner" width="80%"/>
+  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" alt="Backend Banner" width="80%"/>
 </p>
 
 **Kurs Başlangıç Tarihi:** 30.06.2025  
@@ -11,7 +11,6 @@
 
 ---
 
-<<<<<<< HEAD
 ## 📚 Eğitim İçeriği & Ders Haftaları
 
 | Hafta | Tarih        | Konu Başlığı                        | Açıklama |
@@ -35,13 +34,28 @@
 | 14    | 20.10.2025   | Test, Debug & Hata Yönetimi         | Unit test, debug teknikleri, hata ayıklama, loglama |
 | 15    | 27.10.2025   | DevOps & Deployment                 | CI/CD, temel Docker, bulut sunucuya deploy |
 | 16    | 03.11.2025   | Final Proje Sunumu                  | Proje sunumu, kod paylaşımı, mezuniyet |
-=======
-**Başlangıç Tarihi:** 30 Haziran 2025  
-**Bitiş Tarihi:** 5 Kasım 2025
 
 ---
 
+## 📅 Güncel Durum
+
+- **Şu an 4. haftadayız!**
+- Sonraki hafta (28.07.2025) dinlenme/tekrar haftasıdır.
+
+---
+
+## 💡 Kimler Katılmalı?
+- Yazılım geliştirmeye yeni başlayanlar
+- Backend alanında uzmanlaşmak isteyenler
+- Modern web teknolojilerini uygulamalı öğrenmek isteyenler
+
+---
+
+## 📚 Kaynaklar & Linkler
+- [Eğitim Detayları ve Kayıt](https://siliconmadeacademy.com/akademi/BE/BE128.html)
+- [Program Ana Sayfası](https://www.siliconmadeacademy.com/akademi/BE/BE128.html)
 - [GitHub Repo](https://github.com/sercancavus/Fullstack-Developer-Repo)
+- [LinkedIn Profilim](https://www.linkedin.com/in/sercancavus)
 
 ---
 

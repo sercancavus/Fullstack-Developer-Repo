@@ -12,6 +12,8 @@ namespace App.Api.Controllers
         // Çünkü TodoController'a gelen her http isteğinde TodoController new'lenir.
         private static List<TodoItem> _todoItems = new(); // yapılacaklar listesi
 
+        // listenin static olmasının sebebi, uygulama çalıştığı sürece bu listenin bellekte kalmasıdır, yoksa her http isteğinde yeni bir liste oluşturulurdu.
+
         [HttpGet]
         public IEnumerable<TodoItem> GetList() // bütün listeyi döndüren metot
         {
@@ -34,6 +36,28 @@ namespace App.Api.Controllers
                 Description = description
             };
             _todoItems.Add(item);
+        }
+
+        [HttpPut("{id}")]
+        public void UpdateItem(int id, string description) // todo elemanını güncelleyen metot
+        {
+            var index = _todoItems.FindIndex(x => x.Id == id);
+            if (index == -1) // parametreden gelen id'li eleman yoksa
+            {
+                return; // early return, item bulunamadıysa metottan çık
+            }
+            _todoItems[index].Description = description;
+        }
+
+      [HttpDelete("{id}")]
+        public void DeleteItem(int id) // todo elemanını silen metot
+        {
+            var index = _todoItems.FindIndex(x => x.Id == id);
+            if (index == -1) // parametreden gelen id'li eleman yoksa
+            {
+                return; // early return, item bulunamadıysa metottan çık
+            }
+            _todoItems.RemoveAt(index); // index'teki elemanı sil
         }
     }
 }

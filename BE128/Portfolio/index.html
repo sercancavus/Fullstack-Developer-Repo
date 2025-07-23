@@ -14,98 +14,203 @@
       scroll-behavior: smooth;
     }
 
+    /* NAVBAR düz kenarlı ve tam genişlik */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 1050;
+      background: rgba(34, 52, 74, 0.92) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: background 0.3s;
+      border-bottom: 1px solid rgba(34,52,74,0.13);
+      border-radius: 0 !important;
+      margin: 0;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .navbar .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .body {
+      background: linear-gradient(120deg, #e3f6e5 0%, #b6e388 100%) fixed, #e3f6e5;
+      color: #22304a;
+    }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    .glass-card {
+    /* 3D, estetik, minimal ve profesyonel container/kartlar */
+    .glass-card, .skill-card {
+      background: rgba(34, 52, 74, 0.13);
+      color: #22304a;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10), 0 1.5px 6px 0 rgba(30,60,114,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    }
+    .glass-card:hover, .skill-card:hover {
+      box-shadow: 0 12px 36px rgba(30, 60, 114, 0.18), 0 2px 8px rgba(30,60,114,0.10);
+      transform: translateY(-2px) scale(1.015);
       background: rgba(34, 52, 74, 0.18);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 1.5rem;
-      border: 1.5px solid rgba(255, 255, 255, 0.18);
-      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    body.dark-mode .glass-card, body.dark-mode .skill-card {
+      background: rgba(30, 34, 60, 0.92) !important;
+      color: #e0e6ed !important;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.32), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+      border: 1px solid rgba(102,170,255,0.13);
     }
 
-    .glass-card:hover {
-      box-shadow: 0 16px 48px rgba(30, 60, 114, 0.22);
-      transform: scale(1.02) translateY(-4px);
+    .glass-card h1, .glass-card h2, .glass-card h5, .glass-card h6, .glass-card p, .glass-card small,
+    .skill-card h1, .skill-card h2, .skill-card h5, .skill-card h6, .skill-card p, .skill-card small {
+      color: #22304a;
+      transition: color 0.3s;
     }
 
-    .hero-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      box-shadow: 0 4px 24px rgba(30, 60, 114, 0.18);
-      margin-bottom: 1.2rem;
-    }
-
-    .theme-toggle-btn {
-      position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
-      z-index: 100;
-    }
-
-    .modern-btn {
-      background: linear-gradient(90deg, #2a5298 0%, #6b7a8f 100%);
-      color: #fff;
-      border: none;
-      border-radius: 2rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.7rem 2.2rem;
-      box-shadow: 0 2px 12px rgba(30, 60, 114, 0.10);
-      transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.02em;
-    }
-
-    .modern-btn:hover,
-    .modern-btn:focus {
-      background: linear-gradient(90deg, #6b7a8f 0%, #2a5298 100%);
-      color: #fff;
-      transform: scale(1.06) translateY(-2px);
-      box-shadow: 0 8px 32px rgba(30, 60, 114, 0.18);
-    }
-
-    .contact-form-card {
-      border-radius: 1.5rem;
-      box-shadow: 0 8px 32px rgba(30, 60, 114, 0.18);
-      background: rgba(255, 255, 255, 0.98);
-      border: none;
-      padding: 2.5rem 2rem;
-    }
-
-    body.dark-mode .contact-form-card {
-      background: linear-gradient(135deg, #232a36 0%, #2d3a4a 100%) !important;
+    body.dark-mode .glass-card h1, body.dark-mode .glass-card h2, body.dark-mode .glass-card h5, body.dark-mode .glass-card h6, body.dark-mode .glass-card p, body.dark-mode .glass-card small,
+    body.dark-mode .skill-card h1, body.dark-mode .skill-card h2, body.dark-mode .skill-card h5, body.dark-mode .skill-card h6, body.dark-mode .skill-card p, body.dark-mode .skill-card small {
       color: #e0e6ed !important;
     }
 
-    .form-floating label {
-      color: #2a5298;
+    body.dark-mode .glass-card .text-muted, body.dark-mode .skill-card .text-muted {
+      color: #b7d7e8 !important;
     }
 
-    body.dark-mode .form-floating label {
-      color: #b7d7e8;
+    /* Tema switch - oval, pill badge ve modern */
+    .theme-toggle-switch {
+      width: 64px;
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2d1e6b 0%, #3a2e8c 100%);
+      border: 2px solid #5c4dff;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0 0.5rem;
+      box-shadow: 0 2px 12px rgba(44, 20, 80, 0.13);
+      position: relative;
+      transition: background 0.3s, border 0.3s;
+      overflow: hidden;
+    }
+    .theme-toggle-switch:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+    .switch-track {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .switch-thumb {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fff 60%, #b6b6ff 100%);
+      box-shadow: 0 2px 8px rgba(44, 20, 80, 0.13);
+      transition: left 0.3s, background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .switch-thumb .icon-sun, .switch-thumb .icon-moon {
+      width: 16px;
+      height: 16px;
+      display: block;
+      transition: opacity 0.3s;
+      background-size: contain !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+    .icon-sun {
+      background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 24 24" fill="%23ffe066" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"/><g stroke="%23ffe066" stroke-width="2"><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></svg>') no-repeat center/contain;
+      opacity: 1;
+    }
+    .icon-moon {
+      background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 24 24" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 0 1 12.21 3a7 7 0 1 0 8.79 9.79z"/></svg>') no-repeat center/contain;
+      opacity: 0;
+    }
+    body.dark-mode .theme-toggle-switch {
+      background: linear-gradient(90deg, #2d1e6b 0%, #3a2e8c 100%);
+      border: 2px solid #5c4dff;
+    }
+    body.dark-mode .switch-thumb {
+      left: 40px;
+      background: linear-gradient(145deg, #3a2e8c 60%, #5c4dff 100%);
+    }
+    body.dark-mode .icon-sun {
+      opacity: 0;
+    }
+    body.dark-mode .icon-moon {
+      opacity: 1;
+    }
+    /* Açık tema için kontrast badge ve thumb */
+    body:not(.dark-mode) .theme-toggle-switch {
+      background: linear-gradient(90deg, #e3f6e5 0%, #b6e388 100%);
+      border: 2px solid #4e944f;
+    }
+    body:not(.dark-mode) .switch-thumb {
+      left: 4px;
+      background: linear-gradient(145deg, #fff 60%, #e3f6e5 100%);
+    }
+    body:not(.dark-mode) .icon-sun {
+      opacity: 1;
+    }
+    body:not(.dark-mode) .icon-moon {
+      opacity: 0;
     }
 
-    .form-control,
-    .form-control:focus {
-      background: #f9fafb;
-      border-radius: 0.75rem;
-      border: 1.5px solid #e0eafc;
-      color: #22304a;
-      box-shadow: none;
-    }
-
-    body.dark-mode .form-control,
-    body.dark-mode .form-control:focus {
-      background: #232a36;
+    /* Uzay temalı koyu arka plan */
+    body.dark-mode {
+      background: radial-gradient(ellipse at 60% 20%, #232946 60%, #0a2233 100%) fixed, #0a2233;
       color: #e0e6ed;
-      border-color: #6b7a8f;
+    }
+    body.dark-mode .glass-card, body.dark-mode .skill-card {
+      background: rgba(30, 34, 60, 0.92) !important;
+      color: #e0e6ed !important;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.32), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+      border: 1px solid rgba(102,170,255,0.13);
+    }
+    body.dark-mode .main-hero-section {
+      background: rgba(30, 34, 60, 0.97) !important;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.28);
+    }
+    body.dark-mode .theme-section-title {
+      color: #66aaff !important;
+      text-shadow: 0 2px 8px #0a2233;
+    }
+    body.dark-mode .navbar {
+      background: rgba(10, 34, 51, 0.98) !important;
+      border-bottom: 1px solid #232946;
+    }
+    body.dark-mode footer {
+      background: #0a2233 !important;
+      color: #b7d7e8 !important;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-top: 70px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -114,25 +219,39 @@
       }
 
       .hero-img {
-        width: 80px;
-        height: 80px;
+        width: 54px;
+        height: 54px;
       }
 
       .contact-form-card {
         padding: 1.2rem 0.5rem;
       }
+
+      .main-hero-section {
+        padding: 1rem 0.2rem 1rem 0.2rem;
+        max-width: 98vw;
+      }
     }
   </style>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80" tabindex="0">
   <nav class="navbar bg-navbar navbar-expand-lg py-3 shadow-sm glass-card mb-4">
     <div class="container d-flex align-items-center justify-content-between">
       <span class="navbar-brand font-montserrat theme-text-primary fs-3">Sercan Çavuş</span>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav"
-        aria-expanded="false" aria-label="Menüyü Aç/Kapat">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="d-flex align-items-center gap-3">
+        <button id="themeToggle" class="theme-toggle-switch" title="Tema Değiştir" aria-label="Tema Değiştir">
+          <span class="switch-track">
+            <span class="switch-thumb">
+              <span class="icon-sun"></span>
+              <span class="icon-moon"></span>
+            </span>
+          </span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
@@ -143,38 +262,16 @@
       </div>
     </div>
   </nav>
-  <button id="themeToggle" class="theme-toggle-btn modern-btn rounded-circle p-2" title="Tema Değiştir"
-    style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;">
-    <svg id="themeIcon" width="32" height="32" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="5" fill="currentColor" />
-      <g id="sunRays">
-        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" />
-        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" />
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" />
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" />
-        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" />
-        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" />
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" />
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" />
-      </g>
-    </svg>
-  </button>
   <main>
     <section class="theme-section d-flex align-items-center min-vh-60">
-      <div class="container d-flex flex-column align-items-center text-center glass-card p-4 mb-4">
-        <img src="profil.jpeg" alt="Profil Fotoğrafı" class="hero-img main-logo mb-3" loading="lazy">
+      <div class="container d-flex flex-column align-items-center text-center glass-card main-hero-section">
+        <img src="profil.jpeg" alt="Profil Fotoğrafı" class="hero-img main-logo mb-2" loading="lazy">
         <h1 class="theme-section-title font-montserrat">Sercan Çavuş</h1>
-        <h2 class="theme-section-subtitle font-nunito">Full Stack Developer & Java Enthusiast
-        </h2>
-        <p class="lead font-nunito mx-auto"
-          style="max-width: 600px; margin: 1.2rem auto 0;">Modern web teknolojileriyle profesyonel, ölçeklenebilir ve
-          kullanıcı dostu uygulamalar geliştiriyorum. Kodun gücüne ve sürekli öğrenmeye inanıyorum.
-        </p>
-        <div class="mt-4">
-          <a href="https://www.linkedin.com/in/sercancavus" class="modern-btn me-2"
-            target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/sercancavus" class="modern-btn"
-            target="_blank" rel="noopener">GitHub</a>
+        <h2 class="theme-section-subtitle font-nunito">Full Stack Developer & Java Enthusiast</h2>
+        <p class="lead font-nunito mx-auto" style="max-width: 340px; margin: 0.8rem auto 0; font-size:1.05rem;">Modern web teknolojileriyle profesyonel, ölçeklenebilir ve kullanıcı dostu uygulamalar geliştiriyorum. Kodun gücüne ve sürekli öğrenmeye inanıyorum.</p>
+        <div class="mt-3">
+          <a href="https://www.linkedin.com/in/sercancavus" class="modern-btn me-2" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/sercancavus" class="modern-btn" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
@@ -203,12 +300,139 @@
     <section id="skills" class="theme-section">
       <div class="container">
         <h2 class="theme-section-title">Yetenekler</h2>
-        <div id="skillsRow" class="row g-4 justify-content-center"></div>
+        <ul class="row g-3 justify-content-center list-unstyled" id="skillsList">
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">HTML5</h6>
+              <small class="text-muted">Web sayfası yapısı, semantik etiketler</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">CSS3</h6>
+              <small class="text-muted">Stil, responsive tasarım, Flexbox, Grid</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">JavaScript</h6>
+              <small class="text-muted">ES6+, DOM, Olaylar, Fonksiyonlar, OOP</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">React</h6>
+              <small class="text-muted">Bileşenler, State, Props, Hooks</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">Bootstrap</h6>
+              <small class="text-muted">Modern UI, grid, hazır bileşenler</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">C#</h6>
+              <small class="text-muted">Backend, OOP, WebAPI</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">Python</h6>
+              <small class="text-muted">Veri analizi, otomasyon, script</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">SQL</h6>
+              <small class="text-muted">Veritabanı yönetimi, sorgular</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">Git</h6>
+              <small class="text-muted">Versiyon kontrol, işbirliği</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">GitHub</h6>
+              <small class="text-muted">Açık kaynak, repo yönetimi</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="38" height="38" class="mb-2">
+              <h6 class="fw-semibold mb-1">Java</h6>
+              <small class="text-muted">OOP, Backend, API</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <span style="font-size:2rem;">🔗</span>
+              <h6 class="fw-semibold mb-1">API & WebAPI</h6>
+              <small class="text-muted">REST, JSON, Fetch, AJAX</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <span style="font-size:2rem;">⚡</span>
+              <h6 class="fw-semibold mb-1">Asenkron Programlama</h6>
+              <small class="text-muted">Callback, Promise, Async/Await</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <span style="font-size:2rem;">🗂️</span>
+              <h6 class="fw-semibold mb-1">DOM & Olaylar</h6>
+              <small class="text-muted">DOM manipülasyonu, event handling</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <span style="font-size:2rem;">📝</span>
+              <h6 class="fw-semibold mb-1">Proje Yönetimi</h6>
+              <small class="text-muted">Planlama, dökümantasyon, sunum</small>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="glass-card p-3 text-center h-100">
+              <span style="font-size:2rem;">🌐</span>
+              <h6 class="fw-semibold mb-1">Frontend & Backend</h6>
+              <small class="text-muted">Full Stack geliştirme, entegrasyon</small>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
     <section id="projects" class="theme-section">
       <div class="container">
         <h2 class="theme-section-title">Projeler</h2>
+        <div class="glass-card p-4 mb-4">
+          <h5 class="fw-semibold mb-3">BE128 Klasörü - Github'da Haftalar</h5>
+          <ul class="list-unstyled mb-0" style="font-size:1.1rem;">
+            <li class="mb-2"><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/tree/main/BE128/1.Hafta" target="_blank" rel="noopener" class="modern-btn py-1 px-3">Hafta 1: HTML ve CSS Temelleri</a></li>
+            <li class="mb-2"><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/tree/main/BE128/2.Hafta" target="_blank" rel="noopener" class="modern-btn py-1 px-3">Hafta 2: İleri Düzey CSS & Responsive Tasarım</a></li>
+            <li class="mb-2"><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/tree/main/BE128/3.Hafta" target="_blank" rel="noopener" class="modern-btn py-1 px-3">Hafta 3: JavaScript Temelleri</a></li>
+            <li class="mb-2"><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/tree/main/BE128/4.Hafta" target="_blank" rel="noopener" class="modern-btn py-1 px-3">Hafta 4: İleri JavaScript & DOM Manipülasyonu</a></li>
+            <li class="mb-2"><a href="https://github.com/sercancavus/Fullstack-Developer-Repo/tree/main/BE128" target="_blank" rel="noopener" class="modern-btn py-1 px-3">Tüm Haftalar ve Klasörler</a></li>
+          </ul>
+          <div class="mt-3">
+            <a href="https://github.com/sercancavus/Fullstack-Developer-Repo" target="_blank" rel="noopener" class="badge bg-dark text-white fs-6">GitHub Repo Ana Sayfası</a>
+            <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/blob/main/README.md" target="_blank" rel="noopener" class="badge bg-secondary fs-6 ms-2">README.md</a>
+          </div>
+        </div>
         <div id="projectsRow" class="row g-4 justify-content-center"></div>
         <div id="be128Weeks" class="row g-2 justify-content-center mt-4"></div>
       </div>
@@ -257,12 +481,27 @@
         body.classList.remove('dark-mode');
         localStorage.setItem('theme', 'light');
       }
+      updateSwitch();
     }
-    themeToggle.onclick = function () {
+    function updateSwitch() {
+      const thumb = document.querySelector('.switch-thumb');
+      if (!thumb) return;
+      if (body.classList.contains('dark-mode')) {
+        themeToggle.classList.add('dark');
+        thumb.style.left = '40px';
+      } else {
+        themeToggle.classList.remove('dark');
+        thumb.style.left = '4px';
+      }
+    }
+    themeToggle.addEventListener('click', function () {
       setTheme(!body.classList.contains('dark-mode'));
-    };
+    });
+    // İlk yüklemede doğru tema ve switch pozisyonu
     if (localStorage.getItem('theme') === 'dark' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       setTheme(true);
+    } else {
+      setTheme(false);
     }
     // Dinamik yetenekler
     fetch('skills.json')
@@ -282,6 +521,7 @@
         });
       });
     // Dinamik projeler (GitHub API)
+    // Hatalı fetch satırı düzeltildi
     fetch('https://api.github.com/users/sercancavus/repos')
       .then(r => r.json())
       .then(repos => {

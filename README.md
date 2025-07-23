@@ -15,29 +15,29 @@
 
 ---
 
-**Başlangıç Tarihi:** 1 Ocak 2024  
-**Bitiş Tarihi:** 1 Haziran 2024
+**Başlangıç Tarihi:** 30 Haziran 2025  
+**Bitiş Tarihi:** 5 Kasım 2025
 
 ## 🚀 Program Haftalık İçerik
 
 | Hafta | Konu | Durum | Tarih |
 |:-----:|:-------------------------------|:--------:|:----------:|
-| 1 | HTML ve CSS Temelleri | ✅ | 01.01.2024 |
-| 2 | İleri Düzey CSS & Responsive Tasarım | ✅ | 08.01.2024 |
-| 3 | JavaScript Temelleri | ✅ | 15.01.2024 |
-| 4 | İleri JavaScript & DOM Manipülasyonu | ✅ | 22.01.2024 |
-| 5 | Bootstrap ve Modern CSS Frameworkleri | ✅ | 29.01.2024 |
-| 6 | Versiyon Kontrolü (Git & GitHub) | ✅ | 05.02.2024 |
-| 7 | Web Projesi Geliştirme ve Yayınlama | ✅ | 12.02.2024 |
-| 8 | Backend Giriş ve Node.js Temelleri | 🔄 | 19.02.2024 |
-| 9 | Express.js ile RESTful API Geliştirme | 🔄 | 26.02.2024 |
-| 10 | Veritabanı Temelleri ve MongoDB | 📝 | 04.03.2024 |
-| 11 | Kimlik Doğrulama ve Yetkilendirme | 📝 | 11.03.2024 |
-| 12 | Frontend-Backend Entegrasyonu | 📝 | 18.03.2024 |
-| 13 | Proje Yönetimi ve Takım Çalışması | 📝 | 25.03.2024 |
-| 14 | Test, Debug ve Hata Yönetimi | 📝 | 01.04.2024 |
-| 15 | DevOps ve Deployment | 📝 | 08.04.2024 |
-| 16 | Final Proje Sunumu ve Kapanış | 📝 | 15.04.2024 |
+| 1 | HTML ve CSS Temelleri | ✅ | 30.06.2025|
+| 2 | İleri Düzey CSS & Responsive Tasarım | ✅ | 07.07.2025 |
+| 3 | JavaScript Temelleri | ✅ | 14.07.2025 |
+| 4 | İleri JavaScript & DOM Manipülasyonu | ✅ | 21.07.2025 |
+| 5 | Bootstrap ve Modern CSS Frameworkleri | ✅ | ___ |
+| 6 | Versiyon Kontrolü (Git & GitHub) | ✅ | ___ |
+| 7 | Web Projesi Geliştirme ve Yayınlama | ✅ | ___ |
+| 8 | Backend Giriş ve Node.js Temelleri | 🔄 | ___ |
+| 9 | Express.js ile RESTful API Geliştirme | 🔄 | ___ |
+| 10 | Veritabanı Temelleri ve MongoDB | 📝 | ___ |
+| 11 | Kimlik Doğrulama ve Yetkilendirme | 📝 | ___ |
+| 12 | Frontend-Backend Entegrasyonu | 📝 | ___ |
+| 13 | Proje Yönetimi ve Takım Çalışması | 📝 | ___ |
+| 14 | Test, Debug ve Hata Yönetimi | 📝 | ___ |
+| 15 | DevOps ve Deployment | 📝 | ___ |
+| 16 | Final Proje Sunumu ve Kapanış | 📝 | 05.11.2025 |
 
 ---
 

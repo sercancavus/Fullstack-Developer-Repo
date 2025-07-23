@@ -1,0 +1,7 @@
+[
+  {"name": "Java", "percent": 90},
+  {"name": "HTML5 & CSS3", "percent": 95},
+  {"name": "JavaScript", "percent": 85},
+  {"name": "React", "percent": 75},
+  {"name": "WebAPI", "percent": 70}
+]

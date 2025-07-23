@@ -63,6 +63,6 @@
 </p>
 
 <p align="center">
-  <a href="https://siliconmadeacademy.com/akademi/BE/BE128.html">Program Detayları</a> ·
+  <a href="https://www.siliconmadeacademy.com/fast/backend/">Program Detayları</a> ·
   <a href="https://github.com/sercancavus/Fullstack-Developer-Repo/issues">Sorun Bildir</a>
 </p>

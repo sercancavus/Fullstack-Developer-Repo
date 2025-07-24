@@ -7,73 +7,58 @@ namespace App.Api.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
-        static List<Student> students = new List<Student>
-        {
-            new Student { Id = 1, FirstName = "John", LastName = "Doe" },
-            new Student { Id = 2, FirstName = "Jane", LastName = "Smith" }
-        };
+        // burada CRUD işlemleri yapılacak, public void gibi işlemler ile devam edilecek
 
-        // GET: api/student
         [HttpGet]
-        public ActionResult<List<Student>> GetStudents()
+        public IActionResult GetStudents()
         {
+            // Örnek veri döndürme
+            var students = new List<string> { "Ali", "Ayşe", "Mehmet" };
             return Ok(students);
         }
 
-        // GET: api/student/1
         [HttpGet("{id}")]
-        public ActionResult<Student> GetStudent(int id)
+        public IActionResult GetStudent(int id)
         {
-            var student = students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-            {
-                return NotFound();
-            }
+            // Örnek veri döndürme
+            var student = $"Öğrenci {id}";
             return Ok(student);
         }
 
-        // POST: api/student
         [HttpPost]
-        public ActionResult<Student> CreateStudent([FromBody] Student student)
+        public IActionResult CreateStudent([FromBody] string studentName)
         {
-            if (student == null || string.IsNullOrWhiteSpace(student.FirstName) || string.IsNullOrWhiteSpace(student.LastName))
+            // Öğrenci oluşturma işlemi
+            if (string.IsNullOrEmpty(studentName))
             {
-                return BadRequest("Invalid student data.");
+                return BadRequest("Öğrenci adı boş olamaz.");
             }
-            student.Id = students.Max(s => s.Id) + 1; // Simple ID generation
-            students.Add(student);
-            return CreatedAtAction(nameof(GetStudent), new { id = student.Id }, student);
+            // Başarılı yanıt
+            return CreatedAtAction(nameof(GetStudent), new { id = 1 }, studentName);
         }
-        // PUT: api/student/1
+
         [HttpPut("{id}")]
-        public ActionResult UpdateStudent(int id, [FromBody] Student student)
+        public IActionResult UpdateStudent(int id, [FromBody] string studentName)
         {
-            if (student == null || string.IsNullOrWhiteSpace(student.FirstName) || string.IsNullOrWhiteSpace(student.LastName))
+            // Öğrenci güncelleme işlemi
+            if (string.IsNullOrEmpty(studentName))
             {
-                return BadRequest("Invalid student data.");
+                return BadRequest("Öğrenci adı boş olamaz.");
             }
-            var existingStudent = students.FirstOrDefault(s => s.Id == id);
-            if (existingStudent == null)
-            {
-                return NotFound();
-            }
-            existingStudent.FirstName = student.FirstName;
-            existingStudent.LastName = student.LastName;
+            // Başarılı yanıt
             return NoContent();
         }
 
-        // DELETE: api/student/1
         [HttpDelete("{id}")]
-        public ActionResult DeleteStudent(int id)
+        public IActionResult DeleteStudent(int id)
         {
-            var student = students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-            {
-                return NotFound();
-            }
-            students.Remove(student);
+            // Öğrenci silme işlemi
+            // Başarılı yanıt
             return NoContent();
         }
+
+
+
 
     }
 }

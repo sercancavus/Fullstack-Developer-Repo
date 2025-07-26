@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-cd /c/Users/Monster/Fullstack-Developer-Repo || { echo -e "\e[31m❌ Klasör bulunamadı\e[0m"; exit 1; }
+# cd /c/Users/Monster/Fullstack-Developer-Repo || { echo -e "\e[31m❌ Klasör bulunamadı\e[0m"; exit 1; }
+# Yukarıdaki satırı kaldırdık, script bulunduğu dizinde çalışacak
 
 if git status BE128 | grep -q "modified\|new file\|deleted"; then
   COMMIT_DATE=$(date '+%Y-%m-%d %H:%M')
@@ -124,8 +125,7 @@ if git status BE128 | grep -q "modified\|new file\|deleted"; then
   echo "# BE128 Full Stack Programı" > "$MAIN_README"
   echo >> "$MAIN_README"
   if [ -n "$BASLANGIC" ] && [ -n "$BITIS" ]; then
-    echo "**Başlangıç Tarihi:** $BASLANGIC  
-**Bitiş Tarihi:** $BITIS" >> "$MAIN_README"
+    echo "**Başlangıç Tarihi:** $BASLANGIC  \n**Bitiş Tarihi:** $BITIS" >> "$MAIN_README"
     echo >> "$MAIN_README"
   fi
   echo "## Program Haftalık İçerik" >> "$MAIN_README"

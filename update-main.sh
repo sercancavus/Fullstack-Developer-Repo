@@ -4,6 +4,11 @@ set -euo pipefail
 # cd /c/Users/Monster/Fullstack-Developer-Repo || { echo -e "\e[31m❌ Klasör bulunamadı\e[0m"; exit 1; }
 # Yukarıdaki satırı kaldırdık, script bulunduğu dizinde çalışacak
 
+# Load git helper functions for safe branch operations
+source "$(dirname "$0")/git-helper.sh" 2>/dev/null || {
+    echo -e "\e[33m⚠️  git-helper.sh not found, using basic git operations\e[0m"
+}
+
 if git status BE128 | grep -q "modified\|new file\|deleted"; then
   COMMIT_DATE=$(date '+%Y-%m-%d %H:%M')
   README="BE128/README.md"
@@ -159,10 +164,19 @@ if git status BE128 | grep -q "modified\|new file\|deleted"; then
   # 7️⃣ Commit & Push
   git commit -m "📦 BE128 Güncellemesi - $COMMIT_DATE"
 
-  if git push origin main; then
-    echo -e "\e[32m✅ Git push başarılı!\e[0m"
+  # Use safe_push function if available, fallback to direct push
+  if command -v safe_push >/dev/null 2>&1; then
+    safe_push main || {
+      echo -e "\e[33m⚠️  Failed to push to main, trying current branch...\e[0m"
+      current_branch=$(git branch --show-current)
+      safe_push "$current_branch"
+    }
   else
-    echo -e "\e[31m❌ Git push başarısız. Lütfen remote çatışmalarını kontrol et.\e[0m"
+    if git push origin main; then
+      echo -e "\e[32m✅ Git push başarılı!\e[0m"
+    else
+      echo -e "\e[31m❌ Git push başarısız. Lütfen remote çatışmalarını kontrol et.\e[0m"
+    fi
   fi
 
 else
@@ -171,4 +185,14 @@ fi
 
 git add .
 git commit -m "README ve otomasyon script güncellendi"
-git push origin main
+
+# Use safe_push function if available, fallback to direct push
+if command -v safe_push >/dev/null 2>&1; then
+  safe_push main || {
+    echo -e "\e[33m⚠️  Failed to push to main, trying current branch...\e[0m"
+    current_branch=$(git branch --show-current)
+    safe_push "$current_branch"
+  }
+else
+  git push origin main
+fi

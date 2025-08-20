@@ -40,7 +40,7 @@
 ## 📅 Güncel Durum
 
 - **Şu an 7. haftadayız!**
-- Sonraki hafta dinlenme/tekrar haftasıdır.
+- Sonraki hafta  ORM ve EF Core eğitimleri devam edecek.
 
 ---
 

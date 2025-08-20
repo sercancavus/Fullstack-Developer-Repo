@@ -15,15 +15,15 @@
 
 | Hafta | Konu Başlığı | Açıklama |
 |:-----:|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------|
-| 1     | Algoritma ve Programlamaya Giriş | Algoritma mantığı, temel programlama kavramları, akış diyagramları |
-| 2     | HTML5 ve CSS3 | Web sayfası yapısı, semantik etiketler, temel stil uygulamaları, responsive tasarım |
-| 3     | JavaScript Temelleri | Değişkenler, veri tipleri, operatörler, fonksiyonlar, koşullar, döngüler |
-| 4     | İleri JavaScript & DOM | DOM manipülasyonu, event handling, localStorage, ileri fonksiyonel programlama |
+| 1     | Temel Kavramlar, HTML | WWW, Web, Client, Server, Request, Response, Domain, Hosting, IP, HTTP Protokolü ve Çalışma Prensibi, HTTP Methods, HTTP Status Codes, HTML, HTML Nedir?, HTML Belge Oluşturma ve HTML Yapısı, Element, attribute, value kavramları, Başlıklar, Paragraflar, Listeler, İmage'lar, Bağlantılar, Tablolar, Div, Span, Formlar |
+| 2     | CSS & JavaScript | CSS Giriş, Inline Styles, Classes, ID Styles, Temel CSS Özellikleri, CSS Flex ile Layout Oluşturma, JavaScript, Değişkenler, Sabitler ve Scope, Object ve Diziler, For Döngüleri (for-of / for-in Döngüleri), Fonksiyonlar, Events, Event Listener, DOM Yapısı ve Manipülasyonu, setTimeout, setInterval, fetch, Ajax İşlemleri |
+| 3     | Bootstrap & GitHub | Bootstrap Nedir?, Bootstrap Grid Layout, Bootstrap button ve input, Bootstrap spacing (margin, padding), Bootstrap Alert, Modal, Navbar, Git ve Github Nedir?, Github Repository İşlemleri, Github Desktop Kurulumu, Branch işlemleri (Push/Pull), Pull Request ve Merge, Conflict/Çakışma Çözümü |
+| 4     | WebAPI | WebAPI Proje Yapısı, WebAPI Projesi Oluşturma, Program.cs yapısı, Minimal API, ApiController, Api Metotları, WebAPI Route Yapısı, Compile Time/Runtime, Build |
 | -     | Ara/Boşluk Haftası | Dinlenme ve tekrar için ara hafta |
-| 5     | Bootstrap & Modern CSS | Bootstrap grid, component kullanımı, modern UI/UX trendleri |
-| 6     | Versiyon Kontrol (Git & GitHub) | Git temelleri, branch yönetimi, GitHub ile işbirliği |
-| 7     | Web Projesi Geliştirme | Proje planlama, dosya yapısı, temel web uygulaması geliştirme |
-| 8     | Backend'e Giriş & Node.js | Node.js kurulumu, modül yapısı, temel backend kavramları |
+| 5     | ASP.NET Core Web API'de Çıktı Üretme & JSON | ASP.NET Core Web API'de Çıktı Üretme, İçerik tipleri (mime types), Text Result, Content Result, Redirect Result, JSON nedir?, JSON Serialize ve Deserialize işlemleri, Json Result, Swagger (Produce ve consume özellikleri), Postman kullanımı (collection'lar, import ve export) |
+| 6     | Model & Validasyon | Model Nedir?, Entity ve DTO Modelleri, Data Binding, FromBody ile data binding, FromForm ile data binding, FromRoute ile data binding, FromQuery ile data binding, Bind, BindProperty, BindNever Attribute'ları, Model Validasyonları Nedir?, Client-Side Validation, Server-Side Validation, ASP.Net Core'da validasyon attribute'ları |
+| 7     | İlişkisel Veritabanı & SQL | İlişkisel Veritabanı nedir?, SQL Server Management Studio ile Veritabanı Oluşturma, Tablo Oluşturma, Veri Türleri, Primary Key, Identity, ve Foreign Key, SQL Komutları ile CRUD İşlemleri, Birden fazla tablodan ilişkili sorgu yapma (JOIN), ER Diagramları oluşturma |
+| 8     | ORM ve EF Core | ORM Nedir?, EF Core nedir?, DbContext ve Entity Yapıları, IQueryable ve DbSet, Connection string nedir?, appSettings içerisinde Connection string tanımlama, Data Annotations, EnsureCreated ile otomatik DB oluşturulması (Code First), EF Core ve Linq ile CRUD işlemleri yapmak, Include ile Eager Loading, EF Core ve Linq ile JOIN işlemleri, DB Seed |
 | -     | Ara/Boşluk Haftası | Dinlenme ve tekrar için ara hafta |
 | 9     | Express.js ile RESTful API | Express.js ile API geliştirme, route, middleware, CRUD işlemleri |
 | 10    | Veritabanı Temelleri & MongoDB | NoSQL kavramı, MongoDB kurulumu, temel sorgular, Mongoose |

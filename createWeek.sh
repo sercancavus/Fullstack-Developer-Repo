@@ -1,6 +1,11 @@
 ﻿#!/bin/bash
 set -euo pipefail
 
+# Load git helper functions for safe branch operations
+source "$(dirname "$0")/git-helper.sh" 2>/dev/null || {
+    echo -e "\e[33m⚠️  git-helper.sh not found, using basic git operations\e[0m"
+}
+
 WEEK=$1
 COURSE_DIR="BE128"
 WEEK_DIR="$COURSE_DIR/${WEEK}.Hafta"
@@ -46,6 +51,16 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - ${WEEK}.Hafta klasörü ve index.html eklen
 git add "$WEEK_DIR" README.md update.log
 git commit -m "$(date '+%Y-%m-%d') - ${WEEK}.Hafta: klasör, index.html, README.md ve update.log güncellendi"
 git pull --rebase
-git push origin main
+
+# Use safe_push function if available, fallback to direct push
+if command -v safe_push >/dev/null 2>&1; then
+  safe_push main || {
+    echo -e "\e[33m⚠️  Failed to push to main, trying current branch...\e[0m"
+    current_branch=$(git branch --show-current)
+    safe_push "$current_branch"
+  }
+else
+  git push origin main
+fi
 
 echo -e "\e[32m✅ ${WEEK}.Hafta klasörü başarıyla oluşturuldu ve GitHub'a gönderildi!\e[0m"

@@ -1,6 +1,11 @@
 ﻿#!/bin/bash
 set -euo pipefail
 
+# Load git helper functions for safe branch operations
+source "$(dirname "$0")/git-helper.sh" 2>/dev/null || {
+    echo -e "\e[33m⚠️  git-helper.sh not found, using basic git operations\e[0m"
+}
+
 cd ~/Fullstack-Developer-Repo || { echo -e "\e[31m❌ Klasör bulunamadı\e[0m"; exit 1; }
 
 if git status | grep -q "BE128"; then
@@ -41,7 +46,17 @@ if git status | grep -q "BE128"; then
 
     # Commit ve push
     git commit -m "BE128 tablo ve log güncellemesi - $UPDATE_DATE"
-    git push origin main
+    
+    # Use safe_push function if available, fallback to direct push
+    if command -v safe_push >/dev/null 2>&1; then
+      safe_push main || {
+        echo -e "\e[33m⚠️  Failed to push to main, trying current branch...\e[0m"
+        current_branch=$(git branch --show-current)
+        safe_push "$current_branch"
+      }
+    else
+      git push origin main
+    fi
 
     echo -e "\a"
     echo -e "\e[32m✅ index.html başarıyla güncellendi!\e[0m"

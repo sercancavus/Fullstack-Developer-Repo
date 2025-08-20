@@ -3,6 +3,11 @@ set -euo pipefail
 
 echo -e "\e[36m🔄 gh-pages dalından main dalına geçiş başlatılıyor...\e[0m"
 
+# Load git helper functions for safe branch operations
+source "$(dirname "$0")/git-helper.sh" 2>/dev/null || {
+    echo -e "\e[33m⚠️  git-helper.sh not found, using basic git operations\e[0m"
+}
+
 # Proje klasörüne git
 cd ~/Fullstack-Developer-Repo || { echo -e "\e[31m❌ Klasör bulunamadı\e[0m"; exit 1; }
 
@@ -33,7 +38,16 @@ fi
 git add BE128
 COMMIT_DATE=$(date '+%Y-%m-%d %H:%M')
 git commit -m "BE128 klasörü gh-pages dalından main dalına taşındı - $COMMIT_DATE"
-git push origin main
+# Use safe_push function if available, fallback to direct push
+if command -v safe_push >/dev/null 2>&1; then
+  safe_push main || {
+    echo -e "\e[33m⚠️  Failed to push to main, trying current branch...\e[0m"
+    current_branch=$(git branch --show-current)
+    safe_push "$current_branch"
+  }
+else
+  git push origin main
+fi
 
 echo -e "\e[32m✅ Taşıma işlemi tamamlandı ve GitHub'a gönderildi.\e[0m"
 echo -e "\e[33m🌐 GitHub Pages ayarlarını main dalına göre güncellemeyi unutma!\e[0m"

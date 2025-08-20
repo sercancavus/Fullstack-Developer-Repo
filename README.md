@@ -39,8 +39,8 @@
 
 ## 📅 Güncel Durum
 
-- **Şu an 4. haftadayız!**
-- Sonraki hafta (28.07.2025) dinlenme/tekrar haftasıdır.
+- **Şu an 7. haftadayız!**
+- Sonraki hafta (25.08.2025) dinlenme/tekrar haftasıdır.
 
 ---
 
@@ -60,7 +60,7 @@
 
 <!-- Progress bar yerine çalışan bir badge eklendi -->
 <p align="center">
-  <img src="https://img.shields.io/badge/BE128--Backend%20Eğitimi-4.%20Hafta%20Devam%20Ediyor-brightgreen?style=for-the-badge&logo=github" alt="Eğitim Durumu"/>
+  <img src="https://img.shields.io/badge/BE128--Backend%20Eğitimi-7.%20Hafta%20Devam%20Ediyor-brightgreen?style=for-the-badge&logo=github" alt="Eğitim Durumu"/>
 </p>
 
 <p align="center">

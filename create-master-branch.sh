@@ -1,4 +1,11 @@
 #!/bin/bash
+# Script to create a master branch from the main branch
+# Implements the exact commands from the problem statement:
+#   1. git checkout main
+#   2. git checkout -b master
+#   3. git push origin master
+#
+# This script includes error handling and checks for existing branches
 set -euo pipefail
 
 echo -e "\e[36m🔄 Creating master branch from main...\e[0m"

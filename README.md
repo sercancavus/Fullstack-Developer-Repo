@@ -25,15 +25,14 @@
 | 7     | İlişkisel Veritabanı & SQL | İlişkisel Veritabanı nedir?, SQL Server Management Studio ile Veritabanı Oluşturma, Tablo Oluşturma, Veri Türleri, Primary Key, Identity, ve Foreign Key, SQL Komutları ile CRUD İşlemleri, Birden fazla tablodan ilişkili sorgu yapma (JOIN), ER Diagramları oluşturma |
 | 8     | ORM ve EF Core | ORM Nedir?, EF Core nedir?, DbContext ve Entity Yapıları, IQueryable ve DbSet, Connection string nedir?, appSettings içerisinde Connection string tanımlama, Data Annotations, EnsureCreated ile otomatik DB oluşturulması (Code First), EF Core ve Linq ile CRUD işlemleri yapmak, Include ile Eager Loading, EF Core ve Linq ile JOIN işlemleri, DB Seed |
 | -     | Ara/Boşluk Haftası | Dinlenme ve tekrar için ara hafta |
-| 9     | Express.js ile RESTful API | Express.js ile API geliştirme, route, middleware, CRUD işlemleri |
-| 10    | Veritabanı Temelleri & MongoDB | NoSQL kavramı, MongoDB kurulumu, temel sorgular, Mongoose |
-| 11    | Kimlik Doğrulama & JWT | Kullanıcı yönetimi, şifreleme, JWT ile authentication |
-| 12    | Frontend-Backend Entegrasyonu | API consumption, fetch/axios, CORS, tam entegre uygulama |
-| -     | Ara/Boşluk Haftası | Dinlenme ve tekrar için ara hafta |
-| 13    | Proje Yönetimi & Takım Çalışması | Agile, Trello/Jira, kod inceleme, takım içi işbirliği |
-| 14    | Test, Debug & Hata Yönetimi | Unit test, debug teknikleri, hata ayıklama, loglama |
-| 15    | DevOps & Deployment | CI/CD, temel Docker, bulut sunucuya deploy |
-| 16    | Final Proje Sunumu | Proje sunumu, kod paylaşımı, mezuniyet |
+| 9     | MVC'ye Giriş & Full Stack | MVC'ye Giriş, Full Stack Uygulama Özellikleri, Frontend, Backend nedir?, Statik sayfalar üzerinden Web API ile veri işlemleri yapmak, Neden dinamik bir frontend'e ihtiyacımız var?, ASP.NET Core MVC'ye kısa bir giriş, MVC yapısı, ASP.NET Core MVC'de View Kullanımı, Razor View Engine, View ve Layout'lar |
+| 10    | View & Veri Aktarımı | View, Controller'dan View'a Veri Aktarma Yöntemleri, ViewModel, ViewBag, ViewData, TempData, Partial View ve View Component yapıları, HTML Helper nedir, neden ihtiyacımız var?, Tag Helper nedir, neden ihtiyacımız var?, File Upload/Download |
+| 11    | ASP.NET Core Modülleri & Middleware | ASP.NET Core Modülleri, ASP.NET Core MVC ile Modüler Uygulama Geliştirmek, Logging (Console ve Event Logging), Configuration (Configuration dosyasından veri okumak), Middleware nedir?, program.cs içerisinde Middleware oluşturma, Ayrı bir class olarak Middleware oluşturma, Filter nedir?, ActionFilter Örneği, Attribute ile ActionFilter Örneği, Session yapısı, Cookie yapısı |
+| 12    | Authentication & Authorization | Authentication ve Authorization, Yetkilendirmeye Giriş, Authentication ve Authorization kavramları, Claim nedir?, Cookie Authentication, MVC'de EF Core ile login ve logout işlemleri, APIKey Authentication |
+| 13    | JWT Authentication | JWT, Base64 Encoding/Decoding, JWT Nedir?, jwt.io sitesi üzerinden JWT yapısının incelenmesi, JWT Authentication süreci, WebAPI ile JWT Oluşturma, WebAPI ile JWT Authentication, JWT Authentication için Swagger ayarları, JWT Authentication için Postman ayarları |
+| 14    | Yazılım Mimarisi & Katmanlı Mimari | Yazılım Mimarisi, İleri ASP.NET Core MVC ve Yazılım Mimarileri, Yazılım Mimarisi nedir?, Monolithic ve Katmanlı Mimari tipleri, Bir projeyi katmanlı hale getirmek, Middleware ile hata yönetimi, Dependency Injection yapısı, HttpClient yapısı ve kullanımı, MVC ve Web API'yi kullanarak yazılım geliştirmek |
+| 15    | Uygulama & Data Katmanı | Uygulama, Entity'ler ve ER Diagramı oluşturulması, Business kurallarının oluşturulması ve rollere göre dağılımı, Entity validasyonlarının belirlenmesi, Ekranların belirlenmesi, Data katmanının oluşturulması |
+| 16    | Uygulama & Yayınlama | Uygulama, Business kurallarına uygun Web API endpoint'lerinin oluşturulması, Auth Yapısının oluşturulması, Ekranların oluşturulması, Testler, Publish kavramları |
 
 ---
 

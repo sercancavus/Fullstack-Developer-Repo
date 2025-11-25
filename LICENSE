@@ -19,35 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
----
-
-This repository uses a dual licensing approach to distinguish between source code and educational content:
-- Source Code: Licensed under the MIT License, allowing full reuse, modification, and distribution with proper attribution.
-- Educational Materials & Design Assets: Licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). These may be shared and adapted for non-commercial purposes only, with credit given.
-
-Please refer to the individual license files for more details:
-- LICENSE → MIT License for code
-- LICENSE.assets.md → Creative Commons License for non-code content
-
-
-If you intend to make the repo open for viewing and educational reuse (but not commercial use or redistribution), the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license is a good fit.
-
-```markdown
-Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
-
-You are free to:
-
-✅ Share — copy and redistribute the material in any medium or format  
-✅ Adapt — remix, transform, and build upon the material  
-
-Under the following terms:
-
-🔗 Attribution — You must give appropriate credit, link to the license, and indicate if changes were made.  
-🚫 NonCommercial — You may not use the material for commercial purposes.  
-❗ No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
-
-Read the full license here: [https://creativecommons.org/licenses/by-nc/4.0](https://creativecommons.org/licenses/by-nc/4.0)
-
-© 2025 Sercan Çavuş

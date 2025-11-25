@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - App.Mvc</title>
+   
+    <partial name="Partials/MainStyles" />
+
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    @* Partial view ekleme 1.Yöntem *@
+    @* @await Html.PartialAsync("Partials/MainMenu") *@
+
+    @* Partial view ekleme 2.Yöntem *@
+    <partial name="Partials/MainMenu" />
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - App.Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <partial name="Partials/MainScripts" />
+
+    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Js", required: false)
+</body>
+</html>

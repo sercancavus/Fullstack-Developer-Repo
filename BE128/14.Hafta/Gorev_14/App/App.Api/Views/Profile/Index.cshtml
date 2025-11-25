@@ -1,0 +1,17 @@
+@model App.Api.Data.Entities.User
+
+<h2>Profile</h2>
+<div>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Display Name:</strong> @Model.DisplayName</p>
+    <p><strong>Is Seller Requested:</strong> @Model.IsSellerRequested</p>
+    <p><strong>Active:</strong> @Model.IsActive</p>
+</div>
+
+@if (User.IsInRole("Buyer") && !Model.IsSellerRequested)
+{
+    <form asp-action="RequestSeller" method="post">
+        @Html.AntiForgeryToken()
+        <button class="btn btn-primary">Request to be Seller</button>
+    </form>
+}

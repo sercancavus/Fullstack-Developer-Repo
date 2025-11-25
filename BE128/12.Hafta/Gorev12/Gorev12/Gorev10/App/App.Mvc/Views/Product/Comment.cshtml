@@ -1,0 +1,38 @@
+@model App.Mvc.Models.ProductCommentViewModel
+@{
+    ViewData["Title"] = "Yorum Yaz";
+}
+<h2 class="mb-3">Ürüne Yorum</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+<div class="card">
+  <div class="card-body">
+    <form asp-action="Comment" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ProductId" />
+        <div class="mb-3">
+            <label asp-for="StarCount" class="form-label"></label>
+            <select asp-for="StarCount" class="form-select">
+                <option value="">Seçiniz</option>
+                @for (var i = 1; i <= 5; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+            <span asp-validation-for="StarCount" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Text" class="form-label"></label>
+            <textarea asp-for="Text" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Gönder</button>
+        <a asp-controller="Home" asp-action="Listing" class="btn btn-outline-secondary ms-2">Geri</a>
+    </form>
+  </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

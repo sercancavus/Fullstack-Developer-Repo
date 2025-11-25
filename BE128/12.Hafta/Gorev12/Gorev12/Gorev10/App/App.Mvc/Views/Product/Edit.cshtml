@@ -1,0 +1,57 @@
+@model App.Mvc.Models.ProductEditViewModel
+@{
+    ViewData["Title"] = "Ürün Düzenle";
+}
+<h2 class="mb-3">Ürün Düzenle</h2>
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+<div class="card">
+  <div class="card-body">
+    <form asp-action="Edit" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="form-label"></label>
+            <select asp-for="CategoryId" class="form-select" asp-items="new SelectList((IEnumerable<App.Data.Entities.Category>)ViewBag.Categories, nameof(App.Data.Entities.Category.Id), nameof(App.Data.Entities.Category.Name))"></select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label asp-for="Price" class="form-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label asp-for="StockAmount" class="form-label"></label>
+                <input asp-for="StockAmount" class="form-control" />
+                <span asp-validation-for="StockAmount" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3 form-check mt-4">
+                <input asp-for="Enabled" class="form-check-input" />
+                <label asp-for="Enabled" class="form-check-label"></label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Details" class="form-label"></label>
+            <textarea asp-for="Details" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Details" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <form asp-action="Delete" method="post" class="d-inline ms-2">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Silinsin mi?')">Sil</button>
+        </form>
+        <a asp-controller="Home" asp-action="Listing" class="btn btn-outline-secondary ms-2">Geri</a>
+    </form>
+  </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,26 @@
+﻿@model CartItemViewModel
+@{
+    Layout = null;
+}
+<tr>
+    <td class="shoping__cart__item">
+        <img src="@(Model.ProductImage)" alt="">
+        <h5>@Model.ProductName</h5>
+    </td>
+    <td class="shoping__cart__price">
+        $@Model.Price
+    </td>
+    <td class="shoping__cart__quantity">
+        <div class="quantity">
+            <div class="pro-qty">
+                <input type="text" value="@Model.Quantity">
+            </div>
+        </div>
+    </td>
+    <td class="shoping__cart__total">
+        $@Model.TotalPrice
+    </td>
+    <td class="shoping__cart__item__close">
+        <a asp-controller="Cart" asp-action="Remove" asp-route-cartItemId="@Model.Id" class="icon_close" data-cartItemId="@Model.Id"></a>
+    </td>
+</tr>

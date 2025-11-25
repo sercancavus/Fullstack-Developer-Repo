@@ -1,0 +1,9 @@
+﻿@model List<BlogCategorySidebarViewModel>
+
+<h4>Categories</h4>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li><a href="#">@item.Name (@item.ArticleCount)</a></li>
+    }
+</ul>

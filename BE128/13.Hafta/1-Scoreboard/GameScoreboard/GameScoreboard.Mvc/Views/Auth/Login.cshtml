@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+<h2>Login</h2>
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Error))
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<div class="container">
+    <form asp-controller="Auth" asp-action="Login" method="post">
+        <div class="form-group">
+            <label asp-for="Nickname" class="form-label">Nickname: </label>
+            <input asp-for="Nickname" class="form-control" />
+            <span asp-validation-for="Nickname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="form-label">Password: </label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+</div>

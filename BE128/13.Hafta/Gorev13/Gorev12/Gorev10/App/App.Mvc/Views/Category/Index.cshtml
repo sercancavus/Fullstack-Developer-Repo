@@ -1,0 +1,44 @@
+@model List<App.Data.Entities.Category>
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+<h2>Kategoriler</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+<a asp-action="Create" class="btn btn-success mb-3">Yeni Kategori Ekle</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Renk</th>
+            <th>Ýkon</th>
+            <th>Ürün Sayýsý</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Name</td>
+            <td>@c.Color</td>
+            <td>@c.IconCssClass</td>
+            <td>@(c.Products?.Count ?? 0)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-sm btn-outline-primary">Düzenle</a>
+            </td>
+            <td>
+                <form asp-action="Delete" method="post" style="display:inline">
+                    <input type="hidden" name="id" value="@c.Id" />
+                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Silmek istediðinize emin misiniz?')">Sil</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

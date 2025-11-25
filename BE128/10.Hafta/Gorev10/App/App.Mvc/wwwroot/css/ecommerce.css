@@ -1,0 +1,65 @@
+/* Modern, canlý ve hareketli e-ticaret sitesi için özel stiller */
+body {
+    background: linear-gradient(135deg, #e9f5e1 0%, #f8f9fa 100%);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+.navbar {
+    background: linear-gradient(90deg, #28a745 60%, #20c997 100%);
+    box-shadow: 0 2px 8px rgba(40,167,69,0.08);
+}
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+.nav-link:hover {
+    color: #ffe082 !important;
+}
+.jumbotron {
+    background: linear-gradient(90deg, #28a745 60%, #20c997 100%);
+    color: #fff;
+    box-shadow: 0 2px 16px rgba(40,167,69,0.12);
+    animation: fadeInDown 1s;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.card {
+    box-shadow: 0 2px 12px rgba(40,167,69,0.08);
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(40,167,69,0.18);
+}
+.btn-success {
+    background: linear-gradient(90deg, #28a745 60%, #20c997 100%);
+    border: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.btn-success:hover {
+    background: linear-gradient(90deg, #20c997 60%, #28a745 100%);
+}
+.footer {
+    background: #343a40;
+    color: #fff;
+    padding: 24px 0;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.animate__fadeIn {
+    animation-name: fadeIn;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

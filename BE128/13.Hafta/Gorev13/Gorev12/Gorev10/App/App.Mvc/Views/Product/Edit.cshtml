@@ -1,0 +1,85 @@
+@model App.Data.Entities.Product
+@{
+    ViewData["Title"] = "Ürün Düzenle";
+}
+<h2>Ürün Düzenle</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label"></label>
+        <select asp-for="CategoryId" class="form-select">
+            <option value="">Kategori Seçiniz</option>
+            @foreach (var cat in (List<App.Data.Entities.Category>)ViewBag.Categories)
+            {
+                <option value="@cat.Id" selected="@(cat.Id == Model.CategoryId)">@cat.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Details" class="form-label"></label>
+        <textarea asp-for="Details" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Details" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="StockAmount" class="form-label"></label>
+        <input asp-for="StockAmount" class="form-control" type="number" min="1" max="255" />
+        <span asp-validation-for="StockAmount" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <input asp-for="Enabled" class="form-check-input" />
+        <label asp-for="Enabled" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+<hr />
+<h4 class="mt-4">Var Olan Ürünler</h4>
+@{
+    var allProducts = ViewBag.AllProducts as List<App.Data.Entities.Product>;
+}
+@if (allProducts != null && allProducts.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ad</th>
+                <th>Kategori</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+                <th>Durum</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in allProducts)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Category?.Name</td>
+                <td>@p.Price.ToString("N0") ?</td>
+                <td>@p.StockAmount</td>
+                <td>@(p.Enabled ? "Aktif" : "Pasif")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-sm btn-outline-primary">Düzenle</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

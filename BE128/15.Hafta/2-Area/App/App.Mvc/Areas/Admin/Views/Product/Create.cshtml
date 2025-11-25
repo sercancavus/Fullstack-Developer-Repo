@@ -1,0 +1,9 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <form asp-area="Admin" asp-controller="Product" asp-action="Create" method="post">
+        <label>Ürün Adı: </label>
+        <input type="text" name="productName" />
+        <button type="submit">Ekle</button>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+@Admin.Mvc_HostAddress = http://localhost:5104
+
+GET {{Admin.Mvc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

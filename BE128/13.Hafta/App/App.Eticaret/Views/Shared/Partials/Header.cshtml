@@ -1,0 +1,133 @@
+﻿@using App.Data.Infrastructure
+@inject ApplicationDbContext dbContext
+@{
+    var IsCurrentPage = (string action, string controller) =>
+    {
+        var routeData = ViewContext.RouteData.Values;
+        var routeAction = routeData["action"] as string;
+        var routeController = routeData["controller"] as string;
+
+        if (string.IsNullOrEmpty(action))
+        {
+            action = routeAction;
+        }
+
+        if (string.IsNullOrEmpty(controller))
+        {
+            controller = routeController;
+        }
+
+        return string.Equals(action, routeAction, StringComparison.OrdinalIgnoreCase) &&
+               string.Equals(controller, routeController, StringComparison.OrdinalIgnoreCase);
+    };
+
+    string? currentUserName = Context.Request.Cookies["name"];
+    string? currentUserId = Context.Request.Cookies["userId"];
+
+    bool IsAuthenticated = !string.IsNullOrEmpty(currentUserName);
+
+    int cartItemCount = 0;
+    decimal cartTotalPrice = 0;
+
+    if (IsAuthenticated && int.TryParse(currentUserId, out int userId))
+    {
+        var cartItems = dbContext.CartItems
+            .Where(x => x.UserId == userId)
+            .Select(x => x.Product.Price * x.Quantity)
+            .ToList();
+        cartItemCount = cartItems.Count;
+        cartTotalPrice = cartItems.Sum();
+    }
+}
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                            <li>Free Shipping for all Order of $99</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+                        <div class="header__top__right__language">
+                            <img src="~/theme/img/language.png" alt="">
+                            <div>English</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">Türkçe</a></li>
+                                <li><a href="#">English</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__top__right__auth header__top__right__language">
+                            @if (IsAuthenticated)
+                            {
+                                <a href="#"><i class="fa fa-user"></i> @currentUserName</a>
+                                <ul>
+                                    <li><a asp-controller="Profile" asp-action="Details">Profile</a></li>
+                                    <li><a asp-controller="Profile" asp-action="MyProducts">My Products</a></li>
+                                    <li><a asp-controller="Profile" asp-action="MyOrders">My Orders</a></li>
+                                    <li><a asp-action="Logout" asp-controller="Auth" class="border-top">Logout</a></li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <a asp-controller="Auth" asp-action="Login"><i class="fa fa-user"></i> Login</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a asp-controller="Home" asp-action="Index"><img src="~/theme/img/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li @(IsCurrentPage("Index", "Home") ? "class=active" : "")><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li @(IsCurrentPage("Listing", "Home") ? "class=active" : "")><a asp-controller="Home" asp-action="Listing">Shop</a></li>
+                        <li @(IsCurrentPage("Index", "Blog") ? "class=active" : "")><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                        <li>
+                            <a href="#">Pages</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a asp-controller="Home" asp-action="ProductDetail" asp-route-productId="1">Shop Details</a></li>
+                                <li><a asp-controller="Cart" asp-action="Edit">Shoping Cart</a></li>
+                            </ul>
+                        </li>
+                        <li @(IsCurrentPage("Contact", "Home") ? "class=active" : "")><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a asp-controller="Product" asp-action="Create" title="Add New Product"><i class="fa fa-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a asp-controller="Cart" asp-action="Edit"><i class="fa fa-shopping-bag"></i> <span>@cartItemCount</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span>@(cartTotalPrice.ToString("C"))</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->

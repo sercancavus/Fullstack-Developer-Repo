@@ -1,0 +1,58 @@
+using App.Business.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string is not found");
+
+////builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+
+//builder.Services.AddData(connectionString);
+
+
+builder.Services.AddHttpClient("data-api", client =>
+{
+    // data-api -> HttpClient için bir isim belirlemiþ olduk
+    // Api'nin url'sinin kök kýsmýný ekledik.
+
+
+    client.BaseAddress = new Uri("https://localhost:7243");
+});
+
+
+
+// -----------------------------------------------------
+
+builder.Services.AddScoped<UserService>(); // MVC içinde UserService kullanmak isteyene, UserService sýnýfýnýn instance'ýný ver
+
+// -----------------------------------------------------
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+//using var scope = app.Services.CreateScope();
+//var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+//await dbContext.Database.EnsureCreatedAsync();
+
+app.Run();

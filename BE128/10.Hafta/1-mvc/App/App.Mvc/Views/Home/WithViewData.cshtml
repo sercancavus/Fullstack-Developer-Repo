@@ -1,0 +1,30 @@
+﻿@{
+    var rawData = ViewData["Products"];
+    var data = rawData as List<ProductViewModel>; // cast etme
+
+    // cast etme 2. yöntem
+    // var data2 = (List<ProductViewModel>)rawData;
+
+}
+
+
+<table class="table tabled-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in data)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

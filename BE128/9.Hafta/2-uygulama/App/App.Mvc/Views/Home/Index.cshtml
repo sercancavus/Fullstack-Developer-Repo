@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    List<Product>? products = ViewData["Product"] as List<Product>;
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-primary">Product List</h1>
+    
+    <ul>
+        @if (products is not null)
+        {
+            @foreach (var product in products)
+            {
+                <li>@product.Name - @product.Price</li>
+            }
+        }
+    </ul>
+
+</div>

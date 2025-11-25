@@ -1,0 +1,8 @@
+﻿<div class="container">
+    <ul>
+        @foreach (var item in ViewBag.Urunler)
+        {
+            <li>@item.Name - @item.Price</li>
+        }
+    </ul>
+</div>

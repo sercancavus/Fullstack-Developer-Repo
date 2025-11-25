@@ -1,0 +1,50 @@
+﻿@model RegisterUserViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <h2 class="col-12 text-center">Register</h2>
+        <partial name="Partials/ViewMessages" />
+        <div class="col-12 col-md-6 offset-md-3">
+            <form method="post" asp-action="Register" asp-controller="Auth">
+                <div class="form-group">
+                    <label asp-for="FirstName">First Name</label>
+                    <input asp-for="FirstName" class="form-control">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName">Last Name</label>
+                    <input asp-for="LastName" class="form-control">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form-control">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PasswordConfirm">Confirm Password</label>
+                    <input asp-for="PasswordConfirm" class="form-control">
+                    <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="site-btn mr-auto">Register</button>
+                    <a asp-controller="Auth" asp-action="Login" class="site-btn mr-2">Login</a>
+                    <a asp-controller="Auth" asp-action="ForgotPassword" class="site-btn">Forgot Password</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

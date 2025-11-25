@@ -1,0 +1,32 @@
+﻿@model SaveCategoryViewModel
+@{
+    ViewBag.Title = "Kategori Düzenle";
+}
+
+<div class="d-flex">
+    <h2 class="m-0">@ViewBag.Title</h2>
+    <a asp-action="List" class="btn btn-primary ml-auto">Listeye Dön</a>
+</div>
+
+<partial name="Partials/_ViewMessages" />
+<form asp-controller="Category" asp-action="Edit" asp-route-categoryId="@(Context.GetRouteValue("categoryId"))" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Kategori Adı</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Color">Renk</label>
+        <input asp-for="Color" class="form-control" type="color" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

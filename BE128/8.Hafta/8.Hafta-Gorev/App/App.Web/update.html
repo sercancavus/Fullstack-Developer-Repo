@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öðrenci Güncelle</title>
+</head>
+<body>
+    <h1>Öðrenci Güncelle</h1>
+    <form id="updateForm" method="post" action="#">
+        <input type="hidden" id="id" name="id">
+        <label for="firstName">Adý:</label>
+        <input type="text" id="firstName" name="firstName" maxlength="50" required><br>
+        <label for="lastName">Soyadý:</label>
+        <input type="text" id="lastName" name="lastName" maxlength="50" required><br>
+        <label for="studentNumber">Öðrenci No:</label>
+        <input type="number" id="studentNumber" name="studentNumber" min="1" required><br>
+        <label for="birthDate">Doðum Tarihi:</label>
+        <input type="date" id="birthDate" name="birthDate" required><br>
+        <label for="class">Sýnýf:</label>
+        <input type="text" id="class" name="class" maxlength="20" required><br>
+        <button type="submit">Güncelle</button>
+    </form>
+    <script src="update.js"></script>
+</body>
+</html>

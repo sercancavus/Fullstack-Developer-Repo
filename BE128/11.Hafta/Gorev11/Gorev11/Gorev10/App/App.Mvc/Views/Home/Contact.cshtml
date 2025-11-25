@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Ýletiþim";
+}
+<div class="container py-5 animate__animated animate__fadeIn">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-body">
+                    <h2 class="mb-4 text-success">Ýletiþim</h2>
+                    <p class="mb-4">Bize ulaþmak için aþaðýdaki formu doldurabilirsiniz.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Adýnýz</label>
+                            <input type="text" class="form-control" id="name" placeholder="Adýnýz">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta</label>
+                            <input type="email" class="form-control" id="email" placeholder="E-posta">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajýnýz</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

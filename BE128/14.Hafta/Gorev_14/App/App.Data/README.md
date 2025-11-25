@@ -1,0 +1,1 @@
+This project contains EF Core DbContext, entities and a generic DataRepository used by App.Api.

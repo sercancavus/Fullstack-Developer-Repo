@@ -1,0 +1,23 @@
+﻿@model double? // Rating
+
+@{
+    var rating = Model ?? 0;
+    var fullStars = (int)rating;
+    var halfStar = rating - fullStars;
+    var emptyStars = 5 - fullStars - (halfStar > 0 ? 1 : 0);
+}
+
+@for (var i = 0; i < fullStars; i++)
+{
+    <i class="fa fa-star"></i>
+}
+
+@if (halfStar > 0)
+{
+    <i class="fa fa-star-half-o"></i>
+}
+
+@for (var i = 0; i < emptyStars; i++)
+{
+    <i class="fa fa-star-o"></i>
+}

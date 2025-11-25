@@ -1,0 +1,26 @@
+@model List<App.Api.Data.Entities.Product>
+
+<h2>My Products</h2>
+<table class="table">
+<thead>
+<tr><th>Name</th><th>Price</th><th>Stock</th><th>Active</th><th>Actions</th></tr>
+</thead>
+<tbody>
+@foreach(var p in Model)
+{
+    <tr>
+        <td>@p.Name</td>
+        <td>@p.Price</td>
+        <td>@p.Stock</td>
+        <td>@p.IsActive</td>
+        <td>
+            <form asp-action="ToggleActive" method="post" style="display:inline">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="id" value="@p.Id" />
+                <button class="btn btn-sm btn-warning">Toggle</button>
+            </form>
+        </td>
+    </tr>
+}
+</tbody>
+</table>

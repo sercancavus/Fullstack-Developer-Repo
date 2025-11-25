@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="Partials/PageHead.cshtml">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <partial name="Partials/HamburgerMenu.cshtml">
+
+    <partial name="Partials/Header.cshtml">
+
+    <partial name="Partials/Hero.cshtml">
+
+    @RenderBody()
+
+    <partial name="Partials/Footer.cshtml">
+
+    <partial name="Partials/PageScripts.cshtml">
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+### GitHub Actions ile FTP Üzerinden Web Sitenizi Yayınlama (Adım Adım Rehber)
+
+Eğer bir **web sitesi** oluşturduysanız (HTML, CSS, JS gibi), bunu canlı ortama taşımak için bir hosting sağlayıcısına ve domain'e ihtiyacınız olacak. Aşağıdaki rehberde her şeyi sıfırdan nasıl yapacağınızı açıkça anlatacağım:
+
+---
+
+### **1. Hosting ve Domain Alımı**
+Öncelikle bir hosting ve domain hizmeti satın almalısınız. Hosting, web sitenizin dosyalarını depolayacağınız yerdir; domain ise (ör. `www.orneksite.com`) sitenizin internet üzerindeki adresidir.
+
+#### **Ne yapmalısınız?**
+1. **Hosting Sağlayıcı Seçimi:**
+   - Önerilen popüler hosting sağlayıcılar:
+     - [GoDaddy](https://www.godaddy.com)
+     - [Hostinger](https://www.hostinger.com)
+     - [Bluehost](https://www.bluehost.com)
+   - Hosting planı seçerken:
+     - **FTP desteği** olan bir plan seçtiğinizden emin olun.
+     - Başlangıç için en uygun fiyatlı plan yeterlidir.
+
+2. **Domain Satın Alma:**
+   - Hosting sağlayıcınızdan veya farklı bir domain sağlayıcısından (ör. Namecheap, Google Domains) bir domain alabilirsiniz.
+   - Domain ve hosting aynı sağlayıcıdan alınırsa DNS ayarlarıyla uğraşmanız gerekmez.
+
+---
+
+### **2. FTP Erişiminizi Hazırlayın**
+Hosting sağlayıcınız size FTP bilgilerini verecektir. Bu bilgiler genelde şunlardır:
+- **FTP Sunucusu Adresi:** Örneğin, `ftp.orneksite.com`
+- **Kullanıcı Adı:** Hosting hesabınızla ilişkilendirilir.
+- **Şifre:** FTP erişimi için verilen şifre.
+
+#### **Not:** Hosting kontrol panelinizde (ör. cPanel veya Plesk) bu bilgileri görebilirsiniz.
+
+---
+
+### **3. Projenizi GitHub’a Yükleyin**
+Web sitenizi GitHub’a yükleyerek FTP işlemini otomatikleştirebilirsiniz.
+
+#### **Ne yapmalısınız?**
+1. GitHub’da yeni bir repo oluşturun:
+   - GitHub hesabınıza giriş yapın.
+   - **New Repository** butonuna tıklayın ve projenize uygun bir isim verin.
+
+2. Projenizi GitHub’a yükleyin:
+   - Yerel bilgisayarınızda terminal veya komut satırını açın.
+   ```bash
+   cd projenizin-klasoru
+   git init
+   git add .
+   git commit -m "İlk yükleme"
+   git branch -M main
+   git remote add origin https://github.com/kullaniciadi/repo-adi.git
+   git push -u origin main
+   ```
+
+---
+
+### **4. GitHub Actions ile FTP Yüklemesini Otomatikleştirin**
+GitHub Actions kullanarak her **push** yaptığınızda web sitenizi FTP ile canlı ortama yükleyeceğiz.
+
+#### **Adımlar:**
+1. GitHub repo’nuzda `.github/workflows` adında bir klasör oluşturun.
+2. Bu klasör içinde `deploy.yml` adında bir dosya oluşturun.
+3. Aşağıdaki kodu `deploy.yml` içine yapıştırın:
+
+   ```yaml
+   name: Deploy Website
+
+   on:
+     push:
+       branches:
+         - main
+
+   jobs:
+     deploy:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout Repository
+           uses: actions/checkout@v2
+
+         - name: Deploy via FTP
+           uses: SamKirkland/FTP-Deploy-Action@4.5.0
+           with:
+             server: ${{ secrets.FTP_SERVER }}
+             username: ${{ secrets.FTP_USERNAME }}
+             password: ${{ secrets.FTP_PASSWORD }}
+             local-dir: ./  # Local'deki yükleme yapılacak klasör
+             server-dir: /  # Hosting'deki hedef klasör
+   ```
+
+4. **Secrets Ayarları:**
+   GitHub’da **Settings > Secrets and Variables > Actions** kısmına gidin ve şu bilgileri ekleyin:
+   - `FTP_SERVER`: FTP sunucusu adresiniz (ör. `ftp.orneksite.com`).
+   - `FTP_USERNAME`: FTP kullanıcı adınız.
+   - `FTP_PASSWORD`: FTP şifreniz.
+
+---
+
+### **5. Test Edin**
+1. GitHub’da projenizde değişiklik yapıp bir commit ve push işlemi gerçekleştirin:
+   ```bash
+   git add .
+   git commit -m "Güncelleme yapıldı"
+   git push
+   ```
+2. GitHub Actions otomatik olarak çalışır:
+   - GitHub’da **Actions** sekmesine giderek süreci izleyebilirsiniz.
+   - Başarılı olursa, web siteniz FTP’ye yüklenmiş olur.
+
+---
+
+### **6. Son Kontroller**
+1. Hosting sağlayıcınızın kontrol panelinden dosyaların yüklendiğini doğrulayın.
+2. Domain’inizi tarayıcıda açarak web sitenizin düzgün şekilde çalıştığını kontrol edin.
+
+---
+
+### **Özet**
+1. **Hosting ve domain alın.**
+2. **FTP bilgilerinizi öğrenin.**
+3. **Projenizi GitHub’a yükleyin.**
+4. **GitHub Actions ile FTP yüklemesini otomatikleştirin.**
+5. **Web sitenizi test edin.**
+
+Eğer bu adımlarda bir noktada takılırsanız, daha detaylı açıklamalar ve örnekler sunabilirim! 😊

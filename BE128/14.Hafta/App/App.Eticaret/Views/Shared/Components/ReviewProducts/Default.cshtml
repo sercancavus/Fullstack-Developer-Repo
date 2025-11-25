@@ -1,0 +1,38 @@
+﻿@model OwlCarouselViewModel
+
+<div class="latest-product__text">
+    <h4>@Model.Title</h4>
+    <div class="latest-product__slider owl-carousel">
+        @for(var i = 0; i < Model.Items.Count; i++)
+        {
+            var product = Model.Items[i];
+
+            if (i % 3 == 0)
+            {
+                // If it's the first item or a multiple of 3, open a new div
+                <text>
+                    @Html.Raw("<div class='latest-prdouct__slider__item'>")
+                </text>
+            }
+
+            <a href="#" class="latest-product__item">
+                <div class="latest-product__item__pic">
+                    <img src="@(product.ImageUrl)" alt="">
+                </div>
+                <div class="latest-product__item__text">
+                    <h6>@(product.Name)</h6>
+                    <span>@((product.DiscountedPrice ?? product.Price).ToString("C"))</span>
+                </div>
+            </a>
+
+            @if (i % 3 == 2)
+            {
+                // If it's the last item in slider group, close the div
+                <text>
+                    @Html.Raw("</div>")
+                </text>
+                
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@model App.Api.Models.LoginViewModel
+
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery Xsrf
+
+<form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <input type="hidden" asp-for="ReturnUrl" />
+    <button type="submit">Login</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

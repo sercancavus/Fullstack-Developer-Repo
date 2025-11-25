@@ -1,0 +1,36 @@
+﻿@model List<App.Models.DTO.ProductCommentDto>
+@{
+    ViewBag.Title = "Product Comments";
+}
+
+<h2>Ürün Yorumları</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Yorum</th>
+            <th>Yıldız</th>
+            <th>Ürün</th>
+            <th>Kullanıcı</th>
+            <th>Onaylı mı?</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Text</td>
+            <td>@c.StarCount</td>
+            <td>@c.ProductName</td>
+            <td>@c.UserName</td>
+            <td>@(c.IsConfirmed ? "Evet" : "Hayır")</td>
+            <td>
+                @if(!c.IsConfirmed){
+                    <a class="btn btn-sm btn-primary" asp-controller="Comment" asp-action="Approve" asp-route-commentId="@c.Id">Approve</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

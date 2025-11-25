@@ -1,0 +1,86 @@
+﻿<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <li>
+        <!-- Sidebar - Brand -->
+        <a asp-controller="Home" asp-action="Index" class="sidebar-brand d-flex align-items-center justify-content-center">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">SM Admin</div>
+        </a>
+    </li>
+
+    <li>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+    </li>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Panel</span>
+        </a>
+    </li>
+
+    <li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+    </li>
+
+    <li>
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Yönetim
+        </div>
+    </li>
+
+
+    <!-- Nav Item -->
+    <li class="nav-item">
+        <a asp-controller="Category" asp-action="List" class="nav-link">
+            <i class="fas fa-fw fa-th-large"></i>
+            <span>Kategoriler</span>
+        </a>
+    </li>
+
+    <!-- Nav Item -->
+    <li class="nav-item">
+        <a asp-controller="Product" asp-action="List" class="nav-link">
+            <i class="fas fa-fw fa-parachute-box"></i>
+            <span>Ürünler</span>
+        </a>
+    </li>
+
+    <!-- Nav Item -->
+    <li class="nav-item">
+        <a asp-controller="User" asp-action="List" class="nav-link">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Kullanıcılar</span>
+        </a>
+    </li>
+
+    <!-- Nav Item -->
+    <li class="nav-item">
+        <a asp-controller="Comment" asp-action="List" class="nav-link">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>Yorumlar</span>
+        </a>
+    </li>
+
+    <li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+    </li>
+
+
+    <li class="text-center">
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </li>
+
+</ul>
+<!-- End of Sidebar -->

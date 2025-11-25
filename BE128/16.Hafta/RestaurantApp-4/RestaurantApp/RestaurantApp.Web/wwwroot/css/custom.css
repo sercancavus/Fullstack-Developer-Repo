@@ -1,0 +1,173 @@
+﻿/* Sepet Sidebar'ı */
+.cart-sidebar {
+    position: fixed;
+    right: -650px; /* Genişliği artırdık */
+    top: 0;
+    width: 650px; /* Genişliği artırdık */
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+    .cart-sidebar.active {
+        right: 0;
+    }
+
+    .cart-sidebar h4 {
+        font-size: 2rem; /* Font boyutunu artırdık */
+        margin-bottom: 20px;
+        text-align: center; /* Başlığı ortaladık */
+    }
+
+    .cart-sidebar .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px; /* Padding'i artırdık */
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .cart-sidebar .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-sidebar .list-group-item span {
+            flex-grow: 1;
+        }
+
+    .cart-sidebar .btn {
+        margin-left: 5px;
+    }
+
+    .cart-sidebar .close-cart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .cart-sidebar .cart-total {
+        font-size: 2rem; /* Font boyutunu artırdık */
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold; /* Font kalınlığını artırdık */
+    }
+
+    .cart-sidebar .btn-primary {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+.cart-body {
+    max-height: 400px; /* Max yükseklik ayarı, gerektiğinde ayarlanabilir */
+    overflow-y: auto; /* Yatay kaydırma ekle */
+    padding: 10px; /* İçerik dolgusunu ayarlayın */
+}
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+    .cart-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+/* Orders Sidebar */
+.orders-sidebar {
+    position: fixed;
+    right: -650px; /* Genişliği artırdık */
+    top: 0;
+    width: 650px; /* Genişliği artırdık */
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto; /* Kaydırma ekledik */
+}
+
+    .orders-sidebar.active {
+        right: 0;
+    }
+
+    .orders-sidebar h4 {
+        font-size: 2rem; /* Font boyutunu artırdık */
+        margin-bottom: 20px;
+        text-align: center; /* Başlığı ortaladık */
+    }
+
+    .orders-sidebar .list-group-item {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column; /* Dikey hizalama */
+        padding: 20px; /* Padding'i artırdık */
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .orders-sidebar .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .orders-sidebar .list-group-item h5 {
+            font-size: 1.2rem; /* Font boyutunu artırdık */
+            margin-bottom: 5px;
+        }
+
+        .orders-sidebar .list-group-item p {
+            margin: 0 0 5px;
+        }
+
+        .orders-sidebar .list-group-item ul {
+            padding-left: 15px;
+            list-style-type: disc;
+        }
+
+    .orders-sidebar .close-cart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+.orders-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+    .orders-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+

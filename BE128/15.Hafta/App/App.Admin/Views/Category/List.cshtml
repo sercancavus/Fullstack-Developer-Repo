@@ -1,0 +1,38 @@
+﻿@model List<CategoryListViewModel>
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex">
+                <h4 class="card-title mr-auto mb-0">Kategoriler</h4>
+                <a asp-action="Create" class="btn btn-primary">Yeni Kategori Ekle</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Adı</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-categoryId="@item.Id" class="btn btn-primary">Düzenle</a>
+                                        <a asp-action="Delete" asp-route-categoryId="@item.Id" class="btn btn-danger">Sil</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

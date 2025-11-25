@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+<div class="container py-5">
+    <h2>Admin Paneli</h2>
+    <div class="alert alert-info">Hoþgeldiniz, sadece adminler bu sayfayý görebilir.</div>
+    <ul>
+        <li><a asp-controller="Product" asp-action="Create">Ürün Ekle</a></li>
+        <li><a asp-controller="Product" asp-action="Edit">Ürünleri Düzenle</a></li>
+        <li><a asp-controller="Product" asp-action="Delete">Ürün Sil</a></li>
+        <li><a asp-controller="Category" asp-action="Create">Kategori Ekle</a></li>
+        <li><a asp-controller="Category" asp-action="Edit">Kategorileri Düzenle</a></li>
+        <li><a asp-controller="Category" asp-action="Delete">Kategori Sil</a></li>
+        <li><a asp-controller="Order" asp-action="Index">Sipariþleri Görüntüle</a></li>
+        <li><a asp-controller="User" asp-action="Index">Kullanýcýlarý Yönet</a></li>
+    </ul>
+</div>

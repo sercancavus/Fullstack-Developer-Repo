@@ -1,0 +1,16 @@
+﻿@model List<CategoryListViewModel>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="#">
+                @if (!string.IsNullOrWhiteSpace(item.IconCssClass))
+                {
+                    <i class="@item.IconCssClass mr-2"></i>
+                }
+                <div class=>@item.Name</div>
+            </a>
+        </li>
+    }
+</ul>

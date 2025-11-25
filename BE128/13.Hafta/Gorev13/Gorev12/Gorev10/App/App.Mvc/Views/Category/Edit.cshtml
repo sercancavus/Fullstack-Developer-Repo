@@ -1,0 +1,38 @@
+@model App.Data.Entities.Category
+@{
+    ViewData["Title"] = "Kategori Düzenle";
+}
+<h2>Kategori Düzenle</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label"></label>
+        <input asp-for="Color" class="form-control" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IconCssClass" class="form-label"></label>
+        <input asp-for="IconCssClass" class="form-control" />
+        <span asp-validation-for="IconCssClass" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+@if (Model.Products != null && Model.Products.Any())
+{
+    <h4 class="mt-4">Bu kategorideki ürünler</h4>
+    <ul class="list-group">
+        @foreach (var product in Model.Products)
+        {
+            <li class="list-group-item">@product.Name (@product.Price.ToString("N0") ?)</li>
+        }
+    </ul>
+}
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

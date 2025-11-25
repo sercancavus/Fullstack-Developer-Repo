@@ -1,0 +1,12 @@
+﻿@model IEnumerable<string>
+
+<h2>Dosyalar</h2>
+
+<ul>
+    @foreach (var fileName in Model)
+    {
+        <li>
+            <a asp-controller="File" asp-action="Download" asp-route-fileName="@fileName" >@fileName</a>
+        </li>
+    }
+</ul>

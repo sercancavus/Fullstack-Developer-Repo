@@ -1,0 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace Admin.Mvc.Models
+{
+    public class CategoryEditViewModel
+    {
+        [Required]
+        public int Id { get; set; }
+        [Required, MinLength(2), MaxLength(100)]
+        public string Name { get; set; } = string.Empty;
+        [Required, MinLength(3), MaxLength(6)]
+        public string Color { get; set; } = string.Empty;
+        [Required, MinLength(2), MaxLength(50)]
+        public string IconCssClass { get; set; } = string.Empty;
+    }
+}

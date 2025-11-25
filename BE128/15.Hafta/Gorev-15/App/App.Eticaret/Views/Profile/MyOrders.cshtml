@@ -1,0 +1,33 @@
+﻿@model List<OrderViewModel>
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <partial name="Partials/ViewMessages" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order Code</th>
+                <th>Order Date</th>
+                <th>Products</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.OrderCode</td>
+                    <td>@order.CreatedAt</td>
+                    <td>@order.TotalQuantity</td>
+                    <td>@order.TotalPrice</td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Order" asp-route-orderCode="@order.OrderCode" class="btn btn-primary">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

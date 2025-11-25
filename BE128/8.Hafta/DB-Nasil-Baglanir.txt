@@ -1,0 +1,32 @@
+1) EF Core paketlerini dahil et.
+	- Microsoft.EntityFrameworkCore
+	- Microsoft.EntityFrameworkCore.SqlServer
+
+2) Data klasörü oluþtur.
+	- Data klasörü içinde Entities klasörü oluþtur.
+
+3) Entities klasörü içinde ihtiyacýmýz olan Entity'leri oluþtur.
+	- Entity'ler içinde gerekli property'leri hazýrla.
+	- Property'lerin Data Annotation'larýný (Attribute'larýný) hazýrla
+
+4) Data klasörü içinde AppDbContext oluþtur
+	- AppDbContext, DbContext class'ýndan kalýtým almalý.
+	- AppDbContext constructor metodunu oluþtur. (içi boþ ctor)
+
+5) AppDbContext içinde DbSet<>'leri (varitabaný tablolarý) oluþtur
+	- var ise configuration class'larýný ApplyConfiguration diyerek uygula.
+
+6) appsetting.json içinde connection string yaz.
+
+7) program.cs içerisinde;
+	- Build() metodu öncesinde AddDbContext ile DB servisini uygulamaya dahil et.
+
+8) app.Run() metodu öncesinde;
+	- scope oluþtur.
+	- bu scope üzerinden GetRequiredService() metodu ile dbContext oluþtur.
+	- dbContext üzerinden EnsureCreatedAsync() metodunu çalýþtýr. (veritabanýnýn oluþmasýný saðla.)
+
+9) Uygulama içerisinde ihtiyacýmýz olan yerlerde (Controller);
+	- Controller oluþtur.
+	- Her bir Controller için, constructor(kurucu) metod üzerinden DI (Dependency Injection) yap. Yani Kurucu metoda parametreden "AppDbContext dbContext" ifadesi ver.
+	- Sonrasýnda Controller içindeki action'larda Crud iþlemlerinde DB kullanýlarak devam edilebilir.

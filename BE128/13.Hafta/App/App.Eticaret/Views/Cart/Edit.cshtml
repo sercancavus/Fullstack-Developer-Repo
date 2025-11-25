@@ -1,0 +1,137 @@
+﻿@using App.Eticaret.Controllers
+@model List<CartItemViewModel>
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Shopping Cart</h2>
+                    <div class="breadcrumb__option">
+                        <a asp-controller="Home" asp-action="Index">Home</a>
+                        <span>Shopping Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Shoping Cart Section Begin -->
+<section class="shoping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="shoping__product">Products</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        <img src="@(item.ProductImage)" alt="">
+                                        <h5>@item.ProductName</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        $@item.Price
+                                    </td>
+                                    <td class="shoping__cart__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="@item.Quantity">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        $@item.TotalPrice
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <a asp-controller="Cart" asp-action="Remove" asp-route-cartItemId="@item.Id" class="icon_close" data-cartItemId="@item.Id"></a>
+                                    </td>
+                                </tr>
+                            }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping__cart__btns">
+                    <a asp-controller="Home" asp-action="Listing" class="primary-btn cart-btn"><< CONTINUE SHOPPING</a>
+                    @* <a href="#" class="primary-btn cart-btn cart-btn-right">
+                        <span class="icon_loading"></span>
+                        Update Cart
+                    </a> *@
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="shoping__checkout">
+                    <h5>Cart Total</h5>
+                    <ul>
+                        <li>Total <span class="cart-total-price">$@(Model.Sum(item => item.TotalPrice))</span></li>
+                    </ul>
+                    <a asp-controller="Cart" asp-action="Checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shoping Cart Section End -->
+@section Scripts {
+    <script>
+        $(function () {
+            $(".pro-qty").on("click", ".qtybtn", function () {
+                const input = $(this).closest(".pro-qty").find("input");
+                const tr = $(this).closest("tr");
+                const quantity = input.val();
+                const removeBtn = tr.find("a.icon_close");
+                const cartItemId = removeBtn.attr("data-cartItemId");
+                const currentPrice = parseFloat(tr.find(".shoping__cart__price").text().replace("$", "").replace(",", "."));
+
+                console.log({
+                    quantity,
+                    cartItemId,
+                    removeBtn
+                });
+
+                if(quantity <= 0) {
+                    removeBtn[0].click();
+                    return;
+                }
+
+                $.ajax({
+                    url: "@(Url.Action(nameof(CartController.UpdateCart), "Cart"))",
+                    type: "POST",
+                    data: {
+                        cartItemId: cartItemId,
+                        quantity: quantity
+                    },
+                    success: function (response) {
+                        tr.find(".shoping__cart__total").text("$" + (currentPrice * quantity).toFixed(2));
+
+                        const cartTotalPrice = $(".cart-total-price");
+                        const total = Array.from(document.getElementsByClassName("shoping__cart__total"))
+                            .map(x => parseFloat(x.innerText.replace("$", "").replace(",", ".")))
+                            .reduce((a, b) => a + b, 0);
+
+                        cartTotalPrice.text("$" + total.toFixed(2));
+                    }
+                });
+            });
+        });
+    </script>
+}

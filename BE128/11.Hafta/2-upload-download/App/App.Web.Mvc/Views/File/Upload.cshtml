@@ -1,0 +1,10 @@
+﻿<h2>Dosya Yükleme</h2>
+
+<form method="post" asp-controller="File" asp-action="Upload" enctype="multipart/form-data" >
+    <div class="form-group">
+        <label for="file" > Dosya Seçiniz : </label>
+        <input type="file" class="form-control-file" name="uploadedFile" id="file" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Yükle</button>
+</form>

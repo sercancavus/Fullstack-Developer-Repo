@@ -1,0 +1,16 @@
+@model App.Api.Data.Entities.ProductComment
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ProductId" />
+    <div>
+        <label asp-for="Comment"></label>
+        <textarea asp-for="Comment"></textarea>
+        <span asp-validation-for="Comment"></span>
+    </div>
+    <div>
+        <label asp-for="Stars"></label>
+        <input asp-for="Stars" type="number" min="1" max="5" />
+    </div>
+    <button type="submit">Add Comment</button>
+</form>

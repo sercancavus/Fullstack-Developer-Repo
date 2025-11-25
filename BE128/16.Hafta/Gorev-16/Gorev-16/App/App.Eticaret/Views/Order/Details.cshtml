@@ -1,0 +1,50 @@
+﻿@model OrderDetailsViewModel
+@{
+    ViewData["Title"] = "Order Details"; // Set the title of the page
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+        <div class="col-12 mb-3">
+            <h3>Order Information</h3>
+            <p><strong>Order Code:</strong> @Model.OrderCode</p> @* Display the order ID *@
+            <p><strong>Order Date:</strong> @Model.CreatedAt.ToString("yyyy-MM-dd")</p> @* Display the order date *@
+        </div>
+        <div class="col-12 mb-3">
+            <h3>Order Items</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items) // Iterate over each order item
+                    {
+                        <tr>
+                            <td>@item.ProductName</td> @* Display the product name *@
+                            <td>@item.Quantity</td> @* Display the quantity *@
+                            <td>@item.UnitPrice</td> @* Display the price in currency format *@
+                            <td>@item.TotalPrice</td> @* Calculate and display the total price *@
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12 mb-3">
+            <p><strong>Total Amount:</strong> @(Model.Items.Sum(x => x.TotalPrice))</p> @* Display the total amount of the order *@
+        </div>
+        <div class="col-12 mb-3">
+            <a asp-controller="Profile" asp-action="MyOrders" class="primary-btn">Back to Orders</a> @* Add a link to navigate back to the list of orders *@
+        </div>
+
+
+    </div>
+
+</div>
+

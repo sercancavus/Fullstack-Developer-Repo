@@ -1,0 +1,46 @@
+﻿@model List<UserListItemViewModel>
+
+<div class="container">
+    <h1>User List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Is Enabled</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>@(user.Enabled ? "YES" : "NO")</td>
+                    <td>
+                        @if(user.Enabled)
+                        {
+                            <a asp-controller="User" asp-action="Disable" asp-route-id="@user.Id" class="btn btn-danger">Disable</a>
+                        }
+                        else
+                        {
+                            <a asp-controller="User" asp-action="Enable" asp-route-id="@user.Id" class="btn btn-success">Enable</a>
+                        }
+
+                        @if(user.HasSellerRequest)
+                        {
+                            <a asp-controller="User" asp-action="ApproveSellerRequest" asp-route-id="@user.Id" class="btn btn-success">Approve Seller Request</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<CartItemViewModel>
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+        <div class="col-12 mb-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.Price</td>
+                            <td>@item.TotalPrice</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12">
+            <partial name="Partials/ViewMessages" />
+            <form asp-controller="Order" asp-action="Create" method="post">
+                <h2>Checkout Information</h2>
+                <div class="form-floating mb-3">
+                    <label for="floatingTextarea">Address</label>
+                    <textarea class="form-control" placeholder="Enter your address" id="floatingTextarea" name="Address"></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Place Order</button>
+            </form>
+
+        </div>
+    </div>
+</div>

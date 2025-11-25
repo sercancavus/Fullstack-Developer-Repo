@@ -1,0 +1,11 @@
+@model List<App.Api.Data.Entities.Category>
+
+<h2>Categories</h2>
+<ul>
+@foreach(var c in Model)
+{
+    <li>@c.Name</li>
+}
+</ul>
+
+<a asp-action="Create">Create</a>

@@ -1,0 +1,77 @@
+﻿@model SaveProductViewModel
+@inject IHttpClientFactory clientFactory;
+@{
+    var client = clientFactory.CreateClient("Api.Data");
+    ViewData["Title"] = "Create Product";
+
+    var discounts = await client.GetFromJsonAsync<List<DiscountSelectItemViewModel>>("Discounts");
+    var categories = await client.GetFromJsonAsync<List<CategorySelectItemViewModel>>("Categories");
+
+    var imageUploadModel = new ImageUploadViewModel
+    {
+        Name = nameof(Model.Images),
+        Label = "Product Images",
+        IsRequired = true,
+        IsMultipleFiles = true,
+        Accept = "image/png, image/jpeg"
+    };
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto">
+            <h2 class="mb-3">Create Product</h2>
+            <partial name="Partials/ViewMessages" />
+            <form asp-action="Create" method="post" enctype="multipart/form-data" >
+                <div class="form-group">
+                    <label asp-for="CategoryId">Category</label>
+                    <select asp-for="CategoryId" asp-items="@(new SelectList(categories, nameof(CategorySelectItemViewModel.Id), nameof(CategorySelectItemViewModel.Name)))" class="form-control">
+                        <option value="">Select Category</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiscountId">Discount</label>
+                    <select asp-for="DiscountId" asp-items="@(new SelectList(discounts, nameof(DiscountSelectItemViewModel.Id), nameof(DiscountSelectItemViewModel.Rate)))" class="form-control">
+                        <option value="">Select Discount</option>
+                    </select>
+                    <span asp-validation-for="DiscountId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StockAmount">Stock Amount</label>
+                    <input asp-for="StockAmount" class="form-control" />
+                    <span asp-validation-for="StockAmount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <partial name="Partials/ImageUpload" model="imageUploadModel" />
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}
+
+
+
+
+
+

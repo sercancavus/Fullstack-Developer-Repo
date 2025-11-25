@@ -1,0 +1,14 @@
+﻿@model NewScoreViewModel
+
+<h2>New Score</h2>
+
+<div class="container">
+    <form asp-controller="Home" asp-action="NewScore" method="post">
+        <div class="form-group">
+            <label asp-for="Score">Score: </label>
+            <input asp-for="Score" class="form-control"/>
+            <span asp-validation-for="Score"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

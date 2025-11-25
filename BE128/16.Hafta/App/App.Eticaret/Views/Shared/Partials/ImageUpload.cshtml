@@ -1,0 +1,19 @@
+﻿@model ImageUploadViewModel
+@{
+    var accept = Model.Accept ?? "image/*";
+    accept = $"accept=\"{accept}\"";
+}
+<div class="mb-3">
+@if (!string.IsNullOrWhiteSpace(Model.Label))
+{
+    <label for="@(Model.Name)" class="form-label">@Model.Label</label>
+}
+    <input type="file"
+        id="@(Model.Name)"
+           name="@(Model.Name)"
+        class="form-control"
+        @(Model.IsMultipleFiles ? "multiple" : "")
+        @(Model.IsRequired ? "required" : "")
+        @Html.Raw(accept) />
+</div>
+

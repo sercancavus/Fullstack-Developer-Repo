@@ -1,0 +1,7 @@
+@model App.Api.Models.UserInfoViewModel
+
+<h2>User Info</h2>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Display:</strong> @Model.DisplayName</p>
+<p><strong>Roles:</strong> @string.Join(", ", Model.Roles)</p>
+<p><strong>Active:</strong> @Model.IsActive</p>

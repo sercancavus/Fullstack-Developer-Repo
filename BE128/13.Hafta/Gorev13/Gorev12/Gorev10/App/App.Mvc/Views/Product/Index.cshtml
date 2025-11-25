@@ -1,0 +1,46 @@
+@model List<App.Data.Entities.Product>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+<h2>Ürünler</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+<a asp-action="Create" class="btn btn-success mb-3">Yeni Ürün Ekle</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Durum</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Category?.Name</td>
+            <td>@p.Price.ToString("N0") ?</td>
+            <td>@p.StockAmount</td>
+            <td>@(p.Enabled ? "Aktif" : "Pasif")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-sm btn-outline-primary">Düzenle</a>
+            </td>
+            <td>
+                <form asp-action="Delete" method="post" style="display:inline">
+                    <input type="hidden" name="id" value="@p.Id" />
+                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Silmek istediðinize emin misiniz?')">Sil</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+@model List<App.Api.Data.Entities.User>
+
+<h2>Users</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Display Name</th>
+            <th>Roles</th>
+            <th>IsActive</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var u in Model)
+    {
+        <tr>
+            <td>@u.Email</td>
+            <td>@u.DisplayName</td>
+            <td>
+                @* fetch roles via ajax or show placeholder *@
+            </td>
+            <td>@u.IsActive</td>
+            <td>
+                <form asp-action="ToggleActive" method="post" style="display:inline">
+                    <input type="hidden" name="userId" value="@u.Id" />
+                    <button class="btn btn-sm btn-warning">Toggle Active</button>
+                </form>
+                <form asp-action="ApproveSeller" method="post" style="display:inline">
+                    <input type="hidden" name="userId" value="@u.Id" />
+                    <button class="btn btn-sm btn-success">Approve Seller</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

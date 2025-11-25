@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Ürünler";
+}
+<div class="container py-5 animate__animated animate__fadeIn">
+    <h2 class="mb-4 text-success">Ürünler</h2>
+    <div class="row g-3">
+        @* Statik 10 ürün listesi (örnek). Ýleride dinamik yapýlacak *@
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Buzdolabý</h6><div class="text-muted small">Beyaz Eþya</div><div class="fw-semibold mt-2">15.000?</div><div class="badge bg-secondary mt-1">Stok: 72</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="1" asp-route-title="buzdolabi" asp-route-categoryName="beyaz-esya" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Çamaþýr Makinesi</h6><div class="text-muted small">Beyaz Eþya</div><div class="fw-semibold mt-2">12.000?</div><div class="badge bg-secondary mt-1">Stok: 85</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="2" asp-route-title="camasir-makinesi" asp-route-categoryName="beyaz-esya" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Koltuk Takýmý</h6><div class="text-muted small">Mobilya</div><div class="fw-semibold mt-2">25.000?</div><div class="badge bg-secondary mt-1">Stok: 60</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="3" asp-route-title="koltuk-takimi" asp-route-categoryName="mobilya" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Yatak</h6><div class="text-muted small">Mobilya</div><div class="fw-semibold mt-2">8.000?</div><div class="badge bg-secondary mt-1">Stok: 74</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="4" asp-route-title="yatak" asp-route-categoryName="mobilya" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Akýllý Telefon</h6><div class="text-muted small">Akýllý Cihaz</div><div class="fw-semibold mt-2">20.000?</div><div class="badge bg-secondary mt-1">Stok: 95</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="5" asp-route-title="akilli-telefon" asp-route-categoryName="akilli-cihaz" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Akýllý Saat</h6><div class="text-muted small">Akýllý Cihaz</div><div class="fw-semibold mt-2">5.000?</div><div class="badge bg-secondary mt-1">Stok: 88</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="6" asp-route-title="akilli-saat" asp-route-categoryName="akilli-cihaz" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Televizyon</h6><div class="text-muted small">Eðlence</div><div class="fw-semibold mt-2">18.000?</div><div class="badge bg-secondary mt-1">Stok: 53</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="7" asp-route-title="televizyon" asp-route-categoryName="eglence" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Oyun Konsolu</h6><div class="text-muted small">Eðlence</div><div class="fw-semibold mt-2">12.000?</div><div class="badge bg-secondary mt-1">Stok: 77</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="8" asp-route-title="oyun-konsolu" asp-route-categoryName="eglence" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Bluetooth Kulaklýk</h6><div class="text-muted small">Eðlence</div><div class="fw-semibold mt-2">2.000?</div><div class="badge bg-secondary mt-1">Stok: 64</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="9" asp-route-title="bluetooth-kulaklik" asp-route-categoryName="eglence" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100"><div class="card-body"><h6 class="card-title mb-1">Kahve Makinesi</h6><div class="text-muted small">Küçük Ev Aleti</div><div class="fw-semibold mt-2">3.500?</div><div class="badge bg-secondary mt-1">Stok: 69</div><a asp-controller="Home" asp-action="ProductDetail" asp-route-id="10" asp-route-title="kahve-makinesi" asp-route-categoryName="kucuk-ev-aleti" class="btn btn-success btn-sm w-100 mt-3">Ýncele</a></div></div>
+        </div>
+    </div>
+</div>

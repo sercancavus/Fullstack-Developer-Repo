@@ -1,0 +1,22 @@
+﻿@{
+    List<string> users = ViewData["users"] as List<string> ?? new();
+}
+
+@section Scripts {
+    <script>
+        alert("Privacy'desinizz");
+    </script>
+}
+
+@section Styles {
+    <style>
+        body {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+}
+
+<div>
+    <partial name="Partials/UserList" model="users" />
+</div>

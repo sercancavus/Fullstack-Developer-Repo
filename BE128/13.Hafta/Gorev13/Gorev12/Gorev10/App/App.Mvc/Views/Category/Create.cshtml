@@ -1,0 +1,27 @@
+@model App.Data.Entities.Category
+@{
+    ViewData["Title"] = "Kategori Ekle";
+}
+<h2>Kategori Ekle</h2>
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label"></label>
+        <input asp-for="Color" class="form-control" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IconCssClass" class="form-label"></label>
+        <input asp-for="IconCssClass" class="form-control" />
+        <span asp-validation-for="IconCssClass" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

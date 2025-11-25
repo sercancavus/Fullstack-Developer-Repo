@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    int count = Context.Session.GetInt32("view-count") ?? throw new InvalidOperationException();
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@if (count <= 3)
+{
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Reklam</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2133_20220218191855.png" class="img-fluid" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+                var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
+              keyboard: false
+            });
+            myModal.show()
+        </script>
+    }
+}

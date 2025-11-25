@@ -1,0 +1,13 @@
+@model App.Mvc.Models.EventModel
+@{
+    ViewData["Title"] = "Etkinlik Detaylarý";
+}
+<h2>Etkinlik Detaylarý</h2>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Title</h4>
+        <p class="card-text">@Model.Description</p>
+        <p class="card-text"><strong>Tarih:</strong> @Model.Date.ToString("dd.MM.yyyy")</p>
+    </div>
+</div>
+<a class="btn btn-secondary mt-3" asp-action="List">Geri Dön</a>

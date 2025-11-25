@@ -1,0 +1,14 @@
+﻿@{
+    var name = Context.Session.GetString("Username");
+    var age = Context.Session.GetInt32("Age");
+}
+
+@if (name is null || age is null)
+{
+    <h1>Kullanıcı bulunamadı.</h1>
+}
+else
+{
+    <h1>Hoşgeldin @name</h1>
+    <h1>Yaşın @age</h1>
+}

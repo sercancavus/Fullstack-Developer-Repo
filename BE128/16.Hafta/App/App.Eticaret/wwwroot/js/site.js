@@ -1,0 +1,1 @@
+﻿// Uygulamaya ekleyeceğiniz javascript kodlarını bu dosyaya ekleyebilirsiniz.

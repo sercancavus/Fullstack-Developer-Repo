@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Product Comments";
+}
+
+<h2>Ürün Yorumları</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Yorum</th>
+            <th>Sahibi</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td><i>Ürün çok güzel, çeyizime aldım.</i></td>
+                <td>Merve Yılmaz</td>
+                <td>
+                    <button class="btn btn-primary" onclick="approveComment(1)">Approve</button>
+                </td>
+            </tr>
+    </tbody>
+</table>
+
+@section scripts {
+    <script>
+        function approveComment(commentId) {
+            // Make a fetch request to the server to approve the comment
+
+            fetch(`/comment/${commentId}/approve`)
+                .then(response => response.json())
+                .then(data => {
+                    // Refresh the page to update the approved status
+                    location.reload();
+                })
+                .catch(error => {
+                    alert('Yorum onaylanamadı...');
+                });
+        }
+    </script>
+}

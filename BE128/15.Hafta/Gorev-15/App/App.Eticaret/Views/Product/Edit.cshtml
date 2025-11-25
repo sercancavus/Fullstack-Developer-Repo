@@ -1,0 +1,81 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using App.Data.Entities
+@model SaveProductViewModel
+@inject App.Data.Infrastructure.DataRepository<DiscountEntity> discountRepository
+@inject App.Data.Infrastructure.DataRepository<CategoryEntity> categoryRepository
+@{
+    ViewData["Title"] = "Edit Product";
+    var discounts = await discountRepository.GetAll()
+                .Where(d => d.Enabled)
+                .Select(d => new DiscountSelectItemViewModel { Id = d.Id, Rate = d.DiscountRate })
+                .ToListAsync();
+    var categories = await categoryRepository.GetAll()
+                .Select(c => new CategorySelectItemViewModel { Id = c.Id, Name = c.Name })
+                .ToListAsync();
+
+    var imageUploadModel = new ImageUploadViewModel
+    {
+        Name = nameof(Model.Images),
+        Label = "Product Images",
+        IsRequired = true,
+        IsMultipleFiles = true,
+        Accept = "image/png, image/jpeg"
+    };
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto">
+            <h2 class="mb-3">Edit Product</h2>
+            <partial name="Partials/ViewMessages" />
+            <form asp-action="Edit" asp-route-productId="@(Context.GetRouteValue("productId"))" method="post">
+                <div class="form-group">
+                    <label asp-for="CategoryId">Category</label>
+                    <select asp-for="CategoryId" asp-items="@(new SelectList(categories, nameof(CategorySelectItemViewModel.Id), nameof(CategorySelectItemViewModel.Name)))" class="form-control">
+                        <option value="">Select Category</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiscountId">Discount</label>
+                    <select asp-for="DiscountId" asp-items="@(new SelectList(discounts, nameof(DiscountSelectItemViewModel.Id), nameof(DiscountSelectItemViewModel.Rate)))" class="form-control">
+                        <option value="">Select Discount</option>
+                    </select>
+                    <span asp-validation-for="DiscountId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StockAmount">Stock Amount</label>
+                    <input asp-for="StockAmount" class="form-control" />
+                    <span asp-validation-for="StockAmount" class="text-danger"></span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}
+
+
+
+
+
+

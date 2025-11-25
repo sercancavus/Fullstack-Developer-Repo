@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<vc:categories-slider />
+
+<vc:featured-products />
+
+<!-- Banner Begin -->
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="banner__pic">
+                    <img src="~/theme/img/banner/banner-1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="banner__pic">
+                    <img src="~/theme/img/banner/banner-2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
+<!-- Latest Product Section Begin -->
+<section class="latest-product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <vc:latest-products />
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <vc:top-rated-products />
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <vc:review-products />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Product Section End -->
+<vc:from-the-blog />

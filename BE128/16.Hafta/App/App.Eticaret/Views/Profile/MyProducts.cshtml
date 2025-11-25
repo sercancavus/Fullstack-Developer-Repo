@@ -1,0 +1,35 @@
+﻿@model List<MyProductsViewModel>
+@{
+    ViewData["Title"] = "My Products";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <partial name="Partials/ViewMessages" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Has Discount</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.HasDiscount</td>
+                    <td>@product.Stock</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Product" asp-route-productId="@product.Id" class="btn btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-controller="Product" asp-route-productId="@product.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

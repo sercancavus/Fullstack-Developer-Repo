@@ -1,0 +1,32 @@
+@model List<App.Data.Entities.User>
+@{
+    ViewData["Title"] = "Kullanýcýlar";
+}
+<h2>Kullanýcýlar</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>E-posta</th>
+            <th>Rol</th>
+            <th>Durum</th>
+            <th>Kayýt Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.FirstName</td>
+            <td>@user.LastName</td>
+            <td>@user.Email</td>
+            <td>@user.Role?.Name</td>
+            <td>@(user.Enabled ? "Aktif" : "Pasif")</td>
+            <td>@user.CreatedAt.ToString("yyyy-MM-dd HH:mm")</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,7 @@
+@model App.Eticaret.ViewComponents.CartSummaryViewComponent.SummaryModel
+<ul>
+    <li><a asp-controller="Product" asp-action="Create" title="Add New Product"><i class="fa fa-plus"></i></a></li>
+    <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+    <li><a asp-controller="Cart" asp-action="Edit"><i class="fa fa-shopping-bag"></i> <span>@Model.Count</span></a></li>
+</ul>
+<div class="header__cart__price">item: <span>@Model.Total.ToString("C")</span></div>

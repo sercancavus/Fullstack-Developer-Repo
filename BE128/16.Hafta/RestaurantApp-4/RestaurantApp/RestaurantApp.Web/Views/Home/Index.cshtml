@@ -1,0 +1,82 @@
+﻿@model HomeViewModel
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="food_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>Our Menu</h2>
+        </div>
+        <div class="filters-menu">
+            <ul class="filters_menu">
+                <li class="active" data-filter="*">ALL</li>
+                @foreach (var category in Model.Categories)
+                {
+                    <li data-filter=".@category.Name.Replace(" ", "")">@category.Name</li>
+                }
+            </ul>
+        </div>
+        <div class="filters-content">
+            <div class="row grid">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="col-sm-6 col-lg-4 all @product.Category.Name.Replace(" ", "")">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="~/images/@product.ImageUrl" alt="@product.Name">
+                            </div>
+                            <div class="detail-box">
+                                <h5>@product.Name</h5>
+                                <ul>
+                                    @*Ürünün açıklamalarını satır satır alt alta yazdırabilmek için ayırıyoruz.*@
+                                    @if (product.Description is not null)
+                                    {
+                                        foreach (var item in product.Description.Split('|'))
+                                        {
+                                            <li>@item</li>
+                                        }
+                                    }
+
+                                </ul>
+                                <div class="options">
+                                    <h6>Price: @product.Price €</h6>
+                                    @if (User?.Identity?.IsAuthenticated is true && User.IsInRole("User"))
+                                    {
+                                        <button class="btn btn-sm btn-warning" onclick="addToCart(@product.Id, '@product.Name', @product.Price)">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var $grid = $('.grid').isotope({
+                itemSelector: '.all',
+                layoutMode: 'fitRows'
+            });
+
+            $('.filters_menu li').click(function () {
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({ filter: filterValue });
+                $('.filters_menu li').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+}
+
+

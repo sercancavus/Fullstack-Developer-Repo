@@ -1,0 +1,36 @@
+﻿@model ProfileDetailsViewModel
+
+@{
+    ViewData["Title"] = "Profile Details";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <partial name="Partials/ViewMessages" />
+    <form asp-action="Edit" asp-controller="Profile" method="post">
+        <div class="form-group">
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control">
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control">
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" class="form-control" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" class="form-control" value="******">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

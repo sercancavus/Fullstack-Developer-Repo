@@ -1,0 +1,38 @@
+﻿@model List<App.Admin.Controllers.ProductController.AdminProductItem>
+<div class="container">
+    <h1>Ürün Listesi</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Fiyat</th>
+                <th>Satıcı</th>
+                <th>Durum</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Price</td>
+                    <td>@p.Seller</td>
+                    <td>@(p.Enabled ? "Aktif" : "Pasif")</td>
+                    <td>
+                        @if(p.Enabled)
+                        {
+                            <a class="btn btn-sm btn-warning" asp-controller="Product" asp-action="Disable" asp-route-productId="@p.Id">Pasif Yap</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-sm btn-success" asp-controller="Product" asp-action="Enable" asp-route-productId="@p.Id">Aktif Yap</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Create New Category";
+}
+
+<h2>Create New Category</h2>
+
+<form asp-controller="Category" asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Kategori Adı</label>
+        <input class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Tanım</label>
+        <textarea class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

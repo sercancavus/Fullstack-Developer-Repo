@@ -1,0 +1,50 @@
+﻿@model RegisterViewModel
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Error))
+{
+    <div class="alert alert-danger">
+        @ViewBag.Error
+    </div>
+}
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Success))
+{
+    <div class="alert alert-success">
+        @ViewBag.Success
+    </div>
+}
+
+<div class="container">
+    <h2>Register</h2>
+    <form asp-controller="Auth" asp-action="Register" method="post">
+        <div class="form-group">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Surname">Surname:</label>
+            <input asp-for="Surname" class="form-control" />
+            <span asp-validation-for="Surname"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Password:</label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PasswordRepeat">Confirm Password:</label>
+            <input asp-for="PasswordRepeat" class="form-control" />
+            <span asp-validation-for="PasswordRepeat"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a asp-controller="Auth" asp-action="Login" class="btn btn-secondary">Login</a>
+        </div>
+    </form>
+</div>

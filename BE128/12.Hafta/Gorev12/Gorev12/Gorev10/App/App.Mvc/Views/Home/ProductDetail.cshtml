@@ -1,0 +1,26 @@
+@model App.Mvc.Models.ProductDetailViewModel
+@{
+    ViewData["Title"] = Model.Name + " Detayý";
+}
+<div class="container py-5 animate__animated animate__fadeIn">
+    <h2 class="mb-4">@Model.Name</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-3">Kategori</dt>
+                <dd class="col-sm-9">@Model.Category</dd>
+                <dt class="col-sm-3">Fiyat</dt>
+                <dd class="col-sm-9">@Model.Price.ToString("N0") ?</dd>
+                <dt class="col-sm-3">Stok</dt>
+                <dd class="col-sm-9">@Model.Stock</dd>
+                <dt class="col-sm-3">Açýklama</dt>
+                <dd class="col-sm-9">@Model.Description</dd>
+            </dl>
+            <form method="post" asp-controller="Order" asp-action="Create" class="mt-4">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <button type="submit" class="btn btn-success">Sipariþ Ver</button>
+                <a asp-controller="Home" asp-action="Listing" class="btn btn-outline-secondary ms-2">Geri</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Ürünler";
+}
+<div class="container py-5 animate__animated animate__fadeIn">
+    <h2 class="mb-4 text-success">Ürünler</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <img src="~/img/sample1.jpg" class="card-img-top" alt="Ürün 1">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün 1</h5>
+                    <p class="card-text">Kýsa ürün açýklamasý.</p>
+                    <a asp-controller="Home" asp-action="ProductDetail" asp-route-categoryName="elektronik" asp-route-title="urun-1" asp-route-id="1" class="btn btn-success w-100">Ýncele</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <img src="~/img/sample2.jpg" class="card-img-top" alt="Ürün 2">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün 2</h5>
+                    <p class="card-text">Kýsa ürün açýklamasý.</p>
+                    <a asp-controller="Home" asp-action="ProductDetail" asp-route-categoryName="elektronik" asp-route-title="urun-2" asp-route-id="2" class="btn btn-success w-100">Ýncele</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <img src="~/img/sample3.jpg" class="card-img-top" alt="Ürün 3">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün 3</h5>
+                    <p class="card-text">Kýsa ürün açýklamasý.</p>
+                    <a asp-controller="Home" asp-action="ProductDetail" asp-route-categoryName="elektronik" asp-route-title="urun-3" asp-route-id="3" class="btn btn-success w-100">Ýncele</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <img src="~/img/sample4.jpg" class="card-img-top" alt="Ürün 4">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün 4</h5>
+                    <p class="card-text">Kýsa ürün açýklamasý.</p>
+                    <a asp-controller="Home" asp-action="ProductDetail" asp-route-categoryName="elektronik" asp-route-title="urun-4" asp-route-id="4" class="btn btn-success w-100">Ýncele</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    List<Todo> todos = new()
+    {
+        new Todo{ Id = 1, Title = "Ders" , Description = "Bugün ders 20:00'da!"},
+        new Todo{ Id = 2, Title = "Etüt" , Description = "Yarın etüt 21:00'da!"},
+        new Todo{ Id = 3, Title = "Market" , Description = "Markete gitmem lazım!"},
+        new Todo{ Id = 4, Title = "Çöpler" , Description = "Çöpler çok fena!"},
+        new Todo{ Id = 5, Title = "Oyun" , Description = "Kediyle oyun oyna!"},
+        new Todo{ Id = 6, Title = "Mesela yani" , Description = "açıklama yok"},
+    };
+}
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+        </tr>
+        @foreach (var item in todos)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    </table>
+</div>

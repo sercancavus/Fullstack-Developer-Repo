@@ -1,0 +1,33 @@
+@model IEnumerable<App.Mvc.Models.EventModel>
+@{
+    ViewData["Title"] = "Etkinlik Listesi";
+}
+<h2>Etkinlik Listesi</h2>
+<a class="btn btn-primary mb-2" asp-action="Create">Yeni Etkinlik Oluþtur</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Baþlýk</th>
+            <th>Açýklama</th>
+            <th>Tarih</th>
+            <th>Ýþlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var evt in Model)
+        {
+            <tr>
+                <td>@evt.Title</td>
+                <td>@evt.Description</td>
+                <td>@evt.Date.ToString("dd.MM.yyyy")</td>
+                <td>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@evt.Id">Detaylar</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@evt.Id">Düzenle</a>
+                    <form asp-action="Delete" asp-route-id="@evt.Id" method="post" style="display:inline">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediðinize emin misiniz?');">Sil</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
